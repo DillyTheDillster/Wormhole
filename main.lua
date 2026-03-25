@@ -5,7 +5,7 @@ if PotatoPatchUtils then
         -- Format entries as `['filename.txt'] = true`
     }
 
-    PotatoPatchUtils.load_files(Wormhole.path .. '/content', Wormhole.id, file_blacklist)
-    SMODS.handle_loc_file(Wormhole.path, Wormhole.id)
+    PotatoPatchUtils.load_files(Wormhole.path .. '/content', file_blacklist)
+    SMODS.handle_loc_file(Wormhole.path)
     PotatoPatchUtils.LOC.init()
 end
