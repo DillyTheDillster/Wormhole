@@ -76,7 +76,7 @@ local function is_rock_present()
 		or false
 end
 local function is_rock(card)
-	return card and card.worm_was_quantum_rock or (card.config.center and card.config.center.key == rock.key)
+    return card and (card.worm_was_quantum_rock or (card.config.center and card.config.center.key == rock.key))
 end
 local function emplace_and_shuffle_in_area(card, area)
 	if not area.cards then
