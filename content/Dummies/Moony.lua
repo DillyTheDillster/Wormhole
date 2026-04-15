@@ -174,7 +174,7 @@ function SEMBY_ranbinary_index(max_amount, intend, seed)
         if n == 0 then break; end
     end
     if #s ~= intend then
-        print('MISMATCH! "SEMBY_ranbinary_index()" expected ' .. intend .. ', got ' .. #s .. '!')
+        --print('MISMATCH! "SEMBY_ranbinary_index()" expected ' .. intend .. ', got ' .. #s .. '!')
     end
     return s
 end

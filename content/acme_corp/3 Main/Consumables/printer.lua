@@ -34,7 +34,7 @@ SMODS.Consumable {
 
     calculate = function(self, card, context)
         if context.final_scoring_step then
-            print("Hit final scoring")
+            --print("Hit final scoring")
 
 
             local final_chips, final_mult = hand_chips, mult
@@ -49,13 +49,13 @@ SMODS.Consumable {
 
 
             if score > (card.ability.extra.best_hand or 0) then
-                print('set best_hand to ' .. score)
+                --print('set best_hand to ' .. score)
                 card.ability.extra.best_hand = score
             end
 
 
             if score >= G.GAME.blind.chips and not card.ability.extra.active then
-                print('active!')
+                --print('active!')
                 card.ability.extra.active = true
                 return {
                     message = localize('k_active_ex'),
@@ -66,7 +66,7 @@ SMODS.Consumable {
 
         -- reset each blind
         if context.setting_blind then
-            print("reset")
+            --print("reset")
             card.ability.extra.active = false
         end
     end,

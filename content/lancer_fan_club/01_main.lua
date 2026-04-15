@@ -219,7 +219,7 @@ PotatoPatchUtils.Developer {
                 if not G.GAME.worm_log[cck] then
                     G.GAME.worm_log[cck] = true
                     G.GAME.worm_log_count = (G.GAME.worm_log_count or 0) + 1
-                    Wormhole.LFC_Util.debug_print(G.GAME.worm_log)
+                    --Wormhole.LFC_Util.debug_print(G.GAME.worm_log)
                 end
             end
         end

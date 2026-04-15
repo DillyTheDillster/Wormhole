@@ -157,7 +157,7 @@ function love.draw()
 	local space = Wormhole.LancerFanClub.spacebar
 	if space.active and space.canvas then
 		targettimer = space.pre_timer>0 and "pre_timer" or "timer"
-		love.graphics.print(targettimer..": "..space[targettimer],10,50) -- Debug line
+		--love.graphics.print(targettimer..": "..space[targettimer],10,50) -- Debug line
 		
 		-- Minigame drawing :3
 		local c = love.graphics.getCanvas()

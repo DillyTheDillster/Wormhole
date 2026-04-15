@@ -57,11 +57,11 @@ pattern = '''if G.GAME.round_resets.blind == G.P_BLINDS.bl_small then
                         end'''
 position = 'at'
 payload = '''if not G.GAME.worm_tlr_hercules_blind then
-        print(G.GAME.round_resets.blind_states)
-        print(G.GAME.worm_tlr_orion_original_blind)
-        print((G.P_BLINDS[G.GAME.worm_tlr_orion_original_blind] or {}).boss)
+        --print(G.GAME.round_resets.blind_states)
+        --print(G.GAME.worm_tlr_orion_original_blind)
+        --print((G.P_BLINDS[G.GAME.worm_tlr_orion_original_blind] or {}).boss)
         if ((G.GAME.round_resets.blind_states.Small == "Defeated" or G.GAME.round_resets.blind_states.Small == "Skipped") and (G.GAME.round_resets.blind_states.Big == "Defeated" or G.GAME.round_resets.blind_states.Big == "Skipped") and (G.P_BLINDS[G.GAME.worm_tlr_orion_original_blind] or {}).boss) then
-            print("wtf")
+            --print("wtf")
             G.GAME.current_round.voucher = SMODS.get_next_vouchers()
             G.GAME.round_resets.blind_states.Boss = 'Defeated'
             for k, v in ipairs(G.playing_cards) do

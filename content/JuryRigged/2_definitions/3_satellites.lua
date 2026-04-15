@@ -267,7 +267,7 @@ Wormhole.JR_UTILS.Satellite {
         if SMODS.has_no_rank(v) or (not ranks[v:get_id()]) then targets[#targets + 1] = v end
       end
 
-      print(#targets)
+      --print(#targets)
 
       local to_delete = {}
       for _ = 1, Wormhole.JR_UTILS.get_level(vars.hand_type) do
