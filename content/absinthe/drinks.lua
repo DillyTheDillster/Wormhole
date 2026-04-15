@@ -1125,7 +1125,7 @@ SMODS.Consumable { -- Nebulager
             }
         end
 
-        if context.selling_card and not card.ability.drink_values.filled then
+        if context.selling_card and not card.ability.drink_values.filled and not context.card ~= card then
             card.ability.extra.current_sold = card.ability.extra.current_sold + 1
             SMODS.calculate_effect({ message = card.ability.extra.current_sold .. '/' .. card.ability.extra.sold_goal, colour = G.C.ATTENTION }, card)
             if card.ability.extra.current_sold >= card.ability.extra.sold_goal then
