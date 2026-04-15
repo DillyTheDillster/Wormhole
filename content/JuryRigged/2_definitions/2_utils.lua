@@ -9,7 +9,7 @@ Wormhole.JR_UTILS.ENABLED_SATELLITES = {
   ['Flush'] = 'galileo',
   ['Full House'] = 'sputnik_1',
   ['Four of a Kind'] = 'mariner_9',
-  ['Straight Flush'] = 'voyager_2';
+  ['Straight Flush'] = 'voyager_2',
   ['Five of a Kind'] = 'death_egg',
   ['Flush House'] = 'dawn',
   ['Flush Five'] = 'manhole_cover',
@@ -53,6 +53,14 @@ Wormhole.JR_UTILS.localize_satellite = function(hand)
   return localize('worm_jr_satellites_' .. Wormhole.JR_UTILS.get_satellite(hand))
 end
 
+Wormhole.JR_UTILS.get_level = function(hand)
+  if G.GAME.jr and G.GAME.jr.satellite_hands[arg].level then
+    return G.GAME.jr.satellite_hands[arg].level
+  else
+    return 0
+  end
+end
+
 Wormhole.JR_UTILS.level_up_satellite = function(card, amount)
   amount = amount or 1
   local hand = card.ability.extra.hand_type
@@ -80,7 +88,7 @@ Wormhole.JR_UTILS.level_up_satellite = function(card, amount)
     end
   }))
   update_hand_text({ sound = 'xchips', volume = 0.7, pitch = 0.9, delay = 0 },
-  { level = G.GAME.jr.satellite_hands[hand].level })
+    { level = G.GAME.jr.satellite_hands[hand].level })
   delay(1.3)
   update_hand_text(
     { sound = 'xchips', volume = 0.7, pitch = 0.5, delay = 0 },
@@ -102,28 +110,28 @@ Wormhole.JR_UTILS.draw_satellite_soul = function(card, scale_mod, rotate_mod)
     spr.role.offset.y + 0.03 * math.sin(1.8 * G.TIMERS.REAL),
     nil, 0.3)
 
-    spr:draw_shader('dissolve', nil, nil, nil,
+  spr:draw_shader('dissolve', nil, nil, nil,
     card.children.center, scale_mod * .75, rotate_mod * math.sin(0.1 * G.TIMERS.REAL + 5) * 10)
-  end
+end
 
-  Wormhole.JR_UTILS.update_transponder = function()
-    if G.GAME and G.GAME.jr and G.GAME.jr.satellite_hands then
-      local count = 0
-      for k, v in pairs(G.GAME.jr.satellite_hands) do
-        if v.level > 0 then
-          count = count + 1
-        end
-      end
-
-      G.GAME.jr.transponder_ct = count
-    end
-  end
-
-  Wormhole.JR_UTILS.table_contains = function(table, element)
-    for _, value in pairs(table) do
-      if value == element then
-        return true
+Wormhole.JR_UTILS.update_transponder = function()
+  if G.GAME and G.GAME.jr and G.GAME.jr.satellite_hands then
+    local count = 0
+    for k, v in pairs(G.GAME.jr.satellite_hands) do
+      if v.level > 0 then
+        count = count + 1
       end
     end
-    return false
+
+    G.GAME.jr.transponder_ct = count
   end
+end
+
+Wormhole.JR_UTILS.table_contains = function(table, element)
+  for _, value in pairs(table) do
+    if value == element then
+      return true
+    end
+  end
+  return false
+end
