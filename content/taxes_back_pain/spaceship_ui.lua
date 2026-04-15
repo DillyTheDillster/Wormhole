@@ -49,6 +49,16 @@ end
 
 Wormhole.tbp.shader_draw_stuff = {}
 
+local game_start_run_ref = Game.start_run
+function Game:start_run(args)
+    local ret = game_start_run_ref(self, args)
+    if G.GAME then
+        G.GAME.tbp_module_replace_active = nil
+    end
+    Wormhole.tbp.shader_draw_stuff = {}
+    return ret
+end
+
 G.FUNCS.show_spaceship_tooltips = function(e)
     if e.config.ref_table then 
         e.children.info = UIBox{

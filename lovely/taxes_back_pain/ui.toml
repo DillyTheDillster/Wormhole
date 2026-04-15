@@ -111,15 +111,17 @@ payload = '''
 if shader.key == "worm_tbp_space_warp" then
     love.graphics.setCanvas({current_canvas, stencil = true})
     for k, v in ipairs(Wormhole.tbp.shader_draw_stuff) do
-        love.graphics.push("all")
-        love.graphics.setShader()
-        G.OVERLAY_TUTORIAL = true
-        v:translate_container()
-        v:draw()
-        G.OVERLAY_TUTORIAL = nil
-        love.graphics.pop()
+        if v and v.translate_container then
+            love.graphics.push("all")
+            love.graphics.setShader()
+            G.OVERLAY_TUTORIAL = true
+            v:translate_container()
+            v:draw()
+            G.OVERLAY_TUTORIAL = nil
+            love.graphics.pop()
+        end
     end
-    if G.GAME.module_replace_overlay then
+    if G.GAME.module_replace_overlay and G.GAME.module_replace_overlay.translate_container then
         love.graphics.push("all")
         love.graphics.setShader()
         G.OVERLAY_TUTORIAL = true
