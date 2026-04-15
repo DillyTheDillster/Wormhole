@@ -27,7 +27,8 @@ SMODS.Atlas({
 
 local rock = SMODS.Joker({
 	key = "jtem2_quantum_rock",
-
+	discovered = true,
+	unlocked = true,
 	ppu_team = { "jtem2" },
 	ppu_coder = { "sleepyg11" },
 	ppu_artist = { "aikoyori" },
@@ -76,7 +77,7 @@ local function is_rock_present()
 		or false
 end
 local function is_rock(card)
-	return card and card.worm_was_quantum_rock or (card.config.center and card.config.center.key == rock.key)
+    return card and (card.worm_was_quantum_rock or (card.config.center and card.config.center.key == rock.key))
 end
 local function emplace_and_shuffle_in_area(card, area)
 	if not area.cards then
@@ -305,14 +306,6 @@ function Card:update(...)
 	if should_remove_rock then
 		destroy_rock(true)
 	end
-end
-
-local old_save = Card.save
-function Card:save(...)
-	if is_rock(self) then
-		return nil
-	end
-	return old_save(self, ...)
 end
 
 local old_load = Card.load
