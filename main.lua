@@ -5,13 +5,24 @@ function Wormhole.reset_game_globals(run_start) end
 
 if PotatoPatchUtils then
     local file_blacklist = {
-        ['tlr_gorilla.dll'] = true
+        ['tlr_gorilla.dll'] = true,
         -- Format entries as `['filename.txt'] = true`
+        ['loadlogo.lua'] = true,
     }
 
     PotatoPatchUtils.load_files(Wormhole.path .. '/content', file_blacklist)
+    if Balatest then
+        PotatoPatchUtils.load_files(Wormhole.path .. '/test', file_blacklist)
+    end
     SMODS.handle_loc_file(Wormhole.path)
     PotatoPatchUtils.LOC.init()
 
     SMODS.current_mod.extra_tabs = PotatoPatchUtils.CREDITS.register_page(SMODS.current_mod)
 end
+
+SMODS.Atlas {
+    key = "modicon",
+    path = "modicon.png",
+    px = 34,
+    py = 34
+}
