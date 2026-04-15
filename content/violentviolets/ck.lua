@@ -14,7 +14,7 @@ SMODS.Joker {
             roundadd = 1
         }
     },
-    ppu_team = { "Violent Violets" },
+    ppu_team = { "VV" },
     ppu_artist = { "FirstTry" },
     ppu_coder = { "FirstTry" },
     loc_vars = function(self,info_queue,card)
