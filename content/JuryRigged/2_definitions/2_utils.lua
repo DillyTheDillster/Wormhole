@@ -54,8 +54,8 @@ Wormhole.JR_UTILS.localize_satellite = function(hand)
 end
 
 Wormhole.JR_UTILS.get_level = function(hand)
-  if G.GAME.jr and G.GAME.jr.satellite_hands[arg].level then
-    return G.GAME.jr.satellite_hands[arg].level
+  if G.GAME.jr and G.GAME.jr.satellite_hands[hand].level then
+    return G.GAME.jr.satellite_hands[hand].level
   else
     return 0
   end
