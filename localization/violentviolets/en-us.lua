@@ -1,18 +1,22 @@
 return {
     descriptions = {
         PotatoPatch = {
-            VV = { name =  "Violent Violets" },
-            FireIce = {
+            PotatoPatchTeam_VV = { name =  "Violent Violets" },
+            PotatoPatchDev_FireIce = {
                 name = "FireIce",
+                text = { "not done yet" } -- TO BE REPLACED LATER WITH AN ACTUAL DESCRIPTION
             },
-            Gud = {
+            PotatoPatchDev_Gud = {
                 name = "Gup",
+                text = { "not done yet" } -- TO BE REPLACED LATER WITH AN ACTUAL DESCRIPTION
             },
-            Iso = {
+            PotatoPatchDev_Iso = {
                 name = "Isotypical",
+                text = { "not done yet" } -- TO BE REPLACED LATER WITH AN ACTUAL DESCRIPTION
             },
-            FirstTry = {
+            PotatoPatchDev_FirstTry = {
                 name = "FirstTry",
+                text = { "not done yet" } -- TO BE REPLACED LATER WITH AN ACTUAL DESCRIPTION
             },
         },
         Joker = {

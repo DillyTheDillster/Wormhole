@@ -37,7 +37,7 @@ SMODS.Sound {
 }
 
 SMODS.Atlas {
-    key = 'devs',
+    key = 'vv_devs',
     px = 71,
     py = 95,
     path = 'violentviolets/devs.png'
