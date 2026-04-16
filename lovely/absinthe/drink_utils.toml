@@ -7,7 +7,7 @@ priority = 1
 [[patches]]
 [patches.pattern]
 target = "functions/UI_definitions.lua"
-pattern = '''return base_background'''
+pattern = 'return base_background'
 position = "before"
 payload = '''
 if card.area == G.shop_jokers and G.shop_jokers then
@@ -18,6 +18,20 @@ if card.area == G.shop_jokers and G.shop_jokers then
     card = card, parent = base_attach, type = 'buy',
     func = 'can_buy', button = 'buy_from_shop', card_width = card_width, buy_and_use = buy_and_use
   }
+end
+'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = 'functions/UI_definitions.lua'
+pattern = '''
+card.children.price.alignment.offset.y = card.ability.set == 'Booster' and 0.5 or 0.38
+'''
+position = 'before'
+payload = '''
+if card.ability.set == "abs_drinks" then
+  card.children.buy_and_use_button = nil
 end
 '''
 match_indent = true
