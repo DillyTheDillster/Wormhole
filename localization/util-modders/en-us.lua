@@ -183,7 +183,7 @@ return {
 		b_worm_util_black_hole = {
 			name = "Black Hole Deck",
 			text = {
-				"{C:attention}Hand levelups{} gains",
+				"{C:attention}Hand levelups{} gain an",
 				"additional {C:blue}+#1# level{}"
 			}
 		}
