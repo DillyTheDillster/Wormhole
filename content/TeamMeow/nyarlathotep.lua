@@ -169,11 +169,14 @@ SMODS.Joker({
 		local cae = card.ability.extra
 		local rets = {}
 		if context.joker_main then
-			rets[#rets + 1] = cae.joker_main
+			local temp = copy_table(cae.joker_main)
+			rets[#rets + 1] = temp
 		elseif context.individual and context.cardarea == G.play then
-			rets[#rets + 1] = cae.individual
-		elseif context.individual and context.cardarea == G.hand then
-			rets[#rets + 1] = cae.held_in_hand
+			local temp = copy_table(cae.individual)
+			rets[#rets + 1] = temp
+		elseif context.individual and context.cardarea == G.hand and not context.end_of_round then
+			local temp = copy_table(cae.held_in_hand)
+			rets[#rets + 1] = temp
 		end
 		if next(cae.misc) then
 			for _, power in ipairs(cae.misc) do
