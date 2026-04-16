@@ -128,7 +128,7 @@ return {
                 text = {
                     {
                         "When {C:attention}primed{}, {C:blue}+#1#{} Hand for this",
-                        "Blind if next played poker hand is",
+                        "round if next played poker hand is",
                         "your {C:attention}most played{}, then is {C:abs_drinks}drank{}",
                         '{C:inactive}(Currently {C:attention}#2#{C:inactive})'
                     },
@@ -151,7 +151,7 @@ return {
                     {
                         "{C:inactive,s:0.8}After being Refilled:{}",
                         "When {C:attention}primed{}, {C:blue}+#1#{} Hand for this",
-                        "Blind if next played poker hand is",
+                        "round if next played poker hand is",
                         "your {C:attention}most played{}, then is {C:abs_drinks}drank{}",
                         '{C:inactive}(Currently {C:attention}#2#{C:inactive})'
                     }
@@ -161,8 +161,8 @@ return {
                 name = 'Cosmospolitan',
                 text = {
                     {
-                        "When {C:attention}primed{} and {C:attention}setting Blind{},",
-                        "create a random card from",
+                        "When {C:attention}primed{}, {C:attention}setting Blind{},",
+                        "creates a random card from",
                         "{V:1}#1#{}, then is {C:abs_drinks}drank{}",
                         "{C:inactive}(Must have space!)",
                     },
@@ -182,8 +182,8 @@ return {
                     },
                     {
                         "{C:inactive,s:0.8}After being Refilled:{}",
-                        "When {C:attention}primed{} and {C:attention}setting Blind{},",
-                        "create a random card from",
+                        "When {C:attention}primed{}, {C:attention}setting Blind{},",
+                        "creates a random card from",
                         "{V:1}#1#{}, then is {C:abs_drinks}drank{}",
                         "{C:inactive}(Must have space!)",
                     }
