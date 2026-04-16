@@ -6,6 +6,7 @@ SMODS.Consumable{
 	config = { extra = { seal = 'worm_tlr_star' }, max_highlighted = 1 },
 
 	loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue+1] = G.P_SEALS['worm_tlr_star']
         return { vars = { card.ability.max_highlighted, colours = {SMODS.ConsumableTypes.worm_tlr_constellation.primary_colour}} }
     end,
 	use = function(self, card, area, copier)
