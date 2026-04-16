@@ -244,6 +244,7 @@ SMODS.Joker {
 	atlas = 'Palindrome',
     pos = { x = 1, y = 1 },
     config = { extra = { hands_left = 10 } },
+	attributes = {"generation", "planet", "space"},
 	loc_txt = {
 		name = 'Milky Way',
 		text = {
@@ -305,10 +306,11 @@ SMODS.Joker {
 	atlas = 'Palindrome',
     pos = { x = 1, y = 2 },
     config = { extra = { money_per=1 } },
+	attributes = {"economy", "hands", "hand_type", "space"},
 	loc_txt = {
 		name = 'Andromeda',
 		text = {
-			"Gives {C:money}$#1#{} per level ",
+			"Gives {C:money}$#1#{} per level",
 			"of first played",
 			"{C:attention}poker hand{} each round"
 		},
@@ -353,6 +355,7 @@ SMODS.Joker {
 	atlas = 'Palindrome',
     pos = { x = 0, y = 1 },
     config = { extra = { s_mult = 4, suitOne = 'Diamonds', s_chips = 25, suitTwo = 'Hearts' }, },
+	attributes = {"suit", "hearts", "mult", "diamonds", "chips", "space"},
 	loc_txt = {
 		name = 'Solar Panels',
 		text = {
@@ -392,6 +395,7 @@ SMODS.Joker {
 	atlas = 'Palindrome',
 	pos = { x = 0, y = 3 },
 	config = { },
+	attributes = {"generation", "editions", "tarot", "space"},
 	loc_txt = {
 		name = 'Artemis III',
 		text = {
@@ -440,6 +444,7 @@ SMODS.Joker {
 	atlas = 'Palindrome',
 	pos = { x = 2, y = 4 },
 	config = { extra = { jokers = 5 } },
+	attributes = {"generation", "editions", "joker", "space"},
 	loc_txt = {
 		name = 'Space Walk',
 		text = {
@@ -502,6 +507,7 @@ SMODS.Joker {
 	atlas = 'Palindrome',
 	pos = { x = 1, y = 3 },
 	config = { extra = { x_mult = 2 } },
+	attributes = {"xmult", "editions", "space"},
 	loc_txt = {
 		name = 'Vacuum',
 		text = {
@@ -544,6 +550,7 @@ SMODS.Joker {
 	atlas = 'Palindrome',
 	pos = { x = 0, y = 2 },
 	config = { extra = { x_mult = 1.0, inc_mult = 0.25 } },
+	attributes = {"destroy_card", "xmult", "scaling", "space"},
 	loc_txt = {
 		name = 'Space Worm',
 		text = {
@@ -612,6 +619,7 @@ SMODS.Joker {
 	pos={x=0,y=4},
 	soul_pos={x=1,y=4},
 	config = { extra = { x_mult = 1.0, inc_x_mult = 0.10 } },
+	attributes = {"scaling", "xmult", "editions", "space"},
 	loc_txt = {
 		name = 'Worm',
 		text = {
