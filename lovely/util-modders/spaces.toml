@@ -43,3 +43,27 @@ match_indent = true
 pattern = '''local edition_card_limit = card.ability.card_limit'''
 position = 'at'
 payload = '''local edition_card_limit = card.ability.card_limit - card.ability.extra_slots_used'''
+
+
+    # Prevent "USE" button on Spaces in deck
+[[patches]]
+[patches.pattern]
+target = "functions/UI_definitions.lua"
+pattern = '''
+end
+if card.ability.consumeable then
+'''
+position = "after"
+payload = '''
+    if card.ability.set == "util_Spaces" then
+        return {
+        n=G.UIT.ROOT, config = {padding = 0, colour = G.C.CLEAR}, nodes={
+            {n=G.UIT.C, config={padding = 0.15, align = 'cl'}, nodes={
+            {n=G.UIT.R, config={align = 'cl'}, nodes={
+                sell
+            }},
+            }},
+        }}
+    end
+'''
+match_indent = true
