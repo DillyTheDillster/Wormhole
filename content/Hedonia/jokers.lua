@@ -22,15 +22,16 @@ SMODS.Joker {
     ppu_coder = {'axyraandas', 'professorrenderer'},
     ppu_team = {'Hedonia'},
     loc_vars = function(self,info_queue,center)
+        info_queue[#info_queue + 1] = G.P_CENTERS.m_lucky
+        info_queue[#info_queue + 1] = G.P_CENTERS.e_worm_hedonia_drunk
         return {vars = {center.ability.extra.items}}
     end,
     calculate = function(self, card, context)
         --https://github.com/nh6574/VanillaRemade/blob/369e7c28f3cf9a0c6976f84bacaf4a17cfe7c3aa/src/jokers.lua#L2586
         if context.individual and context.cardarea == G.play and SMODS.has_enhancement(context.other_card, 'm_lucky') then
             -- add drunk if lucky card not drunk
-            local edition = SMODS.poll_edition({guaranteed = true, options = {{name = "e_worm_hedonia_drunk", weight = 1}}})
-            if not context.other_card.edition or (context.other_card.edition and not context.other_card.edition == edition) then
-                context.other_card:set_edition(edition, true, true)
+            if not context.other_card.edition or (context.other_card.edition and not context.other_card.edition == "e_worm_hedonia_drunk") then
+                context.other_card:set_edition("e_worm_hedonia_drunk", true, true)
             end
             -- spawn menu item if lucky card triggered
             --https://github.com/nh6574/VanillaRemade/blob/369e7c28f3cf9a0c6976f84bacaf4a17cfe7c3aa/src/jokers.lua#L608

@@ -14,18 +14,19 @@ return {
             j_worm_hedonia_casino = {
                 name = 'Casino Bartender',
                 text = {
-                    'Add {C:edition}{E:1}Drunk{} to Lucky Cards',
-                    'Creates Menu Items',
-                    'when Lucky Card triggers',
+                    'Add {C:edition}{E:1}Drunk{} to scored',
+                    '{C:attention}Lucky Cards{}, create a Menu Item',
+                    'when a {C:attention}Lucky Card{} triggers',
+                    '{C:inactive}(Must have room)',
                 }
             },
             j_worm_hedonia_trash = {
                 name = 'Trash Compactor',
                 text = {
-                    'Stores all destroyed',
-                    'cards\' Chips until',
-                    'the start of the next Ante',
-                    '{C:inactive}(Currently +{C:chips}#1#{C:inactive} chips)'
+                    '{C:attention}Stores{} all {C:red}destroyed',
+                    'cards\' {C:chips}Chips{} until',
+                    'the start of the next {C:attention}Ante{}',
+                    '{C:inactive}(Currently {C:chips}+#1#{C:inactive} Chips)'
                 }                
             },
             j_worm_hedonia_patron = {
@@ -33,7 +34,7 @@ return {
                 text = {
                     '{C:mult}+#1#{} Mult for every',
                     '{C:edition}{E:2}Tipsy{}, {C:edition}{E:1}Drunk{}, {C:dark_edition}{E:1}Very Drunk{},',
-                    'or {C:dark_edition}Blackout{} card held in hand'
+                    'or {C:dark_edition}Blackout{} card {C:attention}held in hand{}'
                 }
             },
             j_worm_hedonia_happy_hour = {
@@ -45,9 +46,10 @@ return {
             j_worm_hedonia_speed = {
                 name = 'Sous Chef',
                 text = {
-                    'Creates a Food Menu Item when scoring',
-                    'based on how many jokers you have',
-                    '{C:inactive}(currently {C:green}#1# in #2#{C:inactive} chance){}'
+                    'Creates a {C:attention}Food{} Menu Item when scoring',
+                    'based on number of held {C:attention}Jokers{}',
+                    '{C:inactive}(Currently {C:green}#1# in #2#{C:inactive} chance){}',
+                    '{C:inactive}(Must have room)',
                 }
             },
             j_worm_hedonia_bar_mitzvah = {
