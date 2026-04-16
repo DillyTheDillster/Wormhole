@@ -170,11 +170,9 @@ SMODS.Joker({
 		local rets = {}
 		if context.joker_main then
 			rets[#rets + 1] = cae.joker_main
-		end
-		if context.individual and context.cardarea == G.play then
+		elseif context.individual and context.cardarea == G.play then
 			rets[#rets + 1] = cae.individual
-		end
-		if context.individual and context.cardarea == G.hand then
+		elseif context.individual and context.cardarea == G.hand then
 			rets[#rets + 1] = cae.held_in_hand
 		end
 		if next(cae.misc) then
