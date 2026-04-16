@@ -31,8 +31,7 @@ SMODS.Consumable {
     ppu_team = {'Hedonia'},
     use = function(self, card, area, copier)
         local card_to_drink = pseudorandom_element(G.hand.cards, 'alcohol') --https://github.com/nh6574/VanillaRemade/blob/369e7c28f3cf9a0c6976f84bacaf4a17cfe7c3aa/src/spectrals.lua#L26
-        local edition = SMODS.poll_edition({guaranteed = true, options = {{name = "e_worm_hedonia_tipsy", weight = 1}}})
-        card_to_drink:set_edition(edition,true)
+        card_to_drink:set_edition("e_worm_hedonia_tipsy" ,true)
     end,
     can_use = function(self, card)
         return G.hand and G.hand.cards and #G.hand.cards > 0
@@ -49,8 +48,7 @@ SMODS.Consumable {
     ppu_team = {'Hedonia'},
     use = function(self, card, area, copier)
         local card_to_drink = pseudorandom_element(G.hand.cards, 'alcohol') --https://github.com/nh6574/VanillaRemade/blob/369e7c28f3cf9a0c6976f84bacaf4a17cfe7c3aa/src/spectrals.lua#L26
-        local edition = SMODS.poll_edition({guaranteed = true, options = {{name = "e_worm_hedonia_drunk", weight = 1}}})
-        card_to_drink:set_edition(edition,true) 
+        card_to_drink:set_edition("e_worm_hedonia_drunk" ,true) 
     end,
     can_use = function(self, card)
         return G.hand and G.hand.cards and #G.hand.cards > 0
@@ -67,8 +65,7 @@ SMODS.Consumable {
     ppu_team = {'Hedonia'},
     use = function(self, card, area, copier)
         local card_to_drink = pseudorandom_element(G.hand.cards, 'alcohol') --https://github.com/nh6574/VanillaRemade/blob/369e7c28f3cf9a0c6976f84bacaf4a17cfe7c3aa/src/spectrals.lua#L26
-        local edition = SMODS.poll_edition({guaranteed = true, options = {{name = "e_worm_hedonia_very_drunk", weight = 1}}})
-        card_to_drink:set_edition(edition,true) 
+        card_to_drink:set_edition("e_worm_hedonia_very_drunk", true) 
     end,
     can_use = function(self, card)
         return G.hand and G.hand.cards and #G.hand.cards > 0
@@ -85,8 +82,7 @@ SMODS.Consumable {
     ppu_team = {'Hedonia'},
     use = function(self, card, area, copier)
         local card_to_drink = pseudorandom_element(G.hand.cards, 'alcohol') --https://github.com/nh6574/VanillaRemade/blob/369e7c28f3cf9a0c6976f84bacaf4a17cfe7c3aa/src/spectrals.lua#L26
-        local edition = SMODS.poll_edition({guaranteed = true, options = {{name = "e_worm_hedonia_blackout", weight = 1}}})
-        card_to_drink:set_edition(edition,true) 
+        card_to_drink:set_edition("e_worm_hedonia_blackout" ,true) 
     end,
     can_use = function(self, card)
         return G.hand and G.hand.cards and #G.hand.cards > 0
