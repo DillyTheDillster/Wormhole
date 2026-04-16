@@ -9,6 +9,7 @@ SMODS.Joker{
 	pos = {x = 2, y = 1},
 	ppu_coder = {'Youh', 'Opal'},
 	ppu_artist = {'FlameThrowerFIM'},
+	ppu_team = { 'ACME' },
 	config = {
 		extra = {
 			gadget = 'c_worm_acme_ball'

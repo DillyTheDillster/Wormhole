@@ -6,6 +6,7 @@ SMODS.Consumable{
     soul_pos = {x = 8, y = 1 },
     ppu_coder = {'RadiationV2'},
     ppu_artist = {'RadiationV2'},
+    ppu_team = { 'ACME' },
 	config = {
         active = false,
         extra = {boosters_opened = 0, boosters = 4, rarity = 'rare'}

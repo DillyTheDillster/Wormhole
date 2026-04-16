@@ -45,6 +45,7 @@ SMODS.Enhancement {
     key = "ct_junk_card",
     ppu_coder = {"lordruby"},
     ppu_artist = { "notmario", "lordruby", "nxkoo", "ophelia", "meta" },
+    ppu_team = {":3"},
     replace_base_card = true,
     pos = { x = 1, y = 0 },
     no_rank = true,

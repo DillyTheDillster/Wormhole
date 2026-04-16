@@ -32,6 +32,7 @@ SMODS.Consumable{
     soul_pos = {x=0, y=1, draw = function(self, scale_mod) Wormhole.ACME.ball_function(self, scale_mod) end},
     ppu_coder = {'Youh', 'Opal'},
     ppu_artist = {'RadiationV2'},
+    ppu_team = { 'ACME' },
 	config = {
         active = false,
         extra = {aces_scored = 0, aces_required = 7}

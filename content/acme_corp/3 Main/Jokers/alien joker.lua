@@ -10,6 +10,7 @@ SMODS.Joker {
 	pos = { x = 0, y = 0 },
 	ppu_coder = { 'RadiationV2' },
 	ppu_artist = { 'FlameThrowerFIM' },
+	ppu_team = { 'ACME' },
 	config = {
 		extra = {
 			level = 2,

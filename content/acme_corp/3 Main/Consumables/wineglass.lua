@@ -6,6 +6,7 @@ SMODS.Consumable{
     soul_pos = {x = 10, y = 1 },
     ppu_coder = {'RadiationV2'},
     ppu_artist = {'RadiationV2'},
+    ppu_team = { 'ACME' },
 	config = {
         active = false,
         extra = {numBreaks = 0, glassBreak = false, mod_conv = 'm_glass'}

@@ -6,6 +6,7 @@ SMODS.Consumable{
     soul_pos = {x=6, y=1},
     ppu_coder = {'Opal'},
     ppu_artist = {'RadiationV2'},
+    ppu_team = { 'ACME' },
 	config = {extra = {active = false, odds = 2, suits_required = 4}},
     loc_vars = function(self, info_queue, card)
         local n, d = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'acme_brush')

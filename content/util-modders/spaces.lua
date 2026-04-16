@@ -5,6 +5,7 @@ SMODS.ConsumableType {
     secondary_colour = HEX"009688",
     collection_rows = { 4, 4, 4 },
     shop_rate = 0,
+	ppu_team = {"util-modders"},
 }
 
 local function booster_loc_vars(self, info_queue, card)
@@ -199,6 +200,7 @@ for i, r in ipairs(ranks) do
 	key = 'util_spaces_'..r..'_mult',
 	set = 'util_Spaces',
 	atlas = "util_spaces",
+	ppu_team = {"util-modders"},
 	pos = { x = i - 1, y = 0 },
 	cost = i * 2,
 	space_conf = {
@@ -238,6 +240,7 @@ for i, r in ipairs(ranks) do
 	key = 'util_spaces_'..r..'_chips',
 	set = 'util_Spaces',
 	atlas = "util_spaces",
+	ppu_team = {"util-modders"},
 	pos = { x = i - 1, y = 1 },
 	cost = i * 2,
 	space_conf = {
@@ -277,6 +280,7 @@ for i, r in ipairs(ranks) do
 	key = 'util_spaces_'..r..'_money',
 	set = 'util_Spaces',
 	atlas = "util_spaces",
+	ppu_team = {"util-modders"},
 	pos = { x = i - 1, y = 2 },
 	cost = i * 2,
 	space_conf = {

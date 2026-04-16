@@ -6,6 +6,7 @@ SMODS.Consumable{
     soul_pos = {x=2, y=1},
     ppu_artist = {'RadiationV2'},
     ppu_coder = {'Opal'},
+    ppu_team = { 'ACME' },
     config = {extra = {hands = {}, effects_triggered = 0, effects_required = 5}},
     loc_vars = function(self, info_queue, card)
         local _amt = card.ability.extra.effects_required - card.ability.extra.effects_triggered

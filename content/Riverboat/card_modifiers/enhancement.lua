@@ -4,6 +4,7 @@ SMODS.Enhancement {
     key = "riverboat_stardust",
     atlas = "worm_modifiers",
     pos = { x = 0, y = 0 },
+    ppu_team = { "riverboat" },
     ppu_coder = { "blamperer" },
     ppu_artist = { "blamperer" },
     config = {

@@ -10,6 +10,7 @@ SMODS.Joker {
 	pos = { x = 0, y = 1 },
 	ppu_coder = { 'RadiationV2' },
 	ppu_artist = { 'FlameThrowerFIM' },
+	ppu_team = { 'ACME' },
 	config = {
 		extra = {
 			played_hand = "Full House",

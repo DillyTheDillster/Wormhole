@@ -6,6 +6,7 @@ SMODS.Consumable{
     soul_pos = {x=3, y=1},
     ppu_artist = {'RadiationV2'},
     ppu_coder = {'Opal'},
+    ppu_team = { 'ACME' },
     config = {extra = {cards = 5, active = false}},
     loc_vars = function(self, info_queue, card)
         if not card.ability.extra.active then

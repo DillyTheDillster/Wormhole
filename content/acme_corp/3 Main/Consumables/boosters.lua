@@ -112,6 +112,7 @@ SMODS.Booster {
     unlocked = true,
     ppu_artist = { 'RadiationV2' },
     ppu_coder = { 'RadiationV2' },
+    ppu_team = { 'ACME' },
     loc_vars = function(self, info_queue, card)
         local cfg = (card and card.ability) or self.config
         return {
@@ -161,6 +162,7 @@ SMODS.Booster {
     unlocked = true,
     ppu_artist = { 'RadiationV2' },
     ppu_coder = { 'RadiationV2' },
+    ppu_team = { 'ACME' },
     loc_vars = function(self, info_queue, card)
         local cfg = (card and card.ability) or self.config
         return {

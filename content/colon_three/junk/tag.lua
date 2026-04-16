@@ -12,6 +12,7 @@ SMODS.Tag {
     pos = { x = 0, y = 0 },
     ppu_artist = { "notmario" },
     ppu_coder = { "notmario" },
+    ppu_team = {":3"},
     loc_vars = function(self, info_queue, tag)
         info_queue[#info_queue + 1] = G.P_CENTERS.p_worm_ct_junkset_mega_1
     end,

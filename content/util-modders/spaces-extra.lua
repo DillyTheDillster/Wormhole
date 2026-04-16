@@ -31,6 +31,7 @@ SMODS.Joker {
     blueprint_compat = false,
     cost = 7,
     attributes = {"passive", "space"},
+    ppu_team = {"util-modders"},
     add_to_deck = function(self, card, from_debuff)
         for i,v in ipairs(SMODS.find_card("j_worm_util_cargo_space")) do
             if v ~= card then return end
@@ -63,6 +64,7 @@ SMODS.Voucher {
     key = "util_better_craftmanship",
     atlas = "util_extras",
     pos = { x = 1, y = 0 },
+    ppu_team = {"util-modders"},
 }
 
 SMODS.Voucher {
@@ -70,6 +72,7 @@ SMODS.Voucher {
     atlas = "util_extras",
     pos = { x = 2, y = 0 },
     requires = { 'v_worm_util_better_craftmanship' },
+    ppu_team = {"util-modders"},
 }
 
 local _add_to_pool = SMODS.add_to_pool
@@ -86,6 +89,7 @@ SMODS.Stake {
     atlas = 'util_stake',
     applied_stakes = {'gold'},
     prefix_config = { applied_stakes = { mod = false } },
+    ppu_team = {"util-modders"},
     modifiers = function ()
         G.GAME.planet_rate = 0
         G.GAME.modifiers.void_stake = true
@@ -99,6 +103,7 @@ SMODS.Back {
     config = {
         extra = 1
     },
+    ppu_team = {"util-modders"},
     loc_vars = function (self, info_queue, card)
         return { vars = { self.config.extra } }
     end,
@@ -117,6 +122,7 @@ SMODS.Tag {
     key = 'util_pod_pack',
     atlas = 'util_tag',
     pos = { x = 0, y = 0 },
+    ppu_team = {"util-modders"},
 
     apply = function (self, tag, context)
         if context.type == 'new_blind_choice' then

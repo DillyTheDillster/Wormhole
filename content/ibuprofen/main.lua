@@ -6,6 +6,7 @@ PotatoPatchUtils.Team {
   name = 'Team Ibuprofen',
   colour = HEX"e34244",
   loc = 'k_team_ibuprofen',
+  short_credit = true,
 }
 
 PotatoPatchUtils.Developer {
@@ -85,6 +86,7 @@ SMODS.Consumable {
     set = 'Tarot',
     ppu_coder = {'Twigi'},
     ppu_artist = {'Oasis-J'},
+    ppu_team = { 'Team Ibuprofen' },
     loc_txt = {
     name = 'The Mountain',
     text = {
@@ -105,6 +107,7 @@ SMODS.Consumable {
   key = 'eclipse',
   ppu_coder = {'Twigi'},
   ppu_artist = {'Twigi'},
+  ppu_team = { 'Team Ibuprofen' },
   unlocked = true,
   discovered = true,
   set = 'Spectral',
@@ -153,6 +156,7 @@ SMODS.Consumable {
 SMODS.Consumable {
   key = 'nebula',
   ppu_artist = {'Twigi'},
+  ppu_team = { 'Team Ibuprofen' },
   unlocked = true,
   discovered = true,
   set = 'Spectral',
@@ -204,6 +208,7 @@ SMODS.Consumable {
   key = 'supergiant',
   ppu_artist = {'Twigi'},
   ppu_coder = {'Twigi'},
+  ppu_team = { 'Team Ibuprofen' },
   unlocked = true,
   discovered = true,
   set = 'Spectral',
@@ -239,6 +244,7 @@ SMODS.Edition{
     key = "cosmicedition",
     ppu_coder = {'Oasis-J'},
     ppu_artist = {'Oasis-J'},
+    ppu_team = { 'Team Ibuprofen' },
     shader = "cosmic",
     loc_txt = {
         label = "Cosmic",
@@ -264,6 +270,7 @@ SMODS.Enhancement {
     key = 'frozen',
     ppu_artist = {'AveryIGuess'},
     ppu_coder = {'AveryIGuess'},
+    ppu_team = { "Team Ibuprofen" },
     loc_txt = {
     name = 'Frozen Card',
     text = {
@@ -296,6 +303,7 @@ SMODS.Joker {
   key = 'enginefailure',
   ppu_coder = {'Twigi'},
   ppu_artist = {'Oasis-J'},
+  ppu_team = { 'Team Ibuprofen' },
   loc_txt = {
     name = 'Engine Failure',
     text = { "{X:mult,C:white} X#1# {} Mult", "{C:mult} Self destructs{} if score {C:attention}catches fire{}" }
@@ -338,6 +346,7 @@ SMODS.Joker{
     key = "dyson",
     ppu_coder = {'Oasis-J'},
     ppu_artist = {'Oasis-J'},
+    ppu_team = { 'Team Ibuprofen' },
     loc_txt = { -- local text
       name = 'Dyson Sphere',
       text = {"{X:mult,C:white}X2{} Mult for each {C:hearts}Sun{} or {C:diamonds}Stars{}", 
@@ -369,6 +378,7 @@ SMODS.Joker{
     key = "horizon",
     ppu_coder = {'Oasis-J'},
     ppu_artist = {'Oasis-J'},
+    ppu_team = { 'Team Ibuprofen' },
     loc_txt = {
         name ="Event Horizon",
         text = {"{X:mult,C:white}X3{} Mult for lowest level above one", "shared by all hand types.",
@@ -410,6 +420,7 @@ SMODS.Joker {
   key = 'redshift',
   ppu_coder = {'Twigi'},
   ppu_artist = {'Oasis-J'},
+  ppu_team = { 'Team Ibuprofen' },
   loc_txt = {
     name = 'Red Shift',
     text = { "{C:attention}Enhanced Cards{} are {C:attention}Mult Cards{}" }
@@ -440,6 +451,7 @@ SMODS.Joker {
   key = 'permafrost',
   ppu_coder = {'Twigi'},
   ppu_artist = {'Oasis-J'},
+  ppu_team = { 'Team Ibuprofen' },
   loc_txt = {
     name = 'Permafrost',
     text = { "{C:attention}Frozen Cards{}","always return to hand" }
@@ -479,6 +491,7 @@ SMODS.Joker {
   key = 'laika',
   ppu_artist = {'Oasis-J'},
   ppu_coder = {'Twigi'},
+  ppu_team = { 'Team Ibuprofen' },
   loc_txt = {
     name = 'Laika',
     text = { "Earn {C:money}$1{} at the end of round","for each time {C:attention}most played hand{} was played"}
@@ -526,6 +539,7 @@ SMODS.Joker {
   key = 'hyperdrive',
   ppu_coder = {'Twigi'},
   ppu_artist = {'Oasis-J'},
+  ppu_team = { 'Team Ibuprofen' },
   loc_txt = {
     name = 'Hyper Space',
     text = { "Earn {C:money}double ${}","{C:attention}Ante{} increases twice as fast" }
@@ -563,6 +577,7 @@ SMODS.Joker {
   key = 'terraforming',
   ppu_coder = {'Twigi'},
   ppu_artist = {'Oasis-J'},
+  ppu_team = { 'Team Ibuprofen' },
   loc_txt = {
     name = 'Terraforming',
     text = { "Create a {C:attention}Earth{} whenever","a {C:attention}#1#{} is used", "{C:inactive}Used planet changes each round" }
@@ -613,6 +628,7 @@ SMODS.Joker{
   key = 'jettison',
   ppu_coder = {'Twigi'},
   ppu_artist = {'Oasis-J'},
+  ppu_team = { 'Team Ibuprofen' },
   loc_txt = {        -- local text
     name = 'Jettison',
     text = {
@@ -659,6 +675,7 @@ SMODS.Joker {
   key = 'brood',
   ppu_coder = {'Twigi'},
   ppu_artist = {'Oasis-J'},
+  ppu_team = { 'Team Ibuprofen' },
   loc_txt = {
     name = 'Brood Mother',
     text = { "Destroy a random card in hand","and create a {C:attention}Jack{} whenever"," a {C:attention}Queen{} is played" }
@@ -700,6 +717,7 @@ SMODS.Joker {
 SMODS.Joker{
 ppu_coder = {'Twigi'},
 ppu_artist = {'Oasis-J'},
+ppu_team = { 'Team Ibuprofen' },
 key = 'warpgate',
   loc_txt = {
     name = 'Warp Gate',
@@ -749,6 +767,7 @@ key = 'warpgate',
 SMODS.Joker {
   ppu_coder = {'Twigi'},
   ppu_artist = {'Oasis-J'},
+  ppu_team = { 'Team Ibuprofen' },
   key = 'heater', --joker key
   loc_txt = {    -- local text
     name = 'Space Heater',
@@ -806,6 +825,7 @@ SMODS.Joker {
 SMODS.Joker {
   ppu_coder = {'Twigi'},
   ppu_artist = {'Oasis-J'},
+  ppu_team = { 'Team Ibuprofen' },
   key = 'asteroidmining', --joker key
   loc_txt = {    -- local text
     name = 'Asteroid Mining',
@@ -857,6 +877,7 @@ SMODS.Joker {
   key = 'shiningstar',
   ppu_coder = {'Twigi'},
   ppu_artist = {'Twigi'},
+  ppu_team = { 'Team Ibuprofen' },
   loc_txt = {
     name = 'Shining Star',
     text = { "If played hand is a","{C:attention}Single {C:diamonds}Diamond{}","Retrigger it 5 times" }

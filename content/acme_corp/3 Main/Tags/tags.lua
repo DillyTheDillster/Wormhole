@@ -5,6 +5,7 @@ SMODS.Tag {
     pos = { x = 12, y = 0 },
     ppu_artist = {'FlameThrowerFIM'},
     ppu_coder = {'RadiationV2'},
+    ppu_team = { 'ACME' },
     loc_vars = function(self, info_queue, tag)
         info_queue[#info_queue + 1] = G.P_CENTERS.p_gadget_mega_1
     end,

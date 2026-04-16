@@ -8,6 +8,7 @@ SMODS.Joker {
 	eternal_compat = true,
 	ppu_coder = {'Youh', 'RadiationV2'},
 	ppu_artist = {'FlameThrowerFIM'},
+	ppu_team = { 'ACME' },
 	pos = { x = 3, y = 0 },
 	config = {
 		extra = {

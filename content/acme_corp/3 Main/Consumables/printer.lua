@@ -16,6 +16,7 @@ SMODS.Consumable {
     soul_pos = { x = 4, y = 1 },
     ppu_coder = { 'Basil_Squared' },
     ppu_artist = { 'RadiationV2' },
+    ppu_team = { 'ACME' },
     config = {
 
         extra = { best_hand = 0, active = false, }

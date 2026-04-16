@@ -9,6 +9,7 @@ SMODS.Joker{
 	pos = {x = 1, y = 1},
 	ppu_coder = {'Youh'},
 	ppu_artist = {'FlameThrowerFIM'},
+	ppu_team = { 'ACME' },
 	config = {
 		extra = {
 			lose_level = 1,

@@ -6,6 +6,7 @@ SMODS.Consumable{
     soul_pos = {x=5, y=1},
     ppu_artist = {'RadiationV2'},
     ppu_coder = {'Opal'},
+    ppu_team = { 'ACME' },
     config = {extra = {required = 30, discarded = 0}},
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue+1] = {key = 'perishable', set = 'Other', vars = {5, 5}}
