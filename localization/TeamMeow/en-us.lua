@@ -187,7 +187,6 @@ return {
 				text = {
 					"{C:attention}7s{} and {C:attention}8s{} held in",
 					"hand gain {C:chips}+#1#{} Chips",
-					"while held in hand",
 					"permanently",
 				},
 			},
@@ -196,7 +195,6 @@ return {
 				text = {
 					"{C:attention}9s{} and {C:attention}10s{} held in",
 					"hand gain {C:mult}+#1#{} Mult",
-					"while held in hand",
 					"permanently",
 				},
 			},
