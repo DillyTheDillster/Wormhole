@@ -53,7 +53,7 @@ vec4 effect( vec4 colour, Image texture, vec2 texture_coords, vec2 screen_coords
     
     vec2 x = texture_coords - vec2(0.5,0.5);
     float radius = length(x);
-    float norm_radius = radius * sqrt(2);
+    float norm_radius = radius * sqrt(2.0);
     float rad_fac = pow((0.2 + 0.8 * norm_radius), 3.0);
 
     tex *= (1 - norm_radius * pow(sanity_fac, 1.2));
