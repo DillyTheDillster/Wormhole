@@ -8,12 +8,13 @@ SMODS.Tag {
     pos = { x = 0, y = 0 },
     min_ante = 3,
     config = {
-        rank = nil
+        rank = nil,
+        id = nil
     },
     loc_vars = function(self, info_queue, tag)
         return {
             vars = {
-                tag.ability.rank and localize(tag.ability.rank.key, 'ranks') or localize('k_lfc_brackets_rank')
+                tag.ability.rank and localize(tag.ability.rank, 'ranks') or localize('k_lfc_brackets_rank')
             }
         }
     end,
@@ -26,7 +27,8 @@ SMODS.Tag {
                 return false
             end
         }) or SMODS.Ranks.Ace
-        tag.ability.rank = new_rank
+        tag.ability.rank = new_rank.key
+        tag.ability.id = new_rank.id
     end,
     apply = function(self, tag, context)
         if context.type == 'immediate' or context.type == 'round_start_bonus' then
@@ -41,7 +43,7 @@ SMODS.Tag {
                     local cards_to_destroy = {}
                     if G.playing_cards then
                         for _, playing_card in ipairs(G.playing_cards) do
-                            if playing_card:get_id() == tag.ability.rank.id then
+                            if playing_card:get_id() == tag.ability.id then
                                 table.insert(cards_to_destroy, playing_card)
                             end
                         end
