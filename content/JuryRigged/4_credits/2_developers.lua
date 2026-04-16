@@ -11,6 +11,11 @@ PotatoPatchUtils.Developer({
 local team = "JuryRigged"
 local atlas = "worm_jr_devs"
 
+SMODS.Sound({
+  key = "jr_cawcaw",
+  path = "JuryRigged/cawcaw.mp3",
+})
+
 PotatoPatchUtils.Developer({
   name = "DowFrin",
   colour = HEX('888A85'),
@@ -18,7 +23,11 @@ PotatoPatchUtils.Developer({
   team = team,
   atlas = atlas,
   pos = { x = 0, y = 0 },
-  soul_pos = { x = 0, y = 1 }
+  soul_pos = { x = 0, y = 1 },
+
+  click = function(self)
+    play_sound("worm_jr_cawcaw", (60 + math.random(40)) / 100)
+  end
 })
 
 PotatoPatchUtils.Developer({
