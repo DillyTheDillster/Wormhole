@@ -14,6 +14,8 @@ SMODS.Joker {
     eternal_compat = false,
     perishable_compat = false,
 
+    attributes = {"chance", "destroy_card", "hands", "space"},
+
     loc_vars = function (self, info_queue, card)
         local numerator, denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'worm_stew_cheese_moon')
         return{

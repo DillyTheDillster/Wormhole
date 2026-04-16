@@ -14,6 +14,8 @@ SMODS.Joker {
     eternal_compat = true,
     perishable_compat = true,
 
+    attributes = {"chips", "scaling", "suit", "hearts", "diamonds", "clubs", "full_deck", "space"},
+
     update_chips = function (self, card)
         if G.playing_cards then
         local non_spades = 0

@@ -14,6 +14,8 @@ SMODS.Joker {
     eternal_compat = true,
     perishable_compat = true,
 
+    attributes = {"economy", "sell_value", "suit", "diamonds", "space"},
+
     loc_vars = function (self, info_queue, card)
         return{
             vars = {card.ability.extra.price, card.ability.extra.diamonds_required, card.ability.extra.diamonds_remaining}

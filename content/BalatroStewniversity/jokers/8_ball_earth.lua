@@ -14,6 +14,8 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
 
+    attributes = {"generation", "tarot", "planet", "spectral", "hand_type", "space"},
+
     loc_vars = function (self, info_queue, card)
         return{
             vars = {localize(card.ability.extra.poker_hand, 'poker_hands')}

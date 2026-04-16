@@ -15,6 +15,8 @@ SMODS.Joker {
     eternal_compat = false,
     perishable_compat = true,
 
+    attributes = {"xmult", "scaling", "space"},
+
     loc_vars = function (self, info_queue, card)
         return{
             vars = {card.ability.extra.Xmult, card.ability.extra.Xmult_up, card.ability.extra.Xmult_down}

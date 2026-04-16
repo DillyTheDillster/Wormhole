@@ -14,6 +14,9 @@ SMODS.Joker {
     blueprint_compat = true,
     eternal_compat = false,
     perishable_compat = true,
+
+    attributes = {"xchips", "space"}, --never actually returns chips despite the text before it is played
+
     loc_vars = function (self, info_queue, card)
         return {
             vars = { card.ability.extra.Xchips },

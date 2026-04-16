@@ -13,6 +13,8 @@ SMODS.Joker {
     eternal_compat = true,
     perishable_compat = true,
 
+    attributes = {"generation", "planet", "tarot", "space"},
+
     calculate = function (self, card, context)
         if context.using_consumeable and context.consumeable.ability.set == 'Tarot'
             and #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then

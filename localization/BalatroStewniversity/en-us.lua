@@ -5,7 +5,7 @@ return {
                 name = "Stew Earth",
                 text = {
                     '{X:mult,C:white}X#1#{} Mult, gains {X:mult,C:white}X#2#{} Mult',
-                    ' if score {C:attention}catches fire{},',
+                    'if score {C:attention}catches fire{},',
                     'otherwise loses {X:mult,C:white}X#3#{} Mult'
                 },
             },

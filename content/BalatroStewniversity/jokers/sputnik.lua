@@ -14,6 +14,8 @@ SMODS.Joker {
     eternal_compat = true, 
     perishable_compat = true,
 
+    attributes = {"xmult", "space"},
+
     update_mult = function (self, card)
         card.ability.extra.mult = card.ability.extra.mult_mod * math.max(0, card.ability.extra.dollars - (G.GAME.dollars + (G.GAME.dollar_buffer or 0)))
     end,

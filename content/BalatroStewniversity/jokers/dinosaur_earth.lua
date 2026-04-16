@@ -14,6 +14,9 @@ SMODS.Joker {
     blueprint_compat = false,
     eternal_compat = false,
     perishable_compat = true,
+
+    attributes = {"chance", "destroy_card", "space"},
+
     loc_vars = function (self, info_queue, card)
     
         local numerator, denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'worm_stew_dinosaur_earth')

@@ -15,6 +15,8 @@ SMODS.Joker {
     eternal_compat = true, 
     perishable_compat = true,
 
+    attributes = {"chips", "scaling", "economy", "space"},
+
     update_chips = function (self, card)
         card.ability.extra.chips = card.ability.extra.chips_mod * math.max(0, (math.floor((G.GAME.interest_cap - G.GAME.dollars) / card.ability.extra.interest)))
     end,
