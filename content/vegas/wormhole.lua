@@ -3,7 +3,7 @@
 Wormhole Mod - Team People I Found On The Street In Las Vegas (People Found In Vegas for short :D)
 
 Jammbo
-h0l
+Sn0vvBall (h0l)
 Ben Roffey (Reson8r)
 
 ]]
@@ -82,6 +82,7 @@ SMODS.Joker{
 			"{C:inactive}(Currently {C:mult}+#3#{C:inactive} Mult)"
 		}
 	},
+	attibutes = {"mult", "scaling", "rank", "space"},
 	config = { extra = { gain = 1, rank = 14, current = 0}},
 	loc_vars = function(self, info_queue, card)
 		local rank = card.ability.extra.rank
@@ -91,7 +92,7 @@ SMODS.Joker{
 		elseif rank == 13 then
 			text = "King"
 		elseif rank == 12 then
-			text= "Queen"
+			text = "Queen"
 		elseif rank == 11 then
 			text = "Jack"
 		else
@@ -142,6 +143,7 @@ SMODS.Joker{
 			"{C:inactive}(Currently {C:mult}+#3#{C:inactive} Mult)"
 		}
 	},
+	attibutes = {"mult", "scaling", "hand_type", "chance", "space"},
 	config = { extra = { odds = 4, current = 0 }},
 	loc_vars = function(self, info_queue, card)
 		local numerator = 1
@@ -198,6 +200,7 @@ SMODS.Joker{
 			"{C:attention}#3#{} {C:inactive}Planet Cards left"
 		}
 	},
+	attibutes = {"scaling", "hand_size", "planet", "space"},
 	config = { extra = { h_size = 1, h_size_gain = 1, counter = 3, max = 3 }},
 	loc_vars = function(self, info_queue, card)
 		return { vars = { card.ability.extra.h_size_gain, card.ability.extra.h_size, card.ability.extra.counter, card.ability.extra.max }}
@@ -246,6 +249,7 @@ SMODS.Joker{
 			"{C:inactive}(Must have room)"
 		}
 	},
+	attibutes = {"chance", "planet", "space"},
 	config = { extra = { odds = 2 }},
 	loc_vars = function(self, info_queue, card)
 		info_queue[#info_queue + 1] = {key = "Inferior", set = "Other"}
@@ -318,6 +322,7 @@ SMODS.Joker{
 			"played {C:attention}poker hand"
 		}
 	},
+	attibutes = {"hand_type", "economy", "space"},
 	config = { hand = nil, extra = { dollars = 1 }},
 	loc_vars = function(self, info_queue, card)
 		return { vars = { card.ability.extra.dollars }}
@@ -353,6 +358,7 @@ SMODS.Joker{
 			"{C:attention}both{} cards {C:attention}Stone{}"
 		}
 	},
+	attibutes = {"discard", "enhancements", "space"},
 	config = { extra = { size = 2 }},
 	loc_vars = function(self, info_queue, card)
 		info_queue[#info_queue + 1] = G.P_CENTERS.m_stone
@@ -398,6 +404,7 @@ SMODS.Joker{
 			"hand {C:attention}#1#{} time each"
         }
     },
+	attibutes = {"retrigger", "space"},
     config = { extra = { repetitions = 1, repetitions_odd = 2 }},
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.repetitions, card.ability.extra.repetitions_odd }}
@@ -543,6 +550,7 @@ SMODS.Joker{
 			"gain {C:money}$#1#{} for each {C:attention}Joker{}"
 		}
 	},
+	attibutes = {"economy", "chance", "joker_slot", "joker", "space"},
 	config = { gain = 6},
 	loc_vars = function(self, info_queue, card)
 		info_queue[#info_queue + 1] = spacerouletteinfo
@@ -606,6 +614,7 @@ wormhole_joker = SMODS.Joker{
 			"your {C:attention}deck{} when it is used"
 		}
 	},
+	attibutes = {"generation", "tarot", "planet", "spectral", "space"},
 	config = { extra = { sets = { "Tarot", "Planet", "Spectral" }}},
 	loc_vars = function(self, info_queue, card)
 		info_queue[#info_queue + 1] = {key = 'e_negative_consumable', set = 'Edition', config = {extra = 1}}
@@ -680,6 +689,7 @@ SMODS.Joker{
 			"in {C:attention}first{} played hand become {C:dark_edition}Negative{}"
 		}
 	},
+	attibutes = {"suit", "diamonds", "hands", "editions", "space"},
 	config = { extra = { cards = 2, suit = 'Diamonds' }},
 	loc_vars = function(self, info_queue, card)
 		info_queue[#info_queue + 1] = {key = 'e_negative_playing_card', set = 'Edition', config = {extra = 1}}
@@ -720,6 +730,7 @@ SMODS.Joker{
 			"in hand give {X:red,C:white}X#1#{} Mult"
 		}
 	},
+	attibutes = {"xmult", "editions", "space"},
 	config = { extra = { xmult = 1.5 }},
 	loc_vars = function(self, info_queue, card)
 		info_queue[#info_queue + 1] = {key = 'e_negative_playing_card', set = 'Edition', config = {extra = 1}}
@@ -790,6 +801,7 @@ SMODS.Joker{
 			"the same {C:green}Seed{}"
 		}
 	},
+	attibutes = {"passive", "prevents_death", "space"},
 	config = { extra = {  }},
 	loc_vars = function(self, info_queue, card)
 		return { vars = {  }}
@@ -859,6 +871,7 @@ SMODS.Joker{
 			"create a {V:1}Legendary{} Joker"
 		}
 	},
+	attibutes = {"generation", "joker", "on_sell", "space"},
 	config = { extra = {JokerCount = 0, JokerNeed = 15}},
 	loc_vars = function(self, info_queue, card)
 		return { vars = { card.ability.extra.JokerNeed, colours = {G.C.RARITY.Legendary} }}
