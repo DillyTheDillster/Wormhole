@@ -9,7 +9,7 @@ SMODS.Joker {
     atlas = 'stewjokers',
     pos = {x=4, y=2},
     config = { extra = { money = 1, money_needed = 10 } },
-    blueprint_compat = true,
+    blueprint_compat = false,
     eternal_compat = true,
     perishable_compat = true,
 
