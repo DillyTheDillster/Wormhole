@@ -7,7 +7,7 @@ SMODS.Joker {
     config = { extra = { hands = 0, } },
     rarity = 2,
     cost = 5,
-    attributes = { "hands", },
+    attributes = { "hands", "passive"},
     ppu_artist = { "notmario" },
     ppu_coder = { "notmario" },
     ppu_team = { ":3" },

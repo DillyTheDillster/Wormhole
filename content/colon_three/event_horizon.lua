@@ -5,7 +5,7 @@ SMODS.Joker {
     atlas = "ct_event_horizon",
     pos = { x = 2, y = 0 },
     config = { extra = { levels = 0, rotation = 0 } },
-    attributes = { "space", "hand_type" },
+    attributes = { "space", "hand_type", "passive"},
     ppu_coder = { "meta" },
     ppu_artist = { "notmario", "lordruby" },
     ppu_team = { ":3" },

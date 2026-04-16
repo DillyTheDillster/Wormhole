@@ -7,7 +7,7 @@ SMODS.Joker {
     config = { extra = { dollars = 2, } },
     rarity = 2,
     cost = 6,
-    attributes = { "space", "economy", },
+    attributes = { "space", "economy", "passive"},
     ppu_artist = { "ophelia" },
     ppu_coder = { "notmario" },
     ppu_team = { ":3" },

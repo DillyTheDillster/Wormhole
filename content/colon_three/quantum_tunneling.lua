@@ -6,7 +6,7 @@ SMODS.Joker {
     pos = { x = 3, y = 0 },
     rarity = 2,
     cost = 6,
-    attributes = { "mod_chance", "scaling", },
+    attributes = { "mod_chance", "scaling", "passive"},
     ppu_artist = { "lordruby" },
     ppu_coder = { "nxkoo" },
     ppu_team = { ":3" },
