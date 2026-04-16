@@ -56,7 +56,9 @@ function G.UIDEF.Wormhole_TLR_orion(args)
         local blind_col = get_blind_main_colour(choice)
         --local blind_amt = get_blind_amount(G.GAME.round_resets.blind_ante)*G.P_BLINDS[choice].config.mult*G.GAME.starting_params.ante_scaling
 
-        local blind_sprite = AnimatedSprite(0,0, 2, 2, G.ANIMATION_ATLAS['blind_chips'],  G.P_BLINDS[choice].pos)
+        local atlas_key = G.P_BLINDS[choice].atlas or 'blind_chips'
+
+        local blind_sprite = AnimatedSprite(0,0, 2, 2, G.ANIMATION_ATLAS[atlas_key] or G.ASSET_ATLAS[atlas_key],  G.P_BLINDS[choice].pos)
 
         local desc_nodes = {
             --{n = G.UIT.R, config = {align = "cm"}, nodes = {{n = G.UIT.T, config = {align = "cm", text = "Line 1", scale = 0.55, colour = G.C.WHITE}}}},
