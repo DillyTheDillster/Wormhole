@@ -517,6 +517,9 @@ Wormhole.JR_UTILS.Satellite {
       }
     }
   end,
+  in_pool = function(self, args)
+    return G.GAME.hands[self.config.extra.hand_type].played > 0
+  end,
   ppu_artist = { 'AbelSketch', 'DoggFly', 'Inky' },
 }
 
@@ -545,6 +548,9 @@ Wormhole.JR_UTILS.Satellite {
         colours = { (_level == 1 and G.C.UI.TEXT_DARK or G.C.HAND_LEVELS[math.min(7, _level)]) }
       }
     }
+  end,
+  in_pool = function(self, args)
+    return G.GAME.hands[self.config.extra.hand_type].played > 0
   end,
   ppu_artist = { 'DoggFly', 'Inky' },
 }
@@ -591,6 +597,9 @@ Wormhole.JR_UTILS.Satellite {
         colours = { (_level == 1 and G.C.UI.TEXT_DARK or G.C.HAND_LEVELS[math.min(7, _level)]) }
       }
     }
+  end,
+  in_pool = function(self, args)
+    return G.GAME.hands[self.config.extra.hand_type].played > 0
   end,
   ppu_artist = { 'AbelSketch', 'DoggFly', 'Inky' },
 }
