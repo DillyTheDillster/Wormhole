@@ -122,7 +122,7 @@ SMODS.Consumable {
   },
   config = { extra = {}, max_highlighted = 1 },
   loc_vars = function(self, info_queue, card)
-    info_queue[#info_queue + 1] = { key = 'e_negative_consumable', set = 'Edition', config = { extra = 1 } }
+    info_queue[#info_queue + 1] = { key = 'e_negative_playing_card', set = 'Edition', config = { extra = 1 } }
     return { vars = { card.ability.max_highlighted } }
   end,
   can_use = function(self, card)
