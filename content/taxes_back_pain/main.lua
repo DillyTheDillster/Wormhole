@@ -747,8 +747,8 @@ Wormhole.tbp.Module({
             return {
                 func = function()
                     local modules = Wormhole.tbp.get_equipped_modules(card)
-                    for key, module in pairs(modules) do
-                        if key ~= self.slot and module.durability < module.total_durability then
+                    for key, module_data in pairs(modules) do
+                        if key ~= self.slot and module_data.durability < module_data.total_durability then
                             Wormhole.tbp.change_durability(card, key, module.amount)
                         end
                     end
@@ -931,7 +931,7 @@ Wormhole.tbp.Module({
 		return { vars = { module.ability.extra.percent * 100 } }
     end,
     module_calculate = function (self, module, context, card)
-        if context.setting_blind or context.wormhole_tbp_module_install then
+        if context.setting_blind or (context.wormhole_tbp_module_install and G.GAME.blind) then
             if not module.fired_this_blind then
                 module.fired_this_blind = true
                 Wormhole.tbp.change_durability(card, self.slot, -1)
