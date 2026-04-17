@@ -16,7 +16,7 @@ SMODS.Joker {
     perishable_compat = true,
     ppu_artist = { "snipey" },
     ppu_coder = { "blamperer" },
-    ppy_team = { "riverboat" },
+    ppu_team = { "riverboat" },
     attributes = { "xmult", "suit", "spades", "destroy_card" },
     loc_vars = function(self, info_queue, card)
         return {
