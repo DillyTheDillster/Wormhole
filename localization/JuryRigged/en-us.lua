@@ -201,8 +201,8 @@ return {
       },
     },
     Back = {
-      b_worm_jr_colonist = {
-        name = "Colonist Deck",
+      b_worm_jr_lunar = {
+        name = "Lunar Deck",
         text = {
           "{C:worm_jr_satellite}Satellites{} cards may",
           "appear in the shop,",
