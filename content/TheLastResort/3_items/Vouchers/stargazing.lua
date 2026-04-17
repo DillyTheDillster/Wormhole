@@ -6,6 +6,7 @@ SMODS.Voucher {
 	ppu_artist = {"Aura2247"},
 	ppu_team = {"TheLastResort"},
 	cost = 10,
+	requires = {'v_worm_tlr_skywatching'},
 
 	calculate = function(self, card, context)
 		if context.modify_shop_card and context.card.ability.set == 'worm_tlr_constellation' then
