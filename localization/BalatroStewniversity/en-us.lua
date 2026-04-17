@@ -208,8 +208,8 @@ return {
             bl_worm_stew_pull = {
                 name = "The Pull",
                 text = {
-                    "Increases in size",
-                    "per round played",
+                    "+2X Base per",
+                    "round played",
                     "this Ante",
                 },
            },
