@@ -19,12 +19,12 @@ return {
                 }
             }
         },
-        Backs = {
-            worm_colonist = {
+        Back = {
+            b_worm_colonist = {
                 name = 'Colonist Deck',
                 text = {
-                    "Start with {C:chips}Banner{},",
-                    "and {C:blue}Planet Merchant{}",
+                    "Start with {C:chips,T:j_banner}Banner{}",
+                    "and {C:planet,T:v_planet_merchant}Planet Merchant{}",
                     "Hands start at level {C:attention}0",
                 }
             }
