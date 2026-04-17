@@ -251,17 +251,16 @@ return {
             c_worm_shrug_alien_martian = {
                 name = "Martian",
                 text = {
-                    "Select up to {C:attention}#1#{} cards,",
-                    "convert selected cards",
+                    "Converts up to {C:attention}#1#{} selected cards",
                     "into the {C:attention}leftmost{} card's rank"
                 },
             },
             c_worm_shrug_alien_nebulous = {
                 name = "???",
                 text = {
-                    "{C:green}#1# in #2#{} for each card",
-                    "held in hand to be {C:attention}enhanced",
-                    "into {C:attention}Nebulous Card{}"
+                    "Each card in hand",
+                    "has a {C:green}#1# in #2#{} chance",
+                    "to become a {C:attention}Nebulous Card{}"
                 },
             },
             c_worm_shrug_alien_destroy = {
