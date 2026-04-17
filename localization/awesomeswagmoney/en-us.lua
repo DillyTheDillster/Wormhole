@@ -112,17 +112,19 @@ return {
         },
         worm_ultrabeast = {
             c_worm_pheromosa = {
-                    name = 'Pheromosa',
-                    text = {
-                        "Activate to gain {C:chips}+#1#{} chips", "on your next hand,",
-                        "consumes self on activation."
-                    }
+                name = 'Pheromosa',
+                text = {
+                    "Activate to gain {C:chips}+#1#{} chips",
+                    "on your next hand,",
+                    "Consumes self when scoring"
+                }
             },
             c_worm_buzzwole = {
                 name = 'Buzzwole',
                 text = {
-                    "Activate to gain {C:mult}+#1#{} mult", "on your next hand,",
-                    "consumes self on activation."
+                    "Activate to gain {C:mult}+#1#{} mult",
+                    "on your next hand,",
+                    "Consumes self when scoring"
                 }
             },
             c_worm_xurkitree = {
@@ -138,7 +140,8 @@ return {
                 text = {
                     "{C:attention}Slice{} selected card",
                     "to create {C:attention}#1#{} additional copies",
-                    "with their rank reduced by {C:attention}#2#"
+                    "with their rank reduced by {C:attention}#2#",
+                    "{C:inactive,s:0.8}(Ranks cannot go below 2)"
                 }
             },
             c_worm_blacephalon = {
