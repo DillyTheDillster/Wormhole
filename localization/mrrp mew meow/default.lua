@@ -105,14 +105,14 @@ descriptions={
 			name = "Out of Space",
 			text = {
 				{
-					"{C:dark_edition}#1#{} Joker slot",
+					"{C:dark_edition}#1#{} Joker Slot",
 					"{C:dark_edition}#1#{} consumable slot",
 					"{C:dark_edition}#1#{} hand size",
 				},
 				{
 					"{X:blind,C:white}X#2#{} Blind size per",
 					"empty {C:attention}Joker{} slot and",
-					"empty {C:attention}consumeable{} slot"
+					"empty {C:attention}consumable{} slot"
 				}
 			}
 		},
