@@ -14,7 +14,7 @@ SMODS.Sound{
 
 SMODS.Joker{
     key = "dum_worm",
-    attributes = {"booster", "economy", "alien"},
+    attributes = {"booster", "economy", "alien", "passive", "space"},
     config = { extra = {  } },
     atlas = 'dum_worm',
     pos = { x = 0, y = 0 },

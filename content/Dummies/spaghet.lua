@@ -55,5 +55,5 @@ SMODS.Joker {
 	ppu_coder = { "theonegoofali" },
 	ppu_artist = { "theonegoofali" },
 	ppu_team = { "dummies" },
-	attributes = { "space", "planet", "discard", "scaling", "chips" }
+	attributes = { "space", "planet", "discard", "scaling", "chips", "hand_type", "destroy_card"}
 }

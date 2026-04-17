@@ -5,7 +5,7 @@ SMODS.Sound({ key = "dum_gleebleglorp_secret", path = "Dummies/worm_dum_gleebleg
 
 SMODS.Joker {
     key = "dum_gleebleglorp",
-    attributes = { "alien" },
+    attributes = { "alien", "xmult", "hand_type", "space"},
     config = { extra = { xmult = 2 } },
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.xmult } }

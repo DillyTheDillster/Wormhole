@@ -31,7 +31,7 @@ SMODS.Sound{
 
 SMODS.Joker{
     key = "dum_greg",
-    attributes = {"destroy_card","enhancements", "alien", "fish"},
+    attributes = {"destroy_card", "editions", "alien", "fish", "space"},
     config = { extra = {  } },
     atlas = 'dum_greg',
     pos = { x = 0, y = 0 },
