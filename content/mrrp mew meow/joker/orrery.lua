@@ -45,6 +45,7 @@ unlocked = true,
 discovered = false, 
 rarity = 2,
 cost = 6,
+attributes = {"tarot", "generation", "space"},
 loc_vars = function(self, info_queue, card)
     for k,v in ipairs(card.ability.extra.tarot) do
         info_queue[#info_queue+1] = G.P_CENTERS[v]

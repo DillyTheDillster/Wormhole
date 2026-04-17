@@ -70,7 +70,7 @@ SMODS.Joker {
     attributes = {
         "space",
         "hand_type",
-		
+		"face"
     },
 
 	config = {extra = {hand="Straight"}},

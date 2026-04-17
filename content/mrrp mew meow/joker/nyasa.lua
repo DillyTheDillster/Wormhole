@@ -13,7 +13,9 @@ SMODS.Joker {
     attributes = {
         "space",
         "generation",
-        "joker"
+        "joker",
+        "chance",
+        "editions"
     },
 
 	config = {

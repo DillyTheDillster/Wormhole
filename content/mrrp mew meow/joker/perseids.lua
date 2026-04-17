@@ -13,7 +13,7 @@ SMODS.Joker {
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = true,
-    attributes = {'space'},
+    attributes = {'space', "retrigger"},
 
 	config = {
 		extra = {

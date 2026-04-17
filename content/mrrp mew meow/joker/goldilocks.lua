@@ -13,7 +13,7 @@ SMODS.Joker {
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
-    attributes = {'space'},
+    attributes = {'space', "hand_type", "enhancements", "seals", "modify_card"},
     config = {
         extra = {
             hand = "Three of a Kind",

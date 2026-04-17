@@ -15,7 +15,7 @@ SMODS.Joker {
 	blueprint_compat = true,
 	eternal_compat = false,
 	perishable_compat = true,
-    attributes = {'space', "cat"},
+    attributes = {'space', "cat", "chips"},
 
 	config = {
 		extra = {
