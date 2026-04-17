@@ -217,7 +217,7 @@ SMODS.Consumable {
   loc_txt = {
     name = 'Supergiant',
     text = {
-      "{C:attention}Triple{} a cards base chips"
+      "{C:attention}Triple{} a card's {C:chips}Chip{} value"
     }
   },
   config = { extra = {}, max_highlighted = 1 },

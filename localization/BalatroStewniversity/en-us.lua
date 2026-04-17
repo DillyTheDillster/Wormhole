@@ -175,7 +175,7 @@ return {
                 name = "Solar Flare",
                 text = {
                     "{C:attention}Debuff{} all cards in hand",
-                    "Level up a random poker hand",
+                    "{C:attention}Level up{} a random poker hand",
                     "for {C:attention}each{} card debuffed",
                 },
            },

@@ -443,7 +443,7 @@ return {
                 name = 'Artemisia Absinthe',
                 text = {
                     {
-                        "When {C:attention}primed{}, next hand,",
+                        "When {C:attention}primed{},",
                         "each played and scoring card",
                         "{C:attention}permanently{} earns an additional",
                         "{C:money}$#1#{} when scored, then is {C:abs_drinks}drank{}",
@@ -464,7 +464,7 @@ return {
                     },
                     {
                         "{C:inactive,s:0.8}After being Refilled:{}",
-                        "When {C:attention}primed{}, next hand,",
+                        "When {C:attention}primed{},",
                         "each played and scoring card",
                         "{C:attention}permanently{} earns an additional",
                         "{C:money}$#1#{} when scored, then is {C:abs_drinks}drank{}",
