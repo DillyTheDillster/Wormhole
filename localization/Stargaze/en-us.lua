@@ -30,19 +30,19 @@ return {
             j_worm_typhoon = {
                 name = "Humanoid Typhoon",
                 text = {
-                "If played hand is {C:attention}#2#{},",
+                "If played hand is a {C:attention}#2#{},",
                 "gain {X:mult,C:white}X0.2{} Mult",
                 "{C:inactive}(Changes each round){}",
-                "{C:inactive}(Current: {X:mult,C:white}X#1#{}){}"
+                "{C:inactive}(Current: {X:mult,C:white}X#1#{C:inactive}){}"
                 },
             },
 
             j_worm_punisher = {
                 name = "The Punisher",
                 text = {
-                "{C:mult}+15{} Mult if {C:attention}5 cards{} are played",
-                "{C:inactive}(Prevents death and has its final stand){}",
-                "{X:mult,C:white}X#1#{} Mult, loses {X:mult,C:white}X3{} per round"
+                {"{C:mult}+15{} Mult if {C:attention}5 cards{} are played"},
+                {"Prevents death and has its final stand"},
+                {"{X:mult,C:white}X#1#{} Mult, loses {X:mult,C:white}X3{} per round"}
                 },
             },
 
@@ -51,7 +51,8 @@ return {
                 text = {
                "On the {C:attention}final hand{} of round,",
                 "destroy lowest ranked card in hand, and",
-                "create a copy of the highest ranked card"
+                "add a copy of the highest ranked card",
+                "in hand to your deck"
                 },
             },
 
@@ -86,9 +87,10 @@ return {
             j_worm_GOD = {
                 name = "ABSOLUTE GOD OF THE UNIVERSE",
                 text = {
-                "Every {C:attention}10{} planet cards used,",
-                "gain one more chance",
-                "{C:inactive}(Total chances: #1#){}"
+                "Every {C:attention}10 {C:planet}Planet{} cards used,",
+                "gain one {C:attention,E:1}Revive{} that",
+                "prevents Death",
+                "{C:inactive}(Total Revives: #1#){}"
                 },
             },
         },
