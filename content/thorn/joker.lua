@@ -16,7 +16,7 @@ SMODS.Joker {
 	eternal_compat = false,
 	perishable_compat = true,
     jand_gemini_compat = false, -- Me making our Jokers compatible with my shit... Hehehehe :Þ
-    attributes = {'space', 'planet'},
+    attributes = {'space', 'planet', "generation", "hands"},
     loc_vars = function(self, info_queue, card)
         return { vars = {G.PROFILES[G.SETTINGS.profile].name}}
     end,
@@ -87,7 +87,7 @@ SMODS.Joker {
 	eternal_compat = false,
 	perishable_compat = true,
     jand_gemini_compat = true,
-    attributes = {'space', 'xmult', 'spades', 'clubs'},
+    attributes = {'space', 'xmult', 'spades', 'clubs', "suit", "scaling", "full_deck"},
     config = { extra = { xmult_base = 1, xmult_gain = 0.1, xmult = 1, percentage_floor = 45 } },
     loc_vars = function(self, info_queue, card)
         if card.area.config.type == "Joker" then
@@ -131,6 +131,7 @@ SMODS.Joker { --Moved here for the sake of them being close on atlas
 	perishable_compat = false,
     jand_gemini_compat = false,
     config = { extra = { chips = 0 } },
+    attributes = {"scaling", "chips", "suit", "hearts", "diamonds", "rank", "passive", "space"},
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.chips } }
     end,
@@ -162,7 +163,7 @@ SMODS.Joker {
 	eternal_compat = false,
 	perishable_compat = true,
     jand_gemini_compat = false,
-    attributes = {'space', 'hand_type', 'generation'},
+    attributes = {'space', 'hand_type', 'generation', "face"},
     config = { extra = {  } },
     loc_vars = function(self, info_queue, card)
     end,
@@ -218,7 +219,7 @@ SMODS.Joker {
 	eternal_compat = false,
 	perishable_compat = true,
     jand_gemini_compat = false,
-    attributes = {"space", "clubs"}, --I'm not sure of this should have 'diamonds' attribute because of the way SMODS wiki describes these
+    attributes = {"space", "clubs", "suit", "modify_card", "perma_bonus"}, --I'm not sure of this should have 'diamonds' attribute because of the way SMODS wiki describes these -- BenRoffey: correct to omit
     config = { extra = { suit_old = "Clubs", suit_new = "Diamonds", chips = 20 } },
     loc_vars = function(self, info_queue, card)
         local loc = {}
@@ -268,6 +269,7 @@ SMODS.Joker {
 	perishable_compat = true,
     jand_gemini_compat = true,
     config = { extra = { stop = false, odds = 4 } },
+    attributes = {"retrigger", "chance", "space"},
     loc_vars = function(self, info_queue, card)
         local new_numerator, new_denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'devils_machine')
         return {vars = {new_numerator, new_denominator}}
@@ -320,6 +322,7 @@ SMODS.Joker {
     in_pool = function(self)
         return false
     end,
+    attributes = {"retrigger", "chance", "modify_card", "enhancements", "space"},
     config = { extra = { stop = false, odds = 4 } },
     loc_vars = function(self, info_queue, card)
         local new_numerator, new_denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'giygas')
