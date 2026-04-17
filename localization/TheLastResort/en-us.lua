@@ -210,7 +210,7 @@ local CONSTELLATIONS = {
 			"{V:1}Constellation{} card",
 			"used during this run as",
 			"a {V:1}Noticeable Constellation",
-			"{V:1,s:0.8}Canis Minor{s:0.8} excluded"
+			"{C:inactive,s:0.8}({V:1,s:0.8}Canis Minor {C:inactive,s:0.8}excluded)"
 		}
 	},
 	c_worm_tlr_const_canis_minor_t2 = {
@@ -220,7 +220,7 @@ local CONSTELLATIONS = {
 			"{V:1}Constellation{} card",
 			"used during this run as",
 			"a {V:1}Bright Constellation",
-			"{V:1,s:0.8}Canis Minor{s:0.8} excluded"
+			"{C:inactive,s:0.8}({V:1,s:0.8}Canis Minor {C:inactive,s:0.8}excluded)"
 		}
 	},
 	c_worm_tlr_const_canis_minor_t3 = {
@@ -230,7 +230,7 @@ local CONSTELLATIONS = {
 			"{V:1}Constellation{} card",
 			"used during this run as",
 			"a {C:dark_edition}Negative{} {V:1}Bright Constellation",
-			"{s:0.8,V:1}Canis Minor{s:0.8} excluded"
+			"{C:inactive,s:0.8}({V:1,s:0.8}Canis Minor {C:inactive,s:0.8}excluded)"
 		}
 	},
 	c_worm_tlr_const_canis_minor_t4 = {
@@ -240,7 +240,7 @@ local CONSTELLATIONS = {
 			"{V:1}Constellation{} card",
 			"used during this run as",
 			"2 {C:dark_edition}Negative{} {V:1}Shining Constellations",
-			"{V:1,s:0.8}Canis Minor{s:0.8} excluded"
+			"{C:inactive,s:0.8}({V:1,s:0.8}Canis Minor {C:inactive,s:0.8}excluded)"
 		}
 	},
 	c_worm_tlr_const_draco_t1 = {
