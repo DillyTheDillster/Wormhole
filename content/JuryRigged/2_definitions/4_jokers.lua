@@ -14,6 +14,8 @@ SMODS.Joker {
   eternal_compat = true,
   perishable_compat = true,
 
+  attributes = {"xmult", "scaling", "space"},
+
   in_pool = function(self, args)
     return G.GAME.jr.transponder_ct > 0
   end,
@@ -66,6 +68,8 @@ SMODS.Joker {
   blueprint_compat = false,
   eternal_compat = true,
   perishable_compat = true,
+
+  attributes = {"boss_blind", "generation", "hand_type", "space"},
 
   calculate = function(self, card, context)
     if context.blueprint then return end
@@ -125,6 +129,8 @@ SMODS.Joker {
   eternal_compat = true,
   perishable_compat = true,
 
+  attributes = {"generation", "space"}, 
+
   loc_vars = function(self, info_queue, card)
     return {
       vars = {
@@ -170,6 +176,9 @@ SMODS.Joker {
   blueprint_compat = true,
   eternal_compat = true,
   perishable_compat = true,
+
+  attributes = {"destroy_card", "planet", "hand_type", "generation", "space"},
+
   calculate = function(self, card, context)
     if context.before then
       for _, v in pairs(G.consumeables.cards) do
