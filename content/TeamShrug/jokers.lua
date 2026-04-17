@@ -28,6 +28,8 @@ Wormhole.SHRUG_Joker {
     eternal_compat = true,
     perishable_compat = true,
 
+    attributes = {"generation", "tag", "planet", "space"},
+
     -- Return tag type
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_TAGS.tag_meteor
@@ -89,6 +91,8 @@ Wormhole.SHRUG_Joker {
     blueprint_compat = false,
     eternal_compat = true,
     perishable_compat = true,
+
+    attributes = {"modify_card", "enhancements", "space"},
 
     -- Return Enhancement Type
     loc_vars = function(self, info_queue, card)
@@ -199,6 +203,8 @@ Wormhole.SHRUG_Joker {
     eternal_compat = true,
     perishable_compat = true,
 
+    attributes = {"hand_type", "hands", "generation", "space"},
+
     -- Calculations
     calculate = function(self, card, context)
         if context.after and context.scoring_name == "Two Pair" then
@@ -272,6 +278,8 @@ Wormhole.SHRUG_Joker {
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
+
+    attributes = {"xmult", "full_deck", "suit", "space"},
 
     -- Check if a card is in the current tallied suits
     check_suit = function(playing_card, suits_used)
