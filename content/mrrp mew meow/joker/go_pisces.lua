@@ -15,7 +15,8 @@ SMODS.Joker {
 		"hand_type",
 		"destroy_card",
 		"generation",
-		"tag"
+		"tag",
+		"fish"
     },
 
 	config = {extra = {hand = "Four of a Kind", tag = "tag_rare"}},
