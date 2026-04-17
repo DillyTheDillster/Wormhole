@@ -24,13 +24,13 @@ return {
             name = "Alien X",
             text = {
                 "{C:planet}Planet Cards{} have a {C:green}#1# in #2#{} Chance",
-                "to activate a {C:spectral}Black Hole{}"
+                "to level up {C:attention}all poker hands{}"
                 }
             },
             j_worm_sttgl = {
             name = "Super Tengen Toppa Gurren Lagann",
             text = {
-                {"Creates {C:attention}#3#{} duplicates of",
+                {"Creates {C:attention}#3#{} copies of",
                 "used non-{C:dark_edition}Negative{} {C:planet}Planet Cards{}"},
                 {"{C:planet}Planet Cards{} have a {C:green}#1# in #2#{} Chance",
                 "to be {C:dark_edition}Negative{} when duplicated"}
@@ -55,21 +55,20 @@ return {
             j_worm_tekit = {
             name = "Tek It",
             text = {
-                "Using {C:tarot}The Moon{} increases this",
-                "Joker's chips by {C:white,X:dark_edition}X#2#",
+                "This Joker gains {C:white,X:chips}X#2#{} chips",
+                "when {C:tarot}The Moon{} is used",
                 "{C:inactive}(Currently: {C:white,X:chips}X#1#{C:inactive})",
                 }
             },
             j_worm_astro_n = {
                 name = "Astro Novalite",
                 text = { {
-                    "Adds {C:blue}+#2#{}",
-                    "{C:blue}Hands{} and {C:red}Discards{}",
-                    "when {C:attention}Blind{} is selected"
+                    "{C:blue}+#2# Hand(s){} and {C:red}+#2# Discard(s){}",
+                    "for this round when {C:attention}Blind{} is selected"
                 },
                 {
                     "Each unique {C:planet}Planet{} used",
-                    "gives +1 additional Hands and Discards"
+                    "gives {C:attention}+1{} additional {C:blue}Hands{} and {C:red}Discards"
                 }
             }
             },
@@ -77,13 +76,14 @@ return {
                 name = "Space Cadet",
                 text = {
                     {
-                        "{C:green}1 in 3 chance{} to do either of the following:"
+                        "{C:green}#1# in #2#{} chance to do",
+                        "each of the following:"
                     },
                     {
-                        "{C:money}+15$",
-                        "{C:blue}+1 Hand",
-                        "{X:mult,C:white}X2{} Mult",
-                        "{C:attention}Retrigger{} a card once",
+                        "{C:money}+#3#$",
+                        "{C:blue}+#4#{} Hand",
+                        "{X:mult,C:white}X#5#{} Mult",
+                        "{C:attention}Retrigger{} a card #6# time",
                         "{C:inactive,s:0.8}Multiple can activate at the same time."
                     }
                 }
@@ -93,8 +93,9 @@ return {
             c_worm_omnipotence = {
                 name = "Omnipotence",
                 text = {
-                    "Create one Otherworldly Joker, but",
-                    "set money to 0 and {C:red}destroy{} one random Joker"
+                    "Creates one {C:worm_otherworldly}Otherworldly{} Joker",
+                    "Set money to {C:money}$0{} and",
+                    "{C:red}destroys{} one random Joker"
                 }
             }
         }
