@@ -82,7 +82,7 @@ SMODS.Joker {
     ppu_coder = {'Typ0'},
     ppu_artist = {'Typ0','Hunter'},
     ppu_team = {"TeamEudaimonia"},
-    attributes = {"chance","chips", "mult", "space",},
+    attributes = {"chance","chips", "mult", "space"},
     loc_vars = function(self, info_queue, card)
         local num, denom = SMODS.get_probability_vars(card, card.ability.extra.numerator, card.ability.extra.denominator)
         return { vars = { num, denom, card.ability.extra.bitflipped, card.ability.extra.chips, card.ability.extra.multmin, card.ability.extra.multmax} }
@@ -155,6 +155,7 @@ SMODS.Joker {
     config = { extra = { xmult_gain = 6, xmult = 3 } },
     ppu_team = {"TeamEudaimonia"},
     ppu_coder = {'Typ0'},
+    attributes = {"xmult", "destroy_card", "joker", "economy", "sell_value", "space"},
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.xmult_gain, card.ability.extra.xmult } }
     end,
@@ -209,6 +210,7 @@ SMODS.Joker {
     ppu_coder = {'Typ0'},
     ppu_artist = {'TigerTHawk'},
     ppu_team = {"TeamEudaimonia"},
+    attributes = {"scaling", "xmult", "tarot", "prevents_death", "space"},
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.xmult, card.ability.extra.xmult_gain } }
     end,

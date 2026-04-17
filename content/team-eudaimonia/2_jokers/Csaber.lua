@@ -101,6 +101,7 @@ SMODS.Joker {
     cost = 4,
     discovered = false,
     config = { extra = { chance = 6, add = 60 }, },
+    attributes = {"chance", "chips", "space"},
     ppu_team = {"TeamEudaimonia"},
     ppu_coder = {'soulware'},
     ppu_artist = {'LasagnaFelidae'},

@@ -20,6 +20,7 @@ SMODS.Joker {
     ppu_coder = {'M0xes'},
     ppu_team = {"TeamEudaimonia"},
     ppu_artist = {'LasagnaFelidae'},
+    attributes = {"enhancements", "xmult", "destroy_card", "space"},
     calculate = function(self, card, context)
         if context.joker_main then
             local tot_enchanted = 0

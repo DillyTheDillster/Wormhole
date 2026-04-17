@@ -15,6 +15,7 @@ SMODS.Joker {
     ppu_team = {"TeamEudaimonia"},
     ppu_coder = {'M0xes'},
     ppu_artist = {'M0xes'},
+    attributes = {"enhancements", "xmult", "space"},
     config = { extra= {xmult = 1.5} },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue+1] = G.P_CENTERS.m_wild

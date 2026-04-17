@@ -17,7 +17,7 @@ SMODS.Joker {
     ppu_coder = {'M0xes'},
     ppu_team = {"TeamEudaimonia"},
     ppu_artist = {'Jewel'},
-    attributes = {"debuff", "retrigger", "space",},
+    attributes = {"debuff", "retrigger", "space", "on_sell"},
     loc_vars = function(self, info_queue, card)
         return { vars = {card.ability.extra.research_length, card.ability.extra.retriggers} }
     end,

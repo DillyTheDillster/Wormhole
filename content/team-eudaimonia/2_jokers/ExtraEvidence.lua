@@ -15,6 +15,7 @@ SMODS.Joker {
     ppu_coder = {'M0xes'},
     ppu_artist = {'Hunter'},
     ppu_team = {"TeamEudaimonia"},
+    attributes = {"retrigger", "rank", "space"},
     calculate = function(self, card, context)
         if context.before then
             for i, playing_card in ipairs(context.scoring_hand) do

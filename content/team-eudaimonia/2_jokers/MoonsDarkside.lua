@@ -16,7 +16,7 @@ SMODS.Joker {
     ppu_coder = {'M0xes'},
     ppu_artist = {'M0xes'},
     ppu_team = {"TeamEudaimonia"},
-    attributes = {"passive", "space",},
+    attributes = {"passive", "space"},
     loc_vars = function(self, info_queue, card)
         return { vars = { localize('Spades', 'suits_plural'), localize('Clubs', 'suits_plural') } }
     end
