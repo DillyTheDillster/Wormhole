@@ -6,7 +6,7 @@ return {
                 name = 'Space Bar',
                 text = {
                     'Start with a random',
-                    'Bartender joker'
+                    '{C:attention}Bartender{} Joker'
                 }
             }
         },

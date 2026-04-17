@@ -142,8 +142,8 @@ local other_loc_table = {
                 name = "Spaceship Deck",
                 text = {
                     "Start with a {T:j_worm_tbp_spaceship,C:attention}Modular Spaceship{}",
-                    "which always spawns a {C:tbp_module}Module{}",
-                    "pack at the start of {T:p_worm_module_jumbo_1,C:attention}shop{}"
+                    "which always spawns a {T:p_worm_module_jumbo_1,C:tbp_module}Jumbo{}",
+                    "{T:p_worm_module_jumbo_1,C:tbp_module}Module Pack{} at the start of {C:attention}shop{}"
                 },
             },
         },

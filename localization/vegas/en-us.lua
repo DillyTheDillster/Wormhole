@@ -18,6 +18,16 @@ return {
                     "{C:chips}chips{} and {C:mult}mult{} at level 1"
                 }
             }
+        },
+        Backs = {
+            worm_colonist = {
+                name = 'Colonist Deck',
+                text = {
+                    "Start with {C:chips}Banner{},",
+                    "and {C:blue}Planet Merchant{}",
+                    "Hands start at level {C:attention}0",
+                }
+            }
         }
     }
 }
