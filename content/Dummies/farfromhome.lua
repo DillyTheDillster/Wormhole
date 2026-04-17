@@ -43,7 +43,7 @@ SMODS.Joker{
             --target = "c_earth"
 		}
 	},
-    attributes = { "planet", "home", "joker" },
+    attributes = { "planet", "home", "joker", "xchips", "space"},
 	loc_vars = function(self, info_queue, card)
 		info_queue[#info_queue + 1] = { key = "c_earth", set = "Planet", config = G.P_CENTERS.c_earth.config }
 		return { vars = {

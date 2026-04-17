@@ -32,7 +32,7 @@ end
 -- Ceremonial Dagger
 SMODS.Joker {
     key = "dum_carnivore",
-    attributes = {"mult","chips","xmult", "alien"},
+    attributes = {"chips", "mult", "xmult", "scaling", "alien", "joker", "destroy_card", "space"},
     blueprint_compat = true,
     perishable_compat = false,
     rarity = 2,
