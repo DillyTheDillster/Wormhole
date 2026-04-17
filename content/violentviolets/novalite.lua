@@ -11,6 +11,7 @@ SMODS.Joker { -- :3
     pos = {x = 4, y = 1},
     soul_pos = {x = 5, y = 1},
     blueprint_compat = true,
+    attributes = {"hands", "discards", "planet", "space"},
     loc_vars = function(self, info_queue, card)
         local planets_used = 1
         for k, v in pairs(G.GAME.consumeable_usage) do if v.set == 'Planet' then planets_used = planets_used + 1 end end

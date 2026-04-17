@@ -11,6 +11,7 @@ SMODS.Joker {
     ppu_team = { "VV" },
     ppu_artist = { "Gud" },
     ppu_coder = { "FireIce" },
+    attributes = {"xmult", "rank", "three", "space"},
     calculate = function(self, card, context)
         if context.cardarea == G.play then
             if context.other_card:get_id() == 3 then

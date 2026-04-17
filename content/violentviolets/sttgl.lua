@@ -12,6 +12,7 @@ SMODS.Joker {
             copies = 2
         }
     },
+    attributes = {"generation", "editions", "planet", "chance", "space"},
     ppu_team = { "VV" },
     ppu_artist = { "FirstTry" },
     ppu_coder = { "FirstTry" },

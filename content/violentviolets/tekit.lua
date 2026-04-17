@@ -16,6 +16,7 @@ SMODS.Joker {
     ppu_team = { "VV" },
     ppu_artist = { "FirstTry" },
     ppu_coder = { "FirstTry" },
+    attributes = {"scaling", "xchips", "tarot", "space"},
     loc_vars = function(self,info_queue,card)
         info_queue[#info_queue+1] = G.P_CENTERS.c_moon
         return {

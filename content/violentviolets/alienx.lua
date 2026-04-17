@@ -11,6 +11,7 @@ SMODS.Joker {
             denom = 4
         }
     },
+    attributes = {"planet", "chance", "space", "alien"},
     ppu_team = { "VV" },
     ppu_artist = { "FirstTry" },
     ppu_coder = { "FirstTry" },
