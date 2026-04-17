@@ -1851,7 +1851,7 @@ end
 
 SMODS.DrawStep {
 	key = "jtem2_tetris_draw",
-	order = 9,
+	order = 21,
 	func = function(card, layer)
 		if card.config.center_key == "j_worm_jtem2_tetris" and card.children.jtem2_tetris_canvas and next(card.ability.extra.game_state or {}) then
 			JtemTGM.HandleDraw(card.children.jtem2_tetris_canvas.canvas, card.ability.extra.game_state)
