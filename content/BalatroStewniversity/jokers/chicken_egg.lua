@@ -2,7 +2,7 @@
 SMODS.Joker {
 
     ppu_team = { "Balatro Stewniversity" },
-    ppu_artist = { "dottykitty", "dottykitty" },
+    ppu_artist = { "dottykitty" },
     ppu_coder = { "stupxd" },
 
     key = 'stew_chicken_egg',
