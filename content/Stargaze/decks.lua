@@ -5,6 +5,26 @@ SMODS.Atlas({
 	path = "Stargaze/deck.png"
 })
 
+local function nope(back)
+	G.E_MANAGER:add_event(Event {
+		blocking = false,
+		func = function(n)
+			G.E_MANAGER:add_event(Event({
+				trigger = 'after',
+				delay = 0.06 * G.SETTINGS.GAMESPEED,
+				blockable = false,
+				blocking = false,
+				func = function()
+					play_sound('tarot2', 0.76, 0.4); return true
+				end
+			}))
+			play_sound('tarot2', 1, 0.4)
+			return true
+		end
+	})
+	SMODS.calculate_effect({ message = localize('k_nope_ex'), colour = G.C.SECONDARY_SET.Tarot }, back)
+end
+
 SMODS.Back({
 	key = "cosmos",
 	pos = { x = 0, y = 0 },
@@ -34,22 +54,24 @@ SMODS.Back({
 							num, den,
 							"worm_cosmos_deck"
 						)
-						if not r then return true end
+						if not r then
+							nope(G.deck.cards[1])
+							return true
+						end
 
-						local pool = SMODS.pseudorandom_probability(
-							back,
-							"cosmos_pool_roll_" .. G.GAME.round_resets.ante,
-							1, 2,
-							"worm_cosmos_deck_pool"
-						) and "Tarot" or "Spectral"
+						local polled = SMODS.poll_object({ types = { "Tarot", "Spectral" } })
+						if polled ~= "UNAVAILABLE" then
+							SMODS.add_card({
+								key = polled,
+								discover = true,
+								bypass_discovery_center = true,
+								key_append = "cosmos_roll",
+								area = G.consumeables
+							})
+						else -- This is ridiculously unlikely
+							nope(G.deck.cards[1])
+						end
 
-						SMODS.add_card({
-							set = pool,
-							discover = true,
-							bypass_discovery_center = true,
-							key_append = "cosmos_roll",
-							area = G.consumeables
-						})
 						return true
 					end
 				}))
