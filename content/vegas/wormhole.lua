@@ -531,7 +531,7 @@ SMODS.Joker{
 local wormhole_joker
 wormhole_joker = SMODS.Joker{
 	key = "wormhole",
-	attibutes = {"generation", "tarot", "planet", "spectral", "space"},
+	attributes = {"generation", "tarot", "planet", "spectral", "space"},
 	config = { extra = { sets = { "Tarot", "Planet", "Spectral" }}},
 	loc_vars = function(self, info_queue, card)
 		info_queue[#info_queue + 1] = {key = 'e_negative_consumable', set = 'Edition', config = {extra = 1}}
