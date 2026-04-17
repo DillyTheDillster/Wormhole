@@ -20,7 +20,7 @@ SMODS.Joker {
         local num, denom = SMODS.get_probability_vars(card, card.ability.extra.prob, card.ability.extra.odds, 'vv_cadet')
         return {
             vars = {
-                num, denom, card.ability.extra.dollars, card.ability.extra.hands, card.ability.extra.retriggers, card.ability.extra.xmult
+                num, denom, card.ability.extra.dollars, card.ability.extra.hands, card.ability.extra.xmult, card.ability.extra.retriggers 
             }
         }
     end,
