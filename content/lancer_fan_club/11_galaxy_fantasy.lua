@@ -18,6 +18,7 @@ SMODS.Joker {
         "on_sell",
         "spectral",
         "generation",
+        "space"
     },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = card.ability.extra.card_type

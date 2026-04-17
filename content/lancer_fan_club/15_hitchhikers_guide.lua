@@ -15,7 +15,12 @@ SMODS.Joker {
     discovered = false,
     config = { extra = { ranks = { "4", "2" } } },
     attributes = {
-
+        "generation",
+        "joker",
+        "rank",
+        "four",
+        "two",
+        "space"
     },
     loc_vars = function(self, info_queue, card)
         return {

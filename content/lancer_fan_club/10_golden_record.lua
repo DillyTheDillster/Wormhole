@@ -33,7 +33,8 @@ SMODS.Joker {
         "enhancements",
         "discards",
         "spectral",
-        "generation"
+        "generation",
+        "space"
     },
     loc_vars = function(self, info_queue, card)
         return {

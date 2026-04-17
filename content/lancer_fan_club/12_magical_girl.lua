@@ -17,7 +17,8 @@ SMODS.Joker {
     attributes = {
         "chips",
         "scaling",
-        "enhancements"
+        "enhancements",
+        "space"
     },
     loc_vars = function(self, info_queue, card)
         return {

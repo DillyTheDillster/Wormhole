@@ -54,6 +54,8 @@ SMODS.Joker {
         "economy",
         "mult",
         "chips",
+        "scaling",
+        "space"
     },
 
     loc_vars = function(self, info_queue, card)

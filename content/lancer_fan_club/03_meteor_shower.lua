@@ -18,7 +18,7 @@ local joker = SMODS.Joker {
 	ppu_team = { "Lancer Fan Club" },
 	atlas = "lfc_jokers",
 	pos = { x = 1, y = 0 },
-	attributes = { "economy" }
+	attributes = { "economy", "space"}
 }
 
 local meteor_sprite = love.graphics.newImage(love.image.newImageData(SMODS.NFS.newFileData(SMODS.current_mod.path ..

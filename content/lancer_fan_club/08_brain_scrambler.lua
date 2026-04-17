@@ -16,6 +16,7 @@ SMODS.Joker {
     attributes = {
         "retriggers",
         "hands",
+        "space"
     },
     loc_vars = function(self, info_queue, card)
         return {}
