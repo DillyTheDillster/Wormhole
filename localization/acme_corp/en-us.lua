@@ -4,7 +4,7 @@ return {
             c_worm_acme_ball = {
                 name = 'ACME "Bounce-O-Matic" Spherical Impact Projectile',
                 text = {
-                    '{X:attention,C:white}After{} scoring {C:attention}#1# #2#{},',
+                    '{X:attention,C:white}After{} scoring {C:attention}#1# {C:inactive}(#2#) {C:attention}#3#{},',
                     '{X:attention,C:white}Use{} to give a random {C:attention}enhancement',
                     'to all {C:attention}unenhanced Face Cards',
                     '{C:attention}held in hand'
@@ -104,7 +104,7 @@ return {
                 name = 'Legally Distinct ACME Automated Helper',
                 text = {
                     '{X:attention,C:white}After{} opening {C:attention}#1# #2#{},',
-                    '{X:attention,C:white}Use{} to create a random {C:mult}rare{} Joker',
+                    '{X:attention,C:white}Use{} to create a random {C:mult}rare{} {C:attention}Joker',
                     '{C:inactive}Fixed {C:green}1 in 25{C:inactive} chance to become',
                     '{C:Legendary,E:1}Legendary{C:inactive} at the end of the shop',
                     '{C:inactive}(Must have room)'

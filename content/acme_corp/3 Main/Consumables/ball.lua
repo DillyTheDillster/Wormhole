@@ -40,9 +40,9 @@ SMODS.Consumable{
     loc_vars = function(self, info_queue, card)
         local aces_left = (card.ability.extra.aces_required - card.ability.extra.aces_scored)
         if aces_left > 1 then
-            return{vars = {aces_left, localize('k_aces')}}
+            return{vars = {card.ability.extra.aces_required, aces_left, localize('k_aces')}}
         elseif aces_left == 1 then
-            return{vars = {aces_left, localize('k_ace')}}
+            return{vars = {card.ability.extra.aces_required, aces_left, localize('k_ace')}}
         else
             return{key = self.key..'_alt'}
         end
