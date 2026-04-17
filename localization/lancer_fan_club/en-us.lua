@@ -336,6 +336,7 @@ return {
                 text = {
                     "{C:red}Destroy{} every",
                     "{C:attention}#1#{} in {C:attention}full deck{}",
+                    "{C:inactive,s:0.8}(Chosen rank is random)"
                 },
             },
         },
@@ -354,7 +355,6 @@ return {
     misc = {
         dictionary = {
             k_lfc_none = "None",
-            k_lfc_brackets_rank = "[rank]",
             k_lfc_secret1 = "Sell this joker to reveal a secret!",
             k_lfc_secret2 = "(creates extra copy of Moon Berry, must have room)",
             k_lfc_secret3 = "gotcha, lol",

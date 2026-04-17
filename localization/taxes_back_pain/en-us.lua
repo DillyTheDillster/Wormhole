@@ -285,7 +285,8 @@ local other_loc_table = {
             tag_worm_tbp_rocketry = {
                 name = "Rocketry Tag",
                 text = {
-                    "Gives a free {C:tbp_module}Mega Module Pack"
+                    "Gives a free",
+                    "{C:tbp_module}Mega Module Pack"
                 }
             }
         }

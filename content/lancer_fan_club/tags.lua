@@ -12,9 +12,10 @@ SMODS.Tag {
         id = nil
     },
     loc_vars = function(self, info_queue, tag)
+        local rank_key = tag.ability.rank or 'Jack'
         return {
             vars = {
-                tag.ability.rank and localize(tag.ability.rank, 'ranks') or localize('k_lfc_brackets_rank')
+                localize(rank_key, 'ranks')
             }
         }
     end,
