@@ -130,6 +130,9 @@ return {
         },
         poker_hand_descriptions = {
             worm_bap_void = { "5 cards with the void edition" }
-        }
+        },
+        labels = {
+            worm_bap_void = 'Void',
+        },
     }
 }

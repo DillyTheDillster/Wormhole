@@ -185,4 +185,9 @@ return {
             }
         }
     },
+    misc = {
+        labels = {
+            worm_ibu_cosmicedition = 'Cosmic'
+        },
+    },
 }
