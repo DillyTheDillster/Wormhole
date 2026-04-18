@@ -710,17 +710,12 @@ nyarlathotep_exchange({
 				eligible_jokers[#eligible_jokers+1] =  v
 			end
 		end
-		for i = 1, 3 do
-			local joker_to_destroy = pseudorandom_element(eligible_jokers)
-			print(joker_to_destroy)
-			destroy[#destroy+1] = joker_to_destroy
-			local new_table = {}
-			for k, v in pairs(eligible_jokers) do
-				if v ~= joker_to_destroy then
-					new_table[#new_table+1] = v
-				end
+		for _ = 1, self.config.destroy do
+			if not next(eligible_jokers) then
+				break
 			end
-			eligible_jokers = new_table
+			local destroyed_index = pseudorandom("nyarlathotep_macabre", 1, #eligible_jokers)
+			destroy[#destroy+1] = table.remove(eligible_jokers, destroyed_index)
 		end
 		SMODS.destroy_cards(destroy)
 		cae.joker_main.mult = (cae.joker_main.mult or 0) + self.config.mult
