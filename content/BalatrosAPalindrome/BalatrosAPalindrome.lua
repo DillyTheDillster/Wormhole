@@ -46,14 +46,6 @@ SMODS.Edition {
 	ppu_team = { "BalatrosAPalindrome" },
 	key = 'bap_void',
 	shader = 'worm_bap_shader_void',
-	loc_txt = {
-		name = 'Void',
-		label = 'Void',
-		text = {
-			"{C:chips}#1#{} chips when {C:attention}held{}",
-			"Never scores"
-		}
-	},
 	config = { chips = -25 },
 	in_shop = false,
 	weight = 0,
@@ -90,13 +82,6 @@ SMODS.Edition {
 SMODS.Consumable {
 	ppu_team = { "BalatrosAPalindrome" },
 	key = 'bap_abyss',
-	loc_txt = {
-		name = 'The Abyss',
-		text = {
-			"Gives {C:money}$#1#{} and",
-			"creates {C:attention}#2#{} random {T:e_worm_bap_void}Void cards{}",
-		}
-	},
 	set = 'Tarot',
 	atlas = 'Palindrome',
 	pos = { x = 2, y = 0 },
@@ -156,11 +141,6 @@ SMODS.PokerHand {
 	chips = 200,
 	l_mult = 2,
 	l_chips = 25,
-	loc_txt = { description = {
-		"5 cards with the void edition",
-	},
-		name = "Void Hand"
-	},
 	example = {
 		{ 'S_A', true, edition = "e_worm_bap_void" },
 		{ 'D_Q', true, edition = "e_worm_bap_void" },
@@ -192,15 +172,6 @@ SMODS.Consumable {
 	atlas = 'Palindrome',
 	pos = { x = 0, y = 0 },
 	config = { hand_type = "worm_bap_void" },
-	loc_txt = {
-		name = 'Nothing',
-		text = {
-			"({V:1}lvl.#1#{}) Level up",
-			"{C:attention}#2#",
-			"{C:mult}+#3#{} Mult and",
-			"{C:chips}+#4#{} chips",
-		},
-	},
 	loc_vars = function(self, info_queue, card)
 		if not SMODS.is_poker_hand_visible("worm_bap_void") then
 			return {
@@ -246,15 +217,6 @@ SMODS.Joker {
 	pos = { x = 1, y = 1 },
 	config = { extra = { hands_left = 10 } },
 	attributes = { "generation", "planet", "space" },
-	loc_txt = {
-		name = 'Milky Way',
-		text = {
-			"Create a {C:planet}Planet{} card",
-			"at the end of the",
-			"next {C:attention}#1#{} rounds",
-			"{C:inactive}(Must have room)",
-		}
-	},
 	loc_vars = function(self, info_queue, card)
 		return { vars = { card.ability.extra.hands_left } }
 	end,
@@ -308,14 +270,6 @@ SMODS.Joker {
 	pos = { x = 1, y = 2 },
 	config = { extra = { money_per = 1 } },
 	attributes = { "economy", "hands", "hand_type", "space" },
-	loc_txt = {
-		name = 'Andromeda',
-		text = {
-			"Gives {C:money}$#1#{} per level",
-			"of first played",
-			"{C:attention}poker hand{} each round"
-		},
-	},
 	loc_vars = function(self, info_queue, card)
 		return { vars = { card.ability.extra.money_per } }
 	end,
@@ -358,15 +312,6 @@ SMODS.Joker {
 	pos = { x = 0, y = 1 },
 	config = { extra = { s_mult = 4, suitOne = 'Diamonds', s_chips = 25, suitTwo = 'Hearts' }, },
 	attributes = { "suit", "hearts", "mult", "diamonds", "chips", "space" },
-	loc_txt = {
-		name = 'Solar Panels',
-		text = {
-			"Played cards with {C:hearts}Heart{} suit",
-			"give {C:mult}+4{} Mult when scored",
-			"Played cards with {C:diamonds}Diamond{} suit",
-			"give {C:chips}+25{} Chips when scored"
-		}
-	},
 	loc_vars = function(self, info_queue, card)
 		return { vars = {} }
 	end,
@@ -398,14 +343,6 @@ SMODS.Joker {
 	pos = { x = 0, y = 3 },
 	config = {},
 	attributes = { "generation", "editions", "tarot", "space" },
-	loc_txt = {
-		name = 'Artemis III',
-		text = {
-			"When {C:attention}Blind{} is",
-			"selected, creates a",
-			"{C:dark_edition}Negative{} {C:tarot}Moon{} card",
-		}
-	},
 	loc_vars = function(self, info_queue, card)
 		info_queue[#info_queue + 1] = G.P_CENTERS.c_moon
 		info_queue[#info_queue + 1] = { key = 'e_negative_consumable', set = 'Edition', config = { extra = 1 } }
@@ -449,19 +386,6 @@ SMODS.Joker {
 	pos = { x = 2, y = 4 },
 	config = { extra = { jokers = 5 } },
 	attributes = { "generation", "editions", "joker", "space" },
-	loc_txt = {
-		name = 'Space Walk',
-		text = {
-			"Create a {C:dark_edition}Negative{} {C:attention}Space Joker{}",
-			"at the end of the",
-			"next {C:attention}#1#{} rounds",
-			"{C:inactive}(Must have room)",
-			-- "When {C:attention}Blind{} is",
-			-- "selected, creates a",
-			-- "{C:attention}Space Joker{}",
-			-- "{C:inactive}(Must have room){}",
-		}
-	},
 	loc_vars = function(self, info_queue, card)
 		return { vars = { card.ability.extra.jokers } }
 	end,
@@ -512,14 +436,6 @@ SMODS.Joker {
 	pos = { x = 1, y = 3 },
 	config = { extra = { x_mult = 2 } },
 	attributes = { "xmult", "editions", "space" },
-	loc_txt = {
-		name = 'Vacuum',
-		text = {
-			"{X:mult,C:white}X2{} Mult if played",
-			"hand contains",
-			"a {T:e_worm_bap_void}Void{} card",
-		}
-	},
 	loc_vars = function(self, info_queue, card)
 		return { vars = {} }
 	end,
@@ -555,15 +471,6 @@ SMODS.Joker {
 	pos = { x = 0, y = 2 },
 	config = { extra = { x_mult = 1.0, inc_mult = 0.25 } },
 	attributes = { "destroy_card", "xmult", "scaling", "space" },
-	loc_txt = {
-		name = 'Space Worm',
-		text = {
-			"When {C:attention}Blind{} is selected,",
-			"{C:attention}destroy{} Joker from {B:1,V:2}Wormhole{}",
-			"to the right and gain {X:mult,C:white} X#1# {} Mult",
-			"{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
-		}
-	},
 	loc_vars = function(self, info_queue, card)
 		return { vars = { card.ability.extra.inc_mult, card.ability.extra.x_mult, colours = { Wormhole.badge_colour, Wormhole.badge_text_colour } } }
 	end,
@@ -625,15 +532,6 @@ SMODS.Joker {
 	soul_pos = { x = 1, y = 4 },
 	config = { extra = { x_mult = 1.0, inc_x_mult = 0.10 } },
 	attributes = { "scaling", "xmult", "editions", "space" },
-	loc_txt = {
-		name = 'Worm',
-		text = {
-			"This Joker gains {X:mult,C:white} X#1# {} Mult",
-			"per {T:e_worm_bap_void}Void{} card played,",
-			"{C:attention}removes{} {T:e_worm_bap_void}Void{} edition",
-			"{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)"
-		}
-	},
 	loc_vars = function(self, info_queue, card)
 		return { vars = { card.ability.extra.inc_x_mult, card.ability.extra.x_mult } }
 	end,
