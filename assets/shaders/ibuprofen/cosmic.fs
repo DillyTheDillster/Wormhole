@@ -4,7 +4,7 @@
 	#define MY_HIGHP_OR_MEDIUMP mediump
 #endif
 
-extern MY_HIGHP_OR_MEDIUMP vec2 cosmic;
+extern MY_HIGHP_OR_MEDIUMP vec2 ibu_cosmic;
 extern MY_HIGHP_OR_MEDIUMP number dissolve;
 extern MY_HIGHP_OR_MEDIUMP number time;
 extern MY_HIGHP_OR_MEDIUMP vec4 texture_details;
@@ -107,7 +107,7 @@ vec4 effect( vec4 colour, Image texture, vec2 texture_coords, vec2 screen_coords
 
 	vec4 hsl = HSL(vec4(tex.r*saturation_fac, tex.g*saturation_fac, tex.b, tex.a));
 
-	float t = cosmic.y*2.221 + time;
+	float t = ibu_cosmic.y*2.221 + time;
 	vec2 floored_uv = (floor((uv*texture_details.ba)))/texture_details.ba;
     vec2 uv_scaled_centered = (floored_uv - 0.5) * 50.;
 	
@@ -119,8 +119,8 @@ vec4 effect( vec4 colour, Image texture, vec2 texture_coords, vec2 screen_coords
         cos(length(field_part1) / 19.483) + sin(length(field_part2) / 33.155) * cos(field_part2.y / 15.73) +
         cos(length(field_part3) / 27.193) * sin(field_part3.x / 21.92) ))/2.;
 
-    float res = (.5 + .5* cos( (cosmic.x) * 2.612 + ( field + -.5 ) *3.14));
-	hsl.x = hsl.x+ res + cosmic.y*0.04;
+    float res = (.5 + .5* cos( (ibu_cosmic.x) * 2.612 + ( field + -.5 ) *3.14));
+	hsl.x = hsl.x+ res + ibu_cosmic.y*0.04;
 	hsl.y = min(0.6,hsl.y+0.5);
 
     tex.rgb = RGB(hsl).rgb;
