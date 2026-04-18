@@ -346,21 +346,33 @@ SMODS.Joker {
   config = { extra = { xmult = 3, current = 0 } },
   attributes = { "xmult", "space" },
   loc_vars = function(self, info_queue, card)
-    return { vars = { card.ability.extra.xmult, card.ability.extra.current } }
-  end,
-  calculate = function(self, card, context)
+
     local level = math.huge
     for k, v in pairs(G.GAME.hands) do
       if SMODS.is_poker_hand_visible(k) and v.level <= level then
         level = v.level
       end
     end
-    card.ability.extra.current = (level - 1)
-    if context.joker_main and level > 1 then
-      local endmult = card.ability.extra.xmult * (level - 1)
-      return {
-        x_mult = endmult
-      }
+    card.ability.extra.current = math.max(card.ability.extra.xmult * (level - 1), 1)
+
+    return { vars = { card.ability.extra.xmult, card.ability.extra.current } }
+  end,
+  calculate = function(self, card, context)
+    if context.joker_main then
+
+      local level = math.huge
+      for k, v in pairs(G.GAME.hands) do
+        if SMODS.is_poker_hand_visible(k) and v.level <= level then
+          level = v.level
+        end
+      end
+      card.ability.extra.current = math.max(card.ability.extra.xmult * (level - 1), 1)
+
+      if card.ability.extra.current > 1 then
+        return {
+          x_mult = card.ability.extra.current
+        }
+      end
     end
   end
 }

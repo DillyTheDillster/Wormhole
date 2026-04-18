@@ -95,9 +95,9 @@ return {
             j_worm_ibu_horizon = {
                 name = "Event Horizon",
                 text = {
-                    "{X:mult,C:white}X#1#{} Mult for lowest level above one",
-                    "shared by all hand types",
-                    "{C:inactive}Currently: #2#{}"
+                    "{X:red,C:white}X#1#{} Mult per level over 1",
+                    "on {C:attention}lowest-level poker hand",
+                    "{C:inactive}(Currently: {X:red,C:white}X#2#{C:inactive} Mult)"
                 },
             },
             j_worm_ibu_redshift = {
