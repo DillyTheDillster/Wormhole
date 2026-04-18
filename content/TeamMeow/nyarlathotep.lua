@@ -703,12 +703,25 @@ nyarlathotep_exchange({
 	config = { destroy = 3, mult = 30 },
 	reward = function(self, card)
 		local destroy = {}
+		local eligible_jokers = {}
 		local cae = card.ability.extra
-		for i = #G.jokers.cards, 2, -1 do
-			local j = math.random(i)
-			G.jokers.cards[i], G.jokers.cards[j] = G.jokers.cards[j], G.jokers.cards[i]
+		for k, v in pairs(G.jokers.cards) do
+			if v ~= card then
+				eligible_jokers[#eligible_jokers+1] =  v
+			end
 		end
-		destroy = { G.jokers.cards[1], G.jokers.cards[2], G.jokers.cards[3] }
+		for i = 1, 3 do
+			local joker_to_destroy = pseudorandom_element(eligible_jokers)
+			print(joker_to_destroy)
+			destroy[#destroy+1] = joker_to_destroy
+			local new_table = {}
+			for k, v in pairs(eligible_jokers) do
+				if v ~= joker_to_destroy then
+					new_table[#new_table+1] = v
+				end
+			end
+			eligible_jokers = new_table
+		end
 		SMODS.destroy_cards(destroy)
 		cae.joker_main.mult = (cae.joker_main.mult or 0) + self.config.mult
 	end,
