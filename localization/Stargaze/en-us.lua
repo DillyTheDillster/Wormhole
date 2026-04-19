@@ -89,9 +89,9 @@ return {
 			j_worm_GOD = {
 				name = "ABSOLUTE GOD OF THE UNIVERSE",
 				text = {
-					"Every {C:attention}10 {C:planet}Planet{} cards used,",
+					"Every {C:attention}#3# {C:inactive}[#2#] {C:planet}Planet{} cards used,",
 					"gain one {C:attention,E:1}Revive{} that prevents Death",
-					"{C:inactive}(Total Revives: #1#){}"
+					"{C:inactive}(Total Revives: {C:attention}#1#{C:inactive}){}"
 				},
 			},
 		},

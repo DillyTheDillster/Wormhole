@@ -456,6 +456,7 @@ SMODS.Joker({
     config = {
         extra = {
             planets_used = 0,
+            planets_req = 10,
             revives = 0
         }
     },
@@ -463,7 +464,9 @@ SMODS.Joker({
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.extra.revives
+                card.ability.extra.revives, 
+                card.ability.extra.planets_req - (card.ability.extra.planets_used % card.ability.extra.planets_req), 
+                card.ability.extra.planets_req,
             }
         }
     end,
@@ -474,7 +477,7 @@ SMODS.Joker({
                 card.ability.extra.planets_used =
                     card.ability.extra.planets_used + 1
 
-                if card.ability.extra.planets_used % 10 == 0 then
+                if card.ability.extra.planets_used % card.ability.extra.planets_req == 0 then
                     card.ability.extra.revives =
                         card.ability.extra.revives + 1
 
