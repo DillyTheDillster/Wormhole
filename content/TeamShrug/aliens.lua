@@ -172,11 +172,11 @@ end
 -- change suits in suit convert cardareas
 local function alien_suit_change(suit)
     for i, c in ipairs(G.worm_shrug_alien_suit_conv.cards) do
-        local percent = 1.15 - (i - 0.999) / (#G.worm_shrug_alien_suit_conv.cards - 0.998) * 0.3
+        local percent = 1.15 - (i - 0.999) / (#G.worm_shrug_alien_suit_conv.cards + #G.worm_shrug_alien_suit_conv2.cards - 0.998) * 0.3
         G.E_MANAGER:add_event(Event({trigger = 'before', delay = 0.05, func = function() c:flip(); play_sound('card1', percent) return true end}))
     end
     for i, c in ipairs(G.worm_shrug_alien_suit_conv2.cards) do
-        local percent = 1.15 - (i + #G.worm_shrug_alien_suit_conv.cards  - 0.999) / (#G.worm_shrug_alien_suit_conv2.cards - 0.998) * 0.3
+        local percent = 1.15 - (i + #G.worm_shrug_alien_suit_conv.cards  - 0.999) / (#G.worm_shrug_alien_suit_conv.cards + #G.worm_shrug_alien_suit_conv2.cards - 0.998) * 0.3
         G.E_MANAGER:add_event(Event({trigger = 'before', delay = 0.05, func = function() c:flip(); play_sound('card1', percent) return true end}))
     end
     for i, c in ipairs(G.worm_shrug_alien_suit_conv.cards) do
@@ -186,11 +186,11 @@ local function alien_suit_change(suit)
         G.E_MANAGER:add_event(Event({trigger = 'before', delay = 0.05, func = function() SMODS.change_base(c, suit) return true end}))
     end
     for i, c in ipairs(G.worm_shrug_alien_suit_conv.cards) do
-        local percent = 0.85 + (i-0.999)/(#G.worm_shrug_alien_suit_conv.cards-0.998)*0.3
+        local percent = 0.85 + (i-0.999)/(#G.worm_shrug_alien_suit_conv.cards + #G.worm_shrug_alien_suit_conv2.cards-0.998)*0.3
         G.E_MANAGER:add_event(Event({trigger = 'before', delay = 0.05, func = function() c:flip(); play_sound('tarot2', percent) return true end}))
     end
     for i, c in ipairs(G.worm_shrug_alien_suit_conv2.cards) do
-        local percent = 0.85 + (i + #G.worm_shrug_alien_suit_conv.cards -0.999)/(#G.worm_shrug_alien_suit_conv2.cards-0.998)*0.3
+        local percent = 0.85 + (i + #G.worm_shrug_alien_suit_conv.cards -0.999)/(#G.worm_shrug_alien_suit_conv.cards + #G.worm_shrug_alien_suit_conv2.cards-0.998)*0.3
         G.E_MANAGER:add_event(Event({trigger = 'before', delay = 0.1, func = function() c:flip(); play_sound('tarot2', percent) return true end}))
     end
     G.E_MANAGER:add_event(Event({trigger = 'before', delay = 0.4, func = function() return true end}))
