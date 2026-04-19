@@ -252,6 +252,12 @@ return {
             b_worm_hedonia_menu_cards = "Tonight's Menu",
             k_worm_hedonia_menu = "Menu Item",
             hedonia_menu = "Tonight's Menu",
-        }
+        },
+        labels = {
+            worm_hedonia_tipsy = 'Tipsy',
+            worm_hedonia_drunk = 'Drunk',
+            worm_hedonia_very_drunk = 'Very Drunk',
+            worm_hedonia_blackout = 'Blackout'
+        },
     },
 }

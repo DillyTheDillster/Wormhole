@@ -349,12 +349,6 @@ return {
                 k_euda_avadon_pack = "Avadon Pack",
                 k_worm_euda_lunarcheese_message = "Cheesy!",
             },
-            labels = {
-                worm_hedonia_tipsy = 'Tipsy',
-                worm_hedonia_drunk = 'Drunk',
-                worm_hedonia_very_drunk = 'Very Drunk',
-                worm_hedonia_blackout = 'Blackout'
-            },
     }
 }
 
