@@ -165,14 +165,14 @@ return {
                 thorn_piss_rant = {
                     name = "",
                     text = {
-                        "I've come to make an {C:attention}announcement{}, {X:red}Shadow{} {X:red}the",
-                        "{X:red}Hedgehog{} is a {C:red}bitch ass motherfucker{} he {C:diamonds}pissed{}",
+                        "I've come to make an {C:attention}announcement{}, {B:1}Shadow the{}",
+                        "{B:1}Hedgehog{} is a {C:red}bitch ass motherfucker{} he {C:diamonds}pissed{}",
                         "on my {C:red}fucking{} {C:attention}wife{} That's right, he took his",
                         "{C:blue}hedgehog{} {C:red}fucking{} quill-y {C:attention}dick{} out and he {C:diamonds}pissed",
                         "on my {C:red}fucking{} {c:attention}wife{} and he said his {C:attention}dick{} was",
                         "{C:attention}THIS BIG{} and I said 'That's {C:clubs}disgusting{}.' so I'm",
                         "making a call-out post on my {C:blue}Twitter dot com{}.",
-                        "{X:red}Shadow{} {X:red}the{} {X:red}Hedgehog{} you got a {s:0.6}small{} {C:attention}dick{}, it's",
+                        "{B:1}Shadow the Hedgehog{} you got a {s:0.6}small{} {C:attention}dick{}, it's",
                         "the size of this {C:attention}walnut{} except way {s:0.6}smaller,",
                         "and guess what? Here's what my {s:0.8}dong{} looks like.",
                         "That's right baby, all points, no quills, no",

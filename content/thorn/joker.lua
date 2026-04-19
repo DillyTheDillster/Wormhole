@@ -224,7 +224,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         local loc = {}
 	    local quip = {}
-	    localize{type = "descriptions", key = "thorn_piss_rant", set = "Joker", default_col = G.C.UI.TEXT_DARK, nodes = loc, vars = {}, scale = 0.7}
+	    localize{type = "descriptions", key = "thorn_piss_rant", set = "Joker", default_col = G.C.UI.TEXT_DARK, nodes = loc, vars = {colours = {G.C.RED}}, scale = 0.7}
 	    quip = {transparent_multiline_text(loc)}
         return { vars = { localize(card.ability.extra.suit_old, 'suits_plural'), localize(card.ability.extra.suit_new, 'suits_plural'), card.ability.extra.chips }, main_end = {
             {n=G.UIT.C, config = {align = "cm", minh = 1, minw = 5, r = 0.3, padding = 0.07, colour = G.C.JOKER_GREY, shadow = true}, nodes={
