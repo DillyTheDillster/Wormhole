@@ -183,10 +183,10 @@ return {
 			v_worm_polarskull_gravitational_slingshot = {
 				name = "Gravitational Slingshot",
 				text = {
-					"The current {C:attention}active {C:polarskull_rocket}Rocket{} card",
-					"lasts for {C:attention}+1{} extra round each",
-					"time you play the {C:planet}Planet{} card",
-					"for the same hand",
+					"{C:attention}Active {C:polarskull_rocket}Rocket{} cards",
+					"last for {C:attention}+1{} extra round each",
+					"time you use the {C:planet}Planet{} card",
+					"for their related hands",
 				},
 			},
 			v_worm_polarskull_prepetual_motion_machine = {
