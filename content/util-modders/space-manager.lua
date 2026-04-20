@@ -36,7 +36,8 @@ function manager:update(dt)
             self.target = nil
             self:recalc_overlay()
         end
-        local hand = G.GAME.current_round.current_hand.handname
+        local hand = nil
+        if G.hand and G.hand.highlighted then hand = G.FUNCS.get_poker_hand_info(G.hand.highlighted) end --returns actual hand index text rather than display text
         if hand ~= self.handname then
             self.targetHand = hand
         end
