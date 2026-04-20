@@ -23,7 +23,7 @@ SMODS.Joker {
 	end,
 	calculate = function(self, card, context)
 		if context.joker_main and
-			G.GAME.hands[context.scoring_name].level > card.ability.extra.level then
+			G.GAME.hands[context.scoring_name].level >= card.ability.extra.level then
 			return {
 				x_mult = card.ability.extra.level
 			}
