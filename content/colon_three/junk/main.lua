@@ -134,7 +134,8 @@ SMODS.DrawStep {
         if edition then
             for k, v in pairs(G.P_CENTER_POOLS.Edition) do
                 if edition[v.key:sub(3)] and v.shader then
-                    if type(v.draw) == 'function' then
+                    --if type(v.draw) == 'function' then
+                    if not v.shader then
                         v:draw(self, layer)
                     else
                         if self.children.front then
