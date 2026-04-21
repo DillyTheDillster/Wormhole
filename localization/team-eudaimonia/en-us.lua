@@ -202,7 +202,7 @@ return {
                 name = "Cyalume Saber",
                 text = {
                     "{C:green}#1# in #2#{} chance to add {C:chips}+#3#{}",
-                    "Chips to a {C:chips}+Chips{} operation"
+                    "Chips to any source of {C:chips}+Chips{}"
                 },
             },
         },
@@ -349,6 +349,8 @@ return {
                 b_euda_fate_cards = "Fate Cards",
                 k_euda_avadon_pack = "Avadon Pack",
                 k_worm_euda_lunarcheese_message = "Cheesy!",
+
+                ph_LittleLight = "Saved by Little Light"
             },
     }
 }

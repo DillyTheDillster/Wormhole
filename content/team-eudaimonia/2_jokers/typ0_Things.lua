@@ -229,7 +229,7 @@ SMODS.Joker {
                 }))
                 return {
                     message = localize('k_saved_ex'),
-                    saved = 'ph_mr_bones',
+                    saved = 'ph_LittleLight',
                     colour = G.C.RED
                 }
             end
