@@ -73,7 +73,7 @@ else
         if scored_card and scored_card.config and scored_card.config.center then
             is_demicolon = (scored_card.config.center.key == "j_cry_demicolon")
         end
-        if key and amount and key ~= 'MDJ_key' and key ~= 'MDJ_amount' and not effect.no_alter then
+        if key and amount and key ~= 'MDJ_key' and key ~= 'MDJ_amount' and not effect.no_alter and key ~= "numerator" then --no_alter is not found anywhere in any files?
             local alter = SMODS.calculate_context({MDJ_mod_key_and_amount = true, MDJ_amount = amount, MDJ_key = key, demicolon_racism = is_demicolon})
             key = (alter and alter.MDJ_key) or key
             amount = (alter and alter.MDJ_amount) or amount
