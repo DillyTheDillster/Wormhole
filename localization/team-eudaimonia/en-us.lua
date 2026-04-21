@@ -201,7 +201,7 @@ return {
             j_worm_euda_csaber = {
                 name = "Cyalume Saber",
                 text = {
-                    "{C:green}#1# in #2#{} chance to add {C:chips}+60{}",
+                    "{C:green}#1# in #2#{} chance to add {C:chips}+#3#{}",
                     "Chips to a {C:chips}+Chips{} operation"
                 },
             },

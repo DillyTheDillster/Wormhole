@@ -119,7 +119,7 @@ return {
             j_worm_riverboat_threeseven = {
                 name = "NGC 2169",
                 text = {
-                    "Played {C:attention}3{}s and {C:attention}7{}s give",
+                    "Each played {C:attention}3{} or {C:attention}7{} gives",
                     "{C:mult}+#1#{} Mult and {C:chips}+#2#{} Chips",
                     "when scored"
                 }
