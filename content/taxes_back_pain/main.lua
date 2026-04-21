@@ -684,7 +684,13 @@ Wormhole.tbp.Module({
             Wormhole.tbp.change_durability(card, self.slot, -1)
             return {
                 func = function()
-                    local _hand = pseudorandom_element(G.handlist, pseudoseed('tbp_nebula_core'))
+                    local visible_hands = {}
+                    for _, hand in ipairs(G.handlist) do
+                        if SMODS.is_poker_hand_visible(hand) then
+                            visible_hands[#visible_hands + 1] = hand
+                        end
+                    end
+                    local _hand = pseudorandom_element(visible_hands, pseudoseed('tbp_nebula_core'))
                     SMODS.smart_level_up_hand(card, _hand, nil, module.amount)
                 end
             }
@@ -1055,27 +1061,29 @@ Wormhole.tbp.Module({
     module_pos = { x = 1, y = 5},
 	config = {
 		extra = {
-            xmult_gain = 1.5,
+            xmult_gain = 0.75,
             current_xmult = 1
         },
     },
 	loc_vars = function(self, info_queue, module, card)
-		local xmult_gain = module.xmult_gain or (module.ability and module.ability.extra and module.ability.extra.xmult_gain) or 1.5
+		local xmult_gain = module.xmult_gain or (module.ability and module.ability.extra and module.ability.extra.xmult_gain) or 0.75
 		local current_xmult = module.current_xmult or (module.ability and module.ability.extra and module.ability.extra.current_xmult) or 1
 		return { vars = { xmult_gain, current_xmult } }
     end,
     module_calculate = function(self, module, context, card)
-        module.xmult_gain = module.xmult_gain or 1.5
+        module.xmult_gain = module.xmult_gain or 0.75
         module.current_xmult = module.current_xmult or 1
 
         if context.skip_blind then
-            Wormhole.tbp.change_durability(card, self.slot, -1)
             module.current_xmult = module.current_xmult + module.xmult_gain
             return {
                 message = localize{type='variable', key='a_xmult', vars={module.current_xmult}},
                 colour = G.C.MULT,
                 card = card
             }
+        end
+        if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
+            Wormhole.tbp.change_durability(card, self.slot, -1)
         end
         if context.joker_main and module.current_xmult and module.current_xmult > 1 then
             return {
