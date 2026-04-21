@@ -119,7 +119,7 @@ return {
                     text = {
                         "Gains {C:white,X:mult}X#1#{} Mult per",
                         "percent of {C:spades}Dark Suits{}",
-                        "in deck above {C:attention}#3#%{}",
+                        "in {C:attention}full deck{} above {C:attention}#3#%{}",
                         "{C:inactive}(Currently: {C:white,X:mult}X#2#{}{C:inactive} Mult, {C:attention}#4#%{}{C:inactive})"
                     }
                 },
@@ -128,7 +128,7 @@ return {
                     text = {
                         "Gains {C:white,X:mult}X#1#{} Mult per",
                         "percent of {C:spades}Dark Suits{}",
-                        "in deck above {C:attention}#3#%{}",
+                        "in {C:attention}full deck{} above {C:attention}#3#%{}",
                         "{C:inactive}(Currently: {C:white,X:mult}X#2#{}{C:inactive} Mult)"
                     }
                 },
