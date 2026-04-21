@@ -80,10 +80,10 @@ return {
                         "each of the following:"
                     },
                     {
-                        "{C:money}+#3#$",
+                        "{C:money}+$#3#",
                         "{C:blue}+#4#{} Hand",
                         "{X:mult,C:white}X#5#{} Mult",
-                        "{C:attention}Retrigger{} a card #6# time",
+                        "{C:attention}Retrigger{} the {C:attention}first{} scored card",
                         "{C:inactive,s:0.8}Multiple can activate at the same time."
                     }
                 }
