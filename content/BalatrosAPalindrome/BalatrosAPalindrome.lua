@@ -172,6 +172,9 @@ SMODS.Consumable {
 	atlas = 'Palindrome',
 	pos = { x = 0, y = 0 },
 	config = { hand_type = "worm_bap_void" },
+	in_pool = function(self, args)
+		return SMODS.is_poker_hand_visible("worm_bap_void")
+	end,
 	loc_vars = function(self, info_queue, card)
 		if not SMODS.is_poker_hand_visible("worm_bap_void") then
 			return {
