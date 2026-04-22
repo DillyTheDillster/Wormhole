@@ -137,7 +137,6 @@ local function roll_new_rock_target()
 			"shop_jokers",
 			"shop_boosters",
 			"shop_vouchers",
-			"title",
 			"screenswipe",
 		}
 		result = pseudorandom_element(targets, "worm_quantum_rock" .. os.time())
@@ -205,8 +204,6 @@ local function spawn_new_rock(protect, whitelist)
 		if simple_create(G.shop_vouchers, true, true) and G.shop_vouchers.cards then
 			G.shop_vouchers.config.card_limit = #G.shop_vouchers.cards
 		end
-	elseif target == "title" and G.title_top then
-		simple_create(G.title_top, 2)
 	end
 end
 local function destroy_rock(delay, no_replace, whitelist)
