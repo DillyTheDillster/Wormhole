@@ -8,7 +8,7 @@ SMODS.Joker {
     cost = 8,
     atlas = 'VVjokers',
     pos = {x = 0, y = 0},
-    ppu_team = { "VV" },
+    ppu_team = { "Violent Violets" },
     ppu_artist = { "Gud" },
     ppu_coder = { "FireIce" },
     attributes = {"xmult", "rank", "three", "space"},

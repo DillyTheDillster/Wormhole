@@ -121,6 +121,7 @@ return {
 			bl_worm_heatdeath = {
 				name = "Heat Death",
 				text = {
+					"Defeat the blind in",
 					"{E:worm_vegas_timer}#1#{}"
 				}
 			}

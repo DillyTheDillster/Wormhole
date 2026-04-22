@@ -9,7 +9,9 @@ SMODS.Joker {
     cost = 10,
     config = {
         extra = {
-            x_mult = 2.25
+            x_mult = 2.25,
+            prob = 1,
+            odds = 3
         }
     },
     ppu_team = { "Violent Violets" },
@@ -19,6 +21,7 @@ SMODS.Joker {
     pos = {x = 0, y = 2},
     blueprint_compat = false,
     loc_vars = function(self, info_queue, card)
+        local num, denom = SMODS.get_probability_vars(card, card.ability.extra.prob, card.ability.extra.odds)
         return {
             vars = {
                 card.ability.extra.x_mult,

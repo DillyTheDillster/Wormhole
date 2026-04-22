@@ -49,9 +49,10 @@ return {
                 }
             },
             j_worm_sttgl = {
-            name = "Super Tengen Toppa Gurren Lagann",
+            name = {"Super Tengen Toppa", "Gurren Lagann"},
             text = {
-                {"Gives the current {C:chips}Chips{} and {C:mult}Mult{}",
+                {"Gives the current",
+                "{C:chips}Chips{} and {C:mult}Mult{}",
                 "of a {C:attention}Straight"},
                 {"{C:white,X:chips,s:1.5}#3##1#{}{C:red,s:1.5} X {C:white,X:mult,s:1.5}#2##3#{}"}
                 }
@@ -77,8 +78,6 @@ return {
             text = {
                 "This Joker gains {C:white,X:chips}X#2#{} chips",
                 "when {C:tarot}The Moon{} is used",
-                "Using {C:tarot}The Moon{} increases this",
-                "Joker's chips by {C:white,X:dark_edition}+X#2#",
                 "{C:inactive}(Currently: {C:white,X:chips}X#1#{C:inactive})",
                 }
             },
@@ -98,7 +97,8 @@ return {
                 name = "Space Cadet",
                 text = {
                     {
-                        "{C:green}1 in 3 chance{} to give {X:mult,C:white}X2.25{} Mult per card"
+                        "{C:green}1 in 3{} chance to",
+                        "give {X:mult,C:white}X2.25{} Mult per card"
                     }
                 }
             }
