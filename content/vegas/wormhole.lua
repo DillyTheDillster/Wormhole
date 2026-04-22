@@ -856,20 +856,18 @@ local TIMERTIME = 2*60 --for DynaTextEffect to read, set to HeatDeath.config.ext
 
 SMODS.DynaTextEffect {
     key = "vegas_timer",
-    func = function (self, index, letter)
+    func = function (self, index, letter)		
 		local minutes = math.floor(TIMERTIME/60)
 		local seconds = TIMERTIME - minutes*60
-		if TIMERTIME > 60 then 
-			letter.colour = G.C.WHITE 
-		else
-			letter.colour = G.C.RED
-		end
+		letter.colour = G.C.RED
 		if index == 1 then
 			letter.letter:set(tostring(minutes))
+		elseif index == 2 then
+			letter.letter:set(":")
 		elseif index == 3 then
 			letter.letter:set(tostring(math.floor(seconds/10)))
 		elseif index == 4 then
-			letter.letter:set(tostring(seconds%10)) 
+			letter.letter:set(tostring(seconds%10))
 		end
     end
 }
@@ -1245,7 +1243,6 @@ hd = SMODS.Blind{ --unfortunately isn't perfect when returning from save, but sh
 		adjust_time(self)
 		local minutes = math.floor(self.config.extra.current/60)
 		local seconds = self.config.extra.current - minutes*60
-		
 
 		if self.config.timing == false and not G.OVERLAY_MENU then
 			TIMERTIME = self.config.extra.current
@@ -1254,7 +1251,9 @@ hd = SMODS.Blind{ --unfortunately isn't perfect when returning from save, but sh
 			heatdeath_timer(self)
 		end
 
-		return { vars = { minutes, string.format("%02d", seconds), colours = {HEX("73fdff")} }}
+		time_string = string.format("%d:%02d", minutes, seconds)
+
+		return { vars = { time_string }}
 	end,
 	get_loc_debuff_text = function(self)
 		if self.config.timing == false and self.config.game_over_override == false then
@@ -1274,7 +1273,9 @@ hd = SMODS.Blind{ --unfortunately isn't perfect when returning from save, but sh
 		adjust_time(self)
 		local minutes = math.floor(self.config.extra.current/60)
 		local seconds = self.config.extra.current - minutes*60
-		return { vars = { minutes, string.format("%02d", seconds), colours = {HEX("73fdff")} }}
+
+		time_string = string.format("%d:%02d", minutes, seconds)
+		return { vars = {time_string}}
 	end,
 	atlas = "vegas_blinds",
 	pos = {x = 0, y = 1},
@@ -1411,6 +1412,10 @@ SMODS.Consumable {
     ppu_coder = {"Ben Roffey"},
     ppu_artist = {"Ben Roffey"},
     loc_vars = function(self, info_queue, card)
+		info_queue[#info_queue + 1] = {key = "bl_worm_heatdeath", set = "Blind", 
+		vars =	G.P_BLINDS["bl_worm_heatdeath"].collection_loc_vars(G.P_BLINDS["bl_worm_heatdeath"]).vars or
+				G.P_BLINDS["bl_worm_heatdeath"].vars
+		}
         return { vars = { card.ability.xmult, card.ability.max_highlighted } }
     end,
 	select_card = "consumeables",
