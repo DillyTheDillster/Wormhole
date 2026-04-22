@@ -187,7 +187,7 @@ local function spawn_new_rock(protect, whitelist)
 		end
 		return true
 	end
-	if target == "hand" and G.hand and G.STATE == G.STATES.SELECTING_HAND then
+	if target == "hand" and G.hand and G.STATE == G.STATES.SELECTING_HAND and G.hand.cards[1] then
 		simple_create(G.hand, true)
 	elseif target == "play" and G.play and G.STATE == G.STATES.HAND_PLAYED then
 		simple_create(G.play)
