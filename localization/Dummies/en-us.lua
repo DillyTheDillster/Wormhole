@@ -198,7 +198,7 @@ return {    -- yo it's GHOSTSALT here look at me TYPING before i SUBMIT THIS THI
             bl_worm_dum_dummy_blind = {
                 name = "Test Flight",
                 text = {
-                    "You can't lose to this blind.",
+                    "You can't lose to this Blind.",
                     "Earn {C:attention}rewards{} based",
                     "on how well you score.",
                     "{s:0.8,C:worm_dum_brown}Let's see if you can",

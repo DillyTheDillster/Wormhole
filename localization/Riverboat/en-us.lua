@@ -138,7 +138,7 @@ return {
                 name = "Roche Limit",
                 text = {
                     "If final score is over", 
-                    "{C:attention}#1#%{} of {C:purple}Blind Requirement{},",
+                    "{C:attention}#1#%{} of {C:blind}Blind Requirement{},",
                     "{C:red}destroy{} a held {C:planet}Planet{} and add",
                     "its {C:chips}Chips{} and {C:mult}Mult{} to the winning hand"
                 }

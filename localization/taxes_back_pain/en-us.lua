@@ -436,7 +436,7 @@ local descriptions = {
                 'Gain {X:mult,C:white}X#1#{} Mult',
                 'when skipping a {C:attention}Blind',
                 '{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive})',
-                '{C:inactive,s:0.8}(Depletes when defeating a blind)'
+                '{C:inactive,s:0.8}(Depletes when defeating a Blind)'
             }
         },
         temporal_jump = {
@@ -444,7 +444,7 @@ local descriptions = {
             text = {
                 'Get {C:attention}#1#{} random {C:attention}Tags',
                 'when skipping a {C:attention}Blind',
-                '{C:inactive,s:0.8}(Depletes when skipping a blind)'
+                '{C:inactive,s:0.8}(Depletes when skipping a Blind)'
             }
         },
         repeater = {

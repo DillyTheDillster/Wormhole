@@ -27,7 +27,7 @@ local CONSTELLATIONS = {
 			"Set {C:attention}Boss Blind{} to",
 			"{C:attention}1{} of {C:attention}2{} choices",
 			"Reroll choices up to {C:attention}#1#{} times",
-			"{C:inactive}Choices may include blinds{}",
+			"{C:inactive}Choices may include Blinds{}",
 			"{C:inactive}that cannot usually appear{}",
 		}
 	},
@@ -325,7 +325,7 @@ local Other = {
 			'Create a tier {C:attention}2{}',
 			'{C:worm_tlr_constellation}Constellation{} when scored',
 			'if chips scored exceeds',
-			'{C:attention}#1#%{} of {C:purple}Blind Requirement',
+			'{C:attention}#1#%{} of {C:blind}Blind Requirement',
 			'{C:inactive}(Must have room)'
 		}
 	},

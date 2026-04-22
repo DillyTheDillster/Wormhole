@@ -55,7 +55,7 @@ return {
                 },
                 text = {
                     "Played hands this run",
-                    "add 20% to blind size"
+                    "add {C:blind}20%{} to Blind Size"
                 }
             }
         },
@@ -185,7 +185,7 @@ return {
                     "{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive} Mult)",
                 },{
                     "Prevents {C:red}Death{} if chips scored are",
-                    "at least {C:attention}25%{} of {C:purple}Blind Requirement{},",
+                    "at least {C:attention}25%{} of {C:blind}Blind Requirement{},",
                     "then {C:red,E:2}self destructs{}"
                 }},
 
