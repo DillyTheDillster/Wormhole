@@ -115,17 +115,13 @@ return {
 				name = "White Hole",
 				text = {
 					"Decrease level of {C:red}all{}",
-					"poker hands by 1 when played",
-					"{s:0.8}Created by team {s:0.8,V:1}People Found In Vegas{}",
-					"{s:0.8}Code & Art by {s:0.8,C:chips}Ben Roffey{}"
+					"poker hands by 1 when played"
 				}
 			},
 			bl_worm_heatdeath = {
 				name = "Heat Death",
 				text = {
-					"{E:worm_vegas_timer}#1#:#2#",
-					"{s:0.8}Created by team {s:0.8,V:1}People Found In Vegas{}",
-					"{s:0.8}Code & Art by {s:0.8,C:chips}Ben Roffey{}"
+					"{E:worm_vegas_timer}#1#{}"
 				}
 			}
 		},
