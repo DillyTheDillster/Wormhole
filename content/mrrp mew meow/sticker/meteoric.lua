@@ -66,4 +66,7 @@ SMODS.Sticker{
                 { mult = 0, chips = 0, handname = '', level = '' })
         end
     end,
+    should_apply = function(self, card, center, area, bypass_roll)
+        return area == G.shop_jokers and SMODS.Sticker.should_apply(self, card, center, area, bypass_roll)
+    end
 }
