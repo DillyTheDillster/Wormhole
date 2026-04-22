@@ -4,7 +4,7 @@ SMODS.Joker { -- :3
     cost = 30,
     config = {
         extra = {
-            multi = 1
+            multi = 0
         }
     },
     atlas = 'VVjokers',

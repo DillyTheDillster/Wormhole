@@ -1,22 +1,43 @@
 return {
     descriptions = {
         PotatoPatch = {
-            PotatoPatchTeam_VV = { name =  "Violent Violets" },
+            VV = { name =  "Violent Violets" },
             PotatoPatchDev_FireIce = {
                 name = "FireIce",
-                text = { "not done yet" } -- TO BE REPLACED LATER WITH AN ACTUAL DESCRIPTION
+                text = {
+                        { 
+                            "the power of {s:1.5,C:dark_edition,E:1}12 gay cats{}",
+                            "may or may not have been used" 
+                        }
+                },
             },
             PotatoPatchDev_Gud = {
                 name = "Gup",
-                text = { "not done yet" } -- TO BE REPLACED LATER WITH AN ACTUAL DESCRIPTION
+                text = {
+                        { 
+                            "meowmeowmeowmeowmeowmeowmeowmeow",
+                            "meowmeowmeowmeowmeowmeowmeowmeow",
+                            "meowmeowmeowmeowmeowmeowmeowmeow",
+                            "meowmeowmeowmeowmeowmeowmeowmeow"
+                            
+                        }
             },
+        },
             PotatoPatchDev_Iso = {
                 name = "Isotypical",
-                text = { "not done yet" } -- TO BE REPLACED LATER WITH AN ACTUAL DESCRIPTION
+                text = {
+                        { 
+                            "{C:inactive,E:1}Developer has not left a quote..." 
+                        }
+            },
             },
             PotatoPatchDev_FirstTry = {
                 name = "FirstTry",
-                text = { "not done yet" } -- TO BE REPLACED LATER WITH AN ACTUAL DESCRIPTION
+                text = {
+                        { 
+                            "Tried too hard, even on vacation" 
+                        }
+            },
             },
         },
         Joker = {
@@ -30,10 +51,9 @@ return {
             j_worm_sttgl = {
             name = "Super Tengen Toppa Gurren Lagann",
             text = {
-                {"Creates {C:attention}#3#{} copies of",
-                "used non-{C:dark_edition}Negative{} {C:planet}Planet{} cards"},
-                {"{C:planet}Planet{} cards have a {C:green}#1# in #2#{} chance",
-                "to be {C:dark_edition}Negative{} when duplicated"}
+                {"Gives the current {C:chips}Chips{} and {C:mult}Mult{}",
+                "of a {C:attention}Straight"},
+                {"{C:white,X:chips,s:1.5}#3##1#{}{C:red,s:1.5} X {C:white,X:mult,s:1.5}#2##3#{}"}
                 }
             },
             j_worm_fraudthird = {
@@ -41,7 +61,7 @@ return {
                 'DISINTEGRATION LOOP'
             },
             text = {
-                "{X:mult,C:white}X8{} Mult for every scored {C:attention}3{}"
+                "{X:mult,C:white}X#1#{} Mult for every scored {C:attention}3{} and {C:attention}8{}"
                 }
             },
             j_worm_cking = {
@@ -57,6 +77,8 @@ return {
             text = {
                 "This Joker gains {C:white,X:chips}X#2#{} chips",
                 "when {C:tarot}The Moon{} is used",
+                "Using {C:tarot}The Moon{} increases this",
+                "Joker's chips by {C:white,X:dark_edition}+X#2#",
                 "{C:inactive}(Currently: {C:white,X:chips}X#1#{C:inactive})",
                 }
             },
@@ -76,15 +98,7 @@ return {
                 name = "Space Cadet",
                 text = {
                     {
-                        "{C:green}#1# in #2#{} chance to do",
-                        "each of the following:"
-                    },
-                    {
-                        "{C:money}+$#3#",
-                        "{C:blue}+#4#{} Hand",
-                        "{X:mult,C:white}X#5#{} Mult",
-                        "{C:attention}Retrigger{} the {C:attention}first{} scored card",
-                        "{C:inactive,s:0.8}Multiple can activate at the same time."
+                        "{C:green}1 in 3 chance{} to give {X:mult,C:white}X2.25{} Mult per card"
                     }
                 }
             }
