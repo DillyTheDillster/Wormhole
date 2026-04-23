@@ -74,20 +74,22 @@ SMODS.Joker {
   calculate = function(self, card, context)
     if context.blueprint then return end
 
-    if context.end_of_round and context.main_eval and G.GAME.blind.boss then
+    if context.end_of_round and context.main_eval and G.GAME.blind.boss 
+    and Wormhole.JR_UTILS.get_satellite(G.GAME.last_hand_played) 
+    and #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
+      G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
+      G.E_MANAGER:add_event(Event({
+          func = function()
+              SMODS.add_card { key = "sat_worm_" .. Wormhole.JR_UTILS.get_satellite(G.GAME.last_hand_played), area = G.consumeables }
+              G.GAME.consumeable_buffer = 0
+              return true;
+          end
+      }))
       return {
         message = localize('worm_jr_plus_satellite'),
         -- For some reason our pink looks extremely bright when used as the background for a message so we use legendary here since it looks similar enough
-        colour = G.C.RARITY.Legendary,
-        func = function()
-          G.E_MANAGER:add_event(Event {
-            func = function()
-              SMODS.add_card { key = "sat_worm_" .. Wormhole.JR_UTILS.get_satellite(G.GAME.jr.curr_hand), area = G.consumeables }
-
-              return true
-            end
-          })
-        end
+        --colour = G.C.RARITY.Legendary,
+        colour = G.C.SECONDARY_SET.worm_jr_satellite, -- i think this is the table you're looking for
       }
     end
   end,
@@ -146,18 +148,24 @@ SMODS.Joker {
 
       if card.ability.extra.counter == card.ability.extra.req then
         card.ability.extra.counter = 0
-        return {
-          message = localize('worm_jr_plus_satellite'),
-          func = function()
-            G.E_MANAGER:add_event(Event {
+        
+        if #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
+          G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
+          G.E_MANAGER:add_event(Event({
               func = function()
-                SMODS.add_card { set = "worm_jr_satellite", area = G.consumeables }
-                return true
+                  SMODS.add_card { set = "worm_jr_satellite", area = G.consumeables }
+                  G.GAME.consumeable_buffer = 0
+                  return true;
               end
-            })
-          end
-        }
+          }))
+          return {
+            message = localize('worm_jr_plus_satellite'),
+            colour = G.C.SECONDARY_SET.worm_jr_satellite,
+          }
+        end
+
       end
+
     end
   end,
   ppu_coder = { 'DowFrin' },
@@ -185,18 +193,16 @@ SMODS.Joker {
         if v.ability.set == 'Planet' and v.ability.consumeable.hand_type == context.scoring_name then
           if not Wormhole.JR_UTILS.table_contains(card.ability.extra.targets, v) then -- this is for blueprint compatibility
             card.ability.extra.targets[#card.ability.extra.targets+1] = v
+            SMODS.destroy_cards(v)
+            G.E_MANAGER:add_event(Event({
+              func = function()
+                SMODS.add_card { key = "sat_worm_" .. Wormhole.JR_UTILS.get_satellite(G.GAME.jr.curr_hand), area = G.consumeables }
+                  return true;
+              end
+            }))
             return {
               message = localize('worm_jr_plus_satellite'),
-              colour = G.C.RARITY.Legendary,
-              func = function()
-                SMODS.destroy_cards(v)
-                G.E_MANAGER:add_event(Event {
-                  func = function()
-                    SMODS.add_card { key = "sat_worm_" .. Wormhole.JR_UTILS.get_satellite(G.GAME.jr.curr_hand), area = G.consumeables }
-                    return true
-                  end
-                })
-              end
+              colour = G.C.SECONDARY_SET.worm_jr_satellite,
             }
           end
         end
