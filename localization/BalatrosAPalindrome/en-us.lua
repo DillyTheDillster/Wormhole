@@ -33,7 +33,8 @@ return {
                 name = 'The Abyss',
                 text = {
                     "Gives {C:money}$#1#{} and",
-                    "creates {C:attention}#2#{} random {T:e_worm_bap_void}Void cards{}",
+                    "creates {C:attention}#2#{} random cards",
+                    "with {T:e_worm_bap_void}Void{} edition",
                 }
             }
         },

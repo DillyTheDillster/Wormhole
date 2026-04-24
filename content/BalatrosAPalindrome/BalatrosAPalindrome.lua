@@ -87,6 +87,7 @@ SMODS.Consumable {
 	pos = { x = 2, y = 0 },
 	config = { extra = { money = 15, cards = 5 } },
 	loc_vars = function(self, info_queue, card)
+		info_queue[#info_queue + 1] = G.P_CENTERS.e_worm_bap_void
 		return { vars = { card.ability.extra.money, card.ability.extra.cards } }
 	end,
 	use = function(self, card, area, copier)
