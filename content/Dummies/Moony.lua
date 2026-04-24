@@ -103,7 +103,6 @@ SMODS.Consumable {
 }
 
 G.FUNCS.worm_run_moony_menu = function(amount)
-    G.SETTINGS.paused = true
     G.FUNCS.overlay_menu {
         definition = worm_create_moony_menu(amount)
     }
@@ -122,6 +121,7 @@ function worm_create_moony_menu(amount)
     -- Get randomly selected IDs:
     local list_ids = SEMBY_ranbinary_index(#poker_hands, (amount or 2), 'MOONY')
 
+    G.SETTINGS.paused = true
     -- Build UI-Tree
     local ui_buttons = {}
     for i = 1, #list_ids do
