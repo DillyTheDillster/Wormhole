@@ -212,7 +212,7 @@ for i, r in ipairs(ranks) do
 	config = {
 	    extra = {
 		mult = mult[i],
-		rounds = 3,
+		rounds = 4,
 	    },
 	},
 	loc_vars = function(self, info_queue, card)
@@ -292,7 +292,7 @@ for i, r in ipairs(ranks) do
 	config = {
 	    extra = {
 		money = money[i],
-		rounds = 3,
+		rounds = 4,
 	    },
 	},
 	loc_vars = function(self, info_queue, card)
