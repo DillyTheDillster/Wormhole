@@ -252,7 +252,7 @@ for i, r in ipairs(ranks) do
 	config = {
 	    extra = {
 		chips = chips[i],
-		rounds = 3,
+		rounds = 4,
 	    },
 	},
 	loc_vars = function(self, info_queue, card)
