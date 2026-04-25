@@ -56,7 +56,6 @@ SMODS.Voucher {
   config = {},
   unlocked = true,
   discovered = false,
-  --TODO: add credits
   requires = { 'v_worm_jr_launch_pad' },
 
   calculate = function(self, card, context)

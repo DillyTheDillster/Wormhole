@@ -26,7 +26,7 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        if context.using_consumeable and context.consumeable.ability.set == "Planet" and G.GAME.blind.in_blind then
+        if context.using_consumeable and context.consumeable.ability.set == "Planet" and context.consumeable.ability.hand_type and G.GAME.blind.in_blind then
             local hand_chips, hand_mult = Wormhole.Riverboat.level_params_for_planet(context.consumeable)
 
             SMODS.calculate_effect({ score = card.ability.extra.score_mult * hand_chips * hand_mult }, card)
