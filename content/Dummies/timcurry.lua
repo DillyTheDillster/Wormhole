@@ -26,7 +26,7 @@ SMODS.Joker({
 	end,
 	unlocked = true,
 	in_pool = function()
-		return not G.GAME.commandandconquer, {allow_duplicates = false}
+		return false
 	end,
 	rarity = 3,
 	atlas = 'DummiesTCJoker',
@@ -68,6 +68,11 @@ SMODS.Joker({
 	end,
 	add_to_deck = function(self, card, from_debuff)
 		G.GAME.commandandconquer = true
+	end,
+	remove_from_deck = function(self, card, from_debuff)
+		if not next(SMODS.find_card('j_worm_dum_timcurry')) then
+			G.GAME.commandandconquer = false
+		end
 	end,
 	display_size = { w = 71 * 1.82, h = 95 },
 	pixel_size = { w = 71, h = 95 },
