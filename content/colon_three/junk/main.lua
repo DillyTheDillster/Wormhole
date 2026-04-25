@@ -30,7 +30,7 @@ function Game:start_run(args)
             retriggers = 1,
             x_hand_stats = 1.5,
             x_mult = 0,
-            money = 0,
+            -- money = 0,
         }
     end
 end
@@ -68,7 +68,7 @@ SMODS.Enhancement {
                 (G.GAME.worm_c3_junk_stats or {}).retriggers or 1,
                 ((G.GAME.worm_c3_junk_stats or {}).retriggers or 1) == 1 and "" or "s",
                 ((G.GAME.worm_c3_junk_stats or {}).x_mult or 0) * card.ability.extra.junk_mult + 1,
-                ((G.GAME.worm_c3_junk_stats or {}).money or 0) * card.ability.extra.junk_mult,
+                -- ((G.GAME.worm_c3_junk_stats or {}).money or 0) * card.ability.extra.junk_mult,
             }
         }
     end,
@@ -87,9 +87,9 @@ SMODS.Enhancement {
             if ((G.GAME.worm_c3_junk_stats or {}).x_mult or 0) ~= 0 then
                 rets["xmult"] = ((G.GAME.worm_c3_junk_stats or {}).x_mult or 0) * card.ability.extra.junk_mult + 1
             end
-            if ((G.GAME.worm_c3_junk_stats or {}).money or 0) ~= 0 then
-                rets["dollars"] = ((G.GAME.worm_c3_junk_stats or {}).money or 0) * card.ability.extra.junk_mult
-            end
+            -- if ((G.GAME.worm_c3_junk_stats or {}).money or 0) ~= 0 then
+            --     rets["dollars"] = ((G.GAME.worm_c3_junk_stats or {}).money or 0) * card.ability.extra.junk_mult
+            -- end
             return rets
         end
         -- if context.initial_scoring_step and context.cardarea == G.play then

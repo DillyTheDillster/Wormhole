@@ -10,7 +10,7 @@ SMODS.Consumable {
     config = {
         extra = {
             xmult_mod = 0.3,
-            dollars_mod = 1,
+            -- dollars_mod = 1,
             increase_xvals = 0.5,
         }
     },
@@ -19,7 +19,7 @@ SMODS.Consumable {
         return {
             vars = {
                 card.ability.extra.xmult_mod,
-                card.ability.extra.dollars_mod,
+                -- card.ability.extra.dollars_mod,
                 card.ability.extra.increase_xvals,
             }
         }
@@ -27,7 +27,7 @@ SMODS.Consumable {
     use = function(self, card)
         if G.GAME.worm_c3_junk_stats then
             G.GAME.worm_c3_junk_stats.x_mult = G.GAME.worm_c3_junk_stats.x_mult + card.ability.extra.xmult_mod
-            G.GAME.worm_c3_junk_stats.money = G.GAME.worm_c3_junk_stats.money + card.ability.extra.dollars_mod
+            -- G.GAME.worm_c3_junk_stats.money = G.GAME.worm_c3_junk_stats.money + card.ability.extra.dollars_mod
             G.GAME.worm_c3_junk_stats.x_hand_stats = G.GAME.worm_c3_junk_stats.x_hand_stats + card.ability.extra.increase_xvals
         end
 

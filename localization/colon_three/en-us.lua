@@ -115,7 +115,6 @@ return {
                     {
                         "{C:chips}+#1#{} Chips",
                         "{X:mult,C:white}X#5#{} Mult",
-                        "Earn {C:gold}+$#6#{}",
                         "Retrigger this",
                         "card {C:attention}#3#{} time#4#"
                     }
@@ -132,7 +131,6 @@ return {
                         "{C:chips}+#1#{} Chips",
                         "{C:mult}+#2#{} Mult",
                         "{X:mult,C:white}X#5#{} Mult",
-                        "Earn {C:gold}+$#6#{}",
                         "Retrigger this",
                         "card {C:attention}#3#{} time#4#"
                     }
@@ -266,12 +264,12 @@ return {
                         "into {C:attention}Junk Cards",
                     },
                     {
-                        "ALL current and future {C:attention}Junk Cards{}",
-                        "gain {X:mult,C:white}X#1#{} Mult and {C:gold}+$#2#{}",
+                        "ALL current and future {C:attention}Junk",
+                        "{C:attention}Cards{} gain {X:mult,C:white}X#1#{} Mult",
                     },
                     {
                         "Played hands with {C:attention}Junk Cards{}",
-                        "gain an additional {X:worm_c3_junkset,C:white}+X#3#{} multiplier",
+                        "gain an additional {X:worm_c3_junkset,C:white}+X#2#{} multiplier",
                         "to {C:chips}Chips{} and {C:mult}Mult{}"
                     }
                 }
