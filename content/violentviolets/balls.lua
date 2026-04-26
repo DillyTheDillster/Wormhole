@@ -13,7 +13,7 @@ SMODS.Joker {
     },
     ppu_team = { "Violent Violets" },
     ppu_coder = { "Iso", "FireIce" },
-    attributes = { "chance", "economy", "hands", "xmult", "retrigger", "space" },
+    attributes = { "chance", "xmult", "space" },
     atlas = 'VVjokers',
     pos = { x = 0, y = 2 },
     blueprint_compat = false,

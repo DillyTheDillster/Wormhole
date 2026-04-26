@@ -17,7 +17,7 @@ SMODS.Joker {
     ppu_team = { "Violent Violets" },
     ppu_artist = { "FirstTry" },
     ppu_coder = { "FirstTry" },
-    attributes = { "hand_type", "space" },
+    attributes = { "hand_type", "space", "level_up" },
     loc_vars = function(self, info_queue, card)
         local _handname, _played = 'High Card', -1
         for hand_key, hand in pairs(G.GAME.hands) do

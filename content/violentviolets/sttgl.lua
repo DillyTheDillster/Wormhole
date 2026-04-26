@@ -3,8 +3,8 @@ SMODS.Joker {
     atlas = 'VVjokers',
     rarity = 'worm_otherworldly',
     cost = 30,
-    pos = {x = 3, y = 0},
-    soul_pos = {x = 4, y = 0},
+    pos = { x = 3, y = 0 },
+    soul_pos = { x = 4, y = 0 },
     config = {
         extra = {
         }
@@ -12,8 +12,8 @@ SMODS.Joker {
     ppu_team = { "Violent Violets" },
     ppu_artist = { "FirstTry" },
     ppu_coder = { "FirstTry" },
-    attributes = {"generation", "editions", "planet", "chance", "space"},
-    loc_vars = function(self,info_queue,card)
+    attributes = { "chips", "mult", "space" },
+    loc_vars = function(self, info_queue, card)
         return {
             vars = {
                 G.GAME.hands["Straight"].chips,
@@ -22,12 +22,12 @@ SMODS.Joker {
             }
         }
     end,
-    calculate = function(self,card,context)
-    if context.joker_main then
-        return {
-            chips = G.GAME.hands["Straight"].chips,
-            mult = G.GAME.hands["Straight"].mult,
-        }
-    end
+    calculate = function(self, card, context)
+        if context.joker_main then
+            return {
+                chips = G.GAME.hands["Straight"].chips,
+                mult = G.GAME.hands["Straight"].mult,
+            }
+        end
     end
 }
