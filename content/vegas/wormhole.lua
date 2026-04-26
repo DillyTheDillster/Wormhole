@@ -1398,10 +1398,6 @@ SMODS.Consumable {
     ppu_coder = {"Ben Roffey"},
     ppu_artist = {"Ben Roffey"},
     loc_vars = function(self, info_queue, card)
-		info_queue[#info_queue + 1] = {key = "bl_worm_heatdeath", set = "Blind", 
-		vars =	G.P_BLINDS["bl_worm_heatdeath"].collection_loc_vars(G.P_BLINDS["bl_worm_heatdeath"]).vars or
-				G.P_BLINDS["bl_worm_heatdeath"].vars
-		}
         return { vars = { card.ability.xmult, card.ability.max_highlighted } }
     end,
 	select_card = "consumeables",
