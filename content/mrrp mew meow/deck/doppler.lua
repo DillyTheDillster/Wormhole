@@ -14,7 +14,7 @@ SMODS.Back {
         }
     end,
     calculate = function(self, back, context)
-        if context.using_consumeable and context.consumeable.ability.set == 'Planet' then
+        if context.using_consumeable and context.consumeable.ability.set == 'Planet' and context.consumeable.ability.consumeable.hand_type then
             local card = context.consumeable
             local from = G.deck and G.deck.cards[1] or G.deck or card
             local from_hand = card.ability.consumeable.hand_type
