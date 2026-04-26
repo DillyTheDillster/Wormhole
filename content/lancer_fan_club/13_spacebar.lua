@@ -80,7 +80,7 @@ SMODS.Joker {
         end
 	end,
 
-	ppu_artist = { "J8-Bit" },
+	ppu_artist = { "J8-Bit", "ellestuff.", "InvalidOS" },
 	ppu_coder = { "ellestuff.", "InvalidOS" },
 	ppu_team = { "Lancer Fan Club" },
 	
