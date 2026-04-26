@@ -56,10 +56,6 @@ SMODS.Atlas {
     px = 71, py = 95
 }
 
-SMODS.Font {
-	key = "emoji",
-	path = "NotoEmoji-Bold.ttf",
-}
 -- stupid that i have to do this
 loc_colour()
 G.ARGS.LOC_COLOURS.pure_black = HEX("000000ff")
@@ -70,6 +66,9 @@ SMODS.DynaTextEffect {
 		letter.offset.y = math.sin((G.TIMERS.REAL + index * 0.1) * 2) * 16
 	end,
 }
+
+local mf_click_count = 0
+local mf_dev_rotation = 0
 
 PotatoPatchUtils.Developer {
     name = "notmario",
@@ -84,8 +83,18 @@ PotatoPatchUtils.Developer {
     },
     text_effect = "worm_mf_credits",
     atlas = "worm_ct_credits",
-    pos = { x = 3, y = 0 }
+    pos = { x = 3, y = 0 },
+    click = function(self)
+        mf_click_count = mf_click_count + 1
+    end,
 }
+
+local lu = love.update
+function love.update(dt)
+    lu(dt)
+    local mix_fac = 0.1 ^ dt
+    mf_dev_rotation = mix_fac * (mf_dev_rotation or 0) + (1 - mix_fac) * mf_click_count * math.pi * 2
+end
 
 -- mf credits drawstep for polychrome stars
 SMODS.DrawStep {
@@ -106,6 +115,31 @@ SMODS.DrawStep {
     end,
     conditions = { vortex = false, facing = 'front' },
 }
+
+-- rotate hook
+local card_draw = Card.draw
+function Card:draw(layer, ...)
+    local should_hit = false
+    if (((self.children or {}).center or {}).atlas or {}).name == "worm_ct_credits" then
+        if self.children.center.sprite_pos.x == 3 then should_hit = true end
+    end
+
+	if should_hit then
+		self.VT.r = self.VT.r + mf_dev_rotation
+		for k, v in pairs(self.children) do
+			v.VT.r = v.VT.r + mf_dev_rotation
+		end
+	end
+
+	card_draw(self, layer, ...)
+
+	if should_hit then
+		self.VT.r = self.VT.r - mf_dev_rotation
+		for k, v in pairs(self.children) do
+			v.VT.r = v.VT.r - mf_dev_rotation
+		end
+	end
+end
 
 PotatoPatchUtils.Developer{
     name = "lordruby",

@@ -420,8 +420,8 @@ return {
                         "cards' mechanic"
                     },
                     {
-                        "{f:worm_emoji}🙂{} Hello I am John Balatro",
-                        "Please play Numbergem"
+                        "maybe play More Fluff",
+                        "{s:0.5}(Or: an Assortment of Balatro Cards of Dubious Excellence)",
                     }
                 }
             },
