@@ -805,7 +805,7 @@ Wormhole.tbp.Module({
 Wormhole.tbp.Module({
 	key = "void",
     slot = 'weapons',
-    durability = 20,
+    durability = 12,
     atlas = "tbp_module_frame",
 	pos = { x = 3, y = 1 },
     module_pos = { x = 2, y = 5},
@@ -843,7 +843,7 @@ Wormhole.tbp.Module({
     module_pos = { x = 7, y = 4},
 	config = {
 		extra = {
-			perma_bonus = 50,
+			perma_bonus = 20,
 		},
     },
 	loc_vars = function(self, info_queue, module, card)
