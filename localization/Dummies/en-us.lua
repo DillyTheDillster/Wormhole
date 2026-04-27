@@ -50,7 +50,7 @@ return {    -- yo it's GHOSTSALT here look at me TYPING before i SUBMIT THIS THI
                 name = "Star-Studded Deck",
                 text = {
                     "{C:red}-1{} {C:attention}Joker slot{}, gain",
-                    "{C:attention}+2{} slots once {C:attention}9{} unique",
+                    "{C:attention}+2 Joker slots{} once {C:attention}9{} unique",
                     "{C:planet}Planet{} cards have",
                     "been used this run"
                 }
