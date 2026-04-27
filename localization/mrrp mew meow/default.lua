@@ -82,9 +82,10 @@ descriptions={
 				"Orrery"
 			, text={
 				"When upgrading level of any",
-				"{C:attention}poker hand{}, create copies of",
-				"up to {C:tarot}#1#{}, {C:tarot}#2#{},",
-				"{C:tarot}#3#{}, and/or {C:tarot}#4#{}",
+				"{C:attention}poker hand{}, creates ",
+				"{C:tarot}#1#{}, {C:tarot}#2#{},",
+				"{C:tarot}#3#{}, and {C:tarot}#4#{}",
+				"in a random order",
 				"{C:inactive}(Must have room){}"
 			}
 		},
