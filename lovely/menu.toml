@@ -67,3 +67,29 @@ payload = '''
 Wormhole.init_custom_menu(change_context)
 '''
 match_indent = true
+
+# Credits vortex
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = '''
+local card = Card(  card_pos.x + G.ROOM.T.w/2 - G.CARD_W*card_size/2,
+                    card_pos.y + G.ROOM.T.h/2 - G.CARD_H*card_size/2,
+                    card_size*G.CARD_W, card_size*G.CARD_H, pseudorandom_element(G.P_CARDS), G.P_CENTERS.c_base)
+'''
+position = "at"
+payload = '''
+local dev = {}
+while not dev.atlas or dev.mod_id ~= 'Wormhole' do
+    dev = pseudorandom_element(PotatoPatchUtils.Developers)
+end
+
+local card = Card(  card_pos.x + G.ROOM.T.w/2 - G.CARD_W*card_size/2,
+                    card_pos.y + G.ROOM.T.h/2 - G.CARD_H*card_size/2,
+                    card_size*G.CARD_W, card_size*G.CARD_H, G.P_CARDS.empty, G.P_CENTERS.c_base)
+
+card.children.center:remove()
+card.children.center = SMODS.create_sprite(card.T.x, card.T.y, card.T.w, card.T.h, dev.atlas, dev.pos or {x = 0, y = 0}) -- Considering checking for and prioritizing soul_pos here
+card.children.center:set_role({major = card, role_type = 'Glued', draw_major = card})
+'''
+match_indent = true
