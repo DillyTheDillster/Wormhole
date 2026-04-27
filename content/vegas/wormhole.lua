@@ -1385,6 +1385,21 @@ SMODS.Consumable {
     end
 }
 
+SMODS.PokerHand{
+	key = "keplerhand",
+	chips = 4,
+	mult = 1, 
+	l_chips = 0,
+	l_mult = 0,
+	example = {},
+	visible = false,
+	evaluate = function(parts, hand)
+		return false
+	end,
+	loc_txt = {},
+	no_collection = true,
+	ignore_levels = true
+}
 SMODS.Consumable {
     key = 'kepler',
     set = 'Planet',
@@ -1394,7 +1409,7 @@ SMODS.Consumable {
  	end,
     pos = { x = 0, y = 0 },
 	discovered = true,
-    config = { xmult = 0.1, max_highlighted = 2 },
+    config = { xmult = 0.1, max_highlighted = 2, hand_type = "worm_keplerhand" },
 	ppu_team = {"People Found In Vegas"},
     ppu_coder = {"Ben Roffey"},
     ppu_artist = {"Ben Roffey"},
@@ -1448,7 +1463,8 @@ SMODS.PokerHand{
 		return false
 	end,
 	loc_txt = {},
-	no_collection = true
+	no_collection = true,
+	ignore_levels = true
 }
 SMODS.Consumable {
     key = 'gj',
@@ -1513,7 +1529,8 @@ SMODS.PokerHand{
 		return false
 	end,
 	loc_txt = {},
-	no_collection = true
+	no_collection = true,
+	ignore_levels = true
 }
 SMODS.Consumable {
     key = 'wasp',
