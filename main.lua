@@ -125,9 +125,6 @@ end
 --#endregion
 
 --#region Config
-local function qrock_callback(val)
-	WORM_JTEM.quantum_rock.enabled = val
-end
 Wormhole.config_tab = function()
 	return {
 		n = G.UIT.ROOT,
@@ -156,27 +153,6 @@ Wormhole.config_tab = function()
 								config = { align = "c", padding = 0 },
 								nodes = {
 									{ n = G.UIT.T, config = { text = localize('b_wormhole_custom_menu'), scale = 0.35, colour = G.C.UI.TEXT_LIGHT } },
-								}
-							},
-						},
-					},
-					-- Quantum rock toggle
-					{
-						n = G.UIT.R,
-						config = { align = "cm", padding = 0 },
-						nodes = {
-							{
-								n = G.UIT.C,
-								config = { align = "cl", padding = 0.05 },
-								nodes = {
-									create_toggle { col = true, label = "", scale = 0.8, w = 0, shadow = true, ref_table = Wormhole.config, ref_value = "quantum_rock", callback = qrock_callback },
-								}
-							},
-							{
-								n = G.UIT.C,
-								config = { align = "c", padding = 0 },
-								nodes = {
-									{ n = G.UIT.T, config = { text = localize('b_wormhole_quantum_rock'), scale = 0.35, colour = G.C.UI.TEXT_LIGHT } },
 								}
 							},
 						},
