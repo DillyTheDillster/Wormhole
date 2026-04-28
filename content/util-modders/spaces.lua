@@ -75,8 +75,15 @@ SMODS.Atlas {
     py = 95
 }
 
+local def_dim = {
+    left = 2,
+    top = 2,
+    right = 2,
+    bottom = 2,
+}
+
 local function newDrawSelf(self, overlay)
-    if self.FRAME.DRAW < G.FRAMES.DRAW and not G.OVERLAY_TUTORIAL then
+    if self.FRAME.DRAW < G.FRAMES.DRAW then
 	self.FRAME.DRAW = G.FRAMES.DRAW
 	local canvas = self.canvas
 	love.graphics.push("all")
@@ -90,10 +97,12 @@ local function newDrawSelf(self, overlay)
 	love.graphics.clear(0, 0, 0, 0)
 
 	local conf = self.parent.ability.extra.space_conf
+	local dim = self.parent.config.center.space_dim or def_dim
 	local shader = Wormhole.util_space_manager.manualSend(conf, scale / .75)
 
+
 	love.graphics.setShader(shader)
-	love.graphics.rectangle("fill", 2 * scale, 2 * scale, (s.atlas.px - 4) * scale, (s.atlas.py - 4) * scale)
+	love.graphics.rectangle("fill", dim.left * scale, dim.top * scale, (s.atlas.px - dim.right - dim.left) * scale, (s.atlas.py - dim.bottom - dim.top) * scale)
 	love.graphics.setShader()
 
 	love.graphics.draw(
@@ -168,17 +177,17 @@ local function initSpace(self, card)
 end
 
 local function setSprites(self, card, front)
-	if card.config.center.discovered or card.bypass_discovery_center then
-		local cs = SMODS.CanvasSprite {
-		canvasScale = 2,
-		}
-		cs.center_ref = card.children.center
-		card.children.center = cs
-		cs:set_role({major = card, role_type = 'Glued', draw_major = card})
-		cs.parent = card
-		cs.ds_ref = cs.draw_self
-		cs.draw_self = newDrawSelf
-	end
+    if card.config.center.discovered or card.bypass_discovery_center then
+	local cs = SMODS.CanvasSprite {
+	    canvasScale = 2,
+	}
+	cs.center_ref = card.children.center
+	card.children.center = cs
+	cs:set_role({major = card, role_type = 'Glued', draw_major = card})
+	cs.parent = card
+	cs.ds_ref = cs.draw_self
+	cs.draw_self = newDrawSelf
+    end
 end
 
 local function isMatch(context, card)
@@ -197,6 +206,12 @@ local function doDeplete(card)
 end
 
 local ranks = {"basic", "advanced", "pro", "luxury"}
+local dims = {
+    { left = 17, right = 9, top = 10, bottom = 9 },
+    { left = 10, right = 9, top = 10, bottom = 10 },
+    { left = 16, right = 13, top = 20, bottom = 9 },
+    { left = 17, right = 9, top = 10, bottom = 9 },
+}
 local mult = {5, 10, 20, 40}
 for i, r in ipairs(ranks) do
     SMODS.Consumable {
@@ -209,6 +224,7 @@ for i, r in ipairs(ranks) do
 	space_conf = {
 	    options = 1 + i,
 	},
+	space_dim = dims[i],
 	config = {
 	    extra = {
 		mult = mult[i],
@@ -249,6 +265,7 @@ for i, r in ipairs(ranks) do
 	space_conf = {
 	    options = 1 + i,
 	},
+	space_dim = dims[i],
 	config = {
 	    extra = {
 		chips = chips[i],
@@ -289,6 +306,7 @@ for i, r in ipairs(ranks) do
 	space_conf = {
 	    options = 1 + i,
 	},
+	space_dim = dims[i],
 	config = {
 	    extra = {
 		money = money[i],
