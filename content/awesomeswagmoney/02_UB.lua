@@ -312,7 +312,7 @@ SMODS.Consumable {
     config = {extra_slots_used = 1, extra = {copies = 3, reduction = 2}},
     loc_vars = function(self, info_queue, card)
         return {
-            vars = {card.ability.extra.copies - 1, card.ability.extra.reduction}
+            vars = {card.ability.extra.copies, card.ability.extra.reduction}
         }
     end,
     can_use = function(self, card) return #G.hand.highlighted == 1 end,

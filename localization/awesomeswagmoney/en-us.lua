@@ -138,9 +138,10 @@ return {
             c_worm_kartana = {
                 name = "Kartana",
                 text = {
-                    "{C:attention}Slice{} selected card",
-                    "to create {C:attention}#1#{} additional copies",
-                    "with their rank reduced by {C:attention}#2#",
+                    "Destroy {C:attention}1{} selected card,",
+                    "add {C:attention}#1#{} permanent copies to your deck",
+                    "with their ranks reduced by {C:attention}#2#",
+                    "and draw them to hand",
                     "{C:inactive,s:0.8}(Ranks cannot go below 2)"
                 }
             },
@@ -164,8 +165,8 @@ return {
                 name = "Guzzlord",
                 text = {
                     "Destroys {C:attention}#1#{} random cards",
-                    "in hand, levels up most",
-                    "played poker hand by {C:attention}#2#"
+                    "in hand, levels up {C:attention}most",
+                    "{C:attention}played poker hand{} by {C:attention}#2#"
                 }
             },
             c_worm_stakataka = {
@@ -178,14 +179,14 @@ return {
             c_worm_naganadel = {
                 name = "Naganadel",
                 text = {
-                    "Turn a random Joker",
+                    "Turn a random {C:attention}Joker{}",
                     "{C:dark_edition}Eternal{} and {C:dark_edition}Polychrome{}",
                 }
             },
             c_worm_poipole = {
                 name = "Poipole",
                 text = {
-                    "Turn a random Joker {C:dark_edition}Eternal{},",
+                    "Turn a random {C:attention}Joker{} {C:dark_edition}Eternal{},",
                     "then turn {C:attention}3{} random cards",
                     "held in hand {C:dark_edition}Holographic{}",
                 }
