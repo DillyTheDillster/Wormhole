@@ -16,31 +16,19 @@ SMODS.Joker({
     end,
     calculate = function(self, card, context)
         if context.joker_main and card.ability.extra.x_mult > 1 then
-            return {
-                message = localize({ type = 'variable', key = 'a_xmult', vars = { card.ability.extra.x_mult } }),
-                Xmult_mod = card.ability.extra.x_mult
-            }
+            return { xmult = card.ability.extra.x_mult }
         end
 
-        if context.end_of_round and context.main_eval and not context.blueprint then
-            if G.GAME.current_round.hands_played == 1 then
+        if context.after and not context.blueprint and G.GAME.current_round.hands_played == 0 then
+            if SMODS.last_hand_oneshot then
                 card.ability.extra.x_mult = card.ability.extra.x_mult + card.ability.extra.gain
-                return {
-                    message = 'Upgrade!',
-                    colour = G.C.RED,
-                    card = card
-                }
-            end
-        end
-
-        if context.after and not context.blueprint then
-            if G.GAME.current_round.hands_played == 1 and not G.GAME.blind.main_eval then
+                return { message = localize("k_upgrade_ex") }
+            else
                 if card.ability.extra.x_mult > 1 then
                     card.ability.extra.x_mult = 1
                     return {
-                        message = 'Reset',
-                        colour = G.C.RED,
-                        card = card
+                        message = localize("k_reset"),
+                        colour = G.C.RED
                     }
                 end
             end
