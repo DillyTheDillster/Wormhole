@@ -114,7 +114,7 @@ SMODS.Consumable{
                     message_card = card,
                     colour = G.C.RED
                 }
-            elseif any_ace_scored then
+            else
                 local remaining = card.ability.extra.aces_required - card.ability.extra.aces_scored
                 return {
                     message = remaining .. " " .. localize('k_remaining'),
