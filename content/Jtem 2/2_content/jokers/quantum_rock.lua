@@ -98,6 +98,24 @@ local convert_perma_to_bonus_vars = function(specific_vars) --card.ability has p
 	return ret
 end
 
+local get_info_for_info_queue = function(name_string) --quick fix
+	if name_string == "Bonus Card"		then return G.P_CENTERS.m_bonus end
+	if name_string == "Mult Card"		then return G.P_CENTERS.m_mult end
+	if name_string == "Wild Card"		then return G.P_CENTERS.m_wild end
+	if name_string == "Glass Card"		then return G.P_CENTERS.m_glass end
+	if name_string == "Steel Card"		then return G.P_CENTERS.m_steel end
+	if name_string == "Stone Card"		then return G.P_CENTERS.m_stone end
+	if name_string == "Gold Card"		then return G.P_CENTERS.m_gold end
+	if name_string == "Lucky Card"		then return G.P_CENTERS.m_lucky end
+	if name_string == "Strange Card"	then return G.P_CENTERS.m_worm_jtem2_strange_card end
+	if name_string == "Gravacard"		then return G.P_CENTERS.m_worm_jtem2_gravacard end
+	if name_string == "Neutron Card"	then return G.P_CENTERS.m_worm_jtem2_neutron_card end
+	if name_string == "Stardust Card"	then return G.P_CENTERS.m_worm_riverboat_stardust end
+	if name_string == "Nebulous Card"	then return G.P_CENTERS.m_worm_shrug_nebulous end
+	if name_string == "Junk"			then return G.P_CENTERS.m_worm_junk_card end
+	if name_string == "Frozen Card"		then return G.P_CENTERS.m_worm_ibu_frozen end
+end
+
 local rock = SMODS.Joker({
 	key = "jtem2_quantum_rock",
 	discovered = true,
@@ -122,6 +140,9 @@ local rock = SMODS.Joker({
 
 	
 	loc_vars = function(self, info_queue, card)
+		if card.ability.effect then
+			info_queue[#info_queue + 1] = get_info_for_info_queue(card.ability.effect)
+		end
 		return {
 			set = "Joker",
 			type = "descriptions",
@@ -202,8 +223,6 @@ local rock = SMODS.Joker({
         end
         desc_nodes.background_colour = res.background_colour
 
-		
-		
 	end,
 
 	calculate = function(self, card, context)
