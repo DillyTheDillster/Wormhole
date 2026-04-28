@@ -79,27 +79,34 @@ local card = Card(  card_pos.x + G.ROOM.T.w/2 - G.CARD_W*card_size/2,
 '''
 position = "at"
 payload = '''
-local dev = {}
-while not dev.atlas or dev.mod_id ~= 'Wormhole' do
-    dev = pseudorandom_element(PotatoPatchUtils.Developers)
-end
+local card
+if Wormhole and Wormhole.config.menu then
+    local dev = {}
+    while not dev.atlas or dev.mod_id ~= 'Wormhole' do
+        dev = pseudorandom_element(PotatoPatchUtils.Developers)
+    end
 
-local card = Card(  card_pos.x + G.ROOM.T.w/2 - G.CARD_W*card_size/2,
+    card = Card(  card_pos.x + G.ROOM.T.w/2 - G.CARD_W*card_size/2,
+                        card_pos.y + G.ROOM.T.h/2 - G.CARD_H*card_size/2,
+                        card_size*G.CARD_W, card_size*G.CARD_H, G.P_CARDS.empty, G.P_CENTERS.c_base)
+
+    card.children.center:remove()
+    card.children.center = SMODS.create_sprite(card.T.x, card.T.y, card.T.w, card.T.h, dev.atlas, dev.pos or {x = 0, y = 0})
+    card.children.center:set_role({major = card, role_type = 'Glued', draw_major = card})
+
+    -- Check for card soul
+    if dev.soul_pos then
+        card.children.front = SMODS.create_sprite(card.T.x, card.T.y, card.T.w, card.T.h, dev.atlas, dev.soul_pos)
+        card.children.front.states.hover = card.states.hover
+        card.children.front.states.click = card.states.click
+        card.children.front.states.drag = card.states.drag
+        card.children.front.states.collide.can = false
+        card.children.front:set_role({major = card, role_type = 'Glued', draw_major = card})
+    end
+else
+    card = Card(  card_pos.x + G.ROOM.T.w/2 - G.CARD_W*card_size/2,
                     card_pos.y + G.ROOM.T.h/2 - G.CARD_H*card_size/2,
-                    card_size*G.CARD_W, card_size*G.CARD_H, G.P_CARDS.empty, G.P_CENTERS.c_base)
-
-card.children.center:remove()
-card.children.center = SMODS.create_sprite(card.T.x, card.T.y, card.T.w, card.T.h, dev.atlas, dev.pos or {x = 0, y = 0})
-card.children.center:set_role({major = card, role_type = 'Glued', draw_major = card})
-
--- Check for card soul
-if dev.soul_pos then
-    card.children.front = SMODS.create_sprite(card.T.x, card.T.y, card.T.w, card.T.h, dev.atlas, dev.soul_pos)
-    card.children.front.states.hover = card.states.hover
-    card.children.front.states.click = card.states.click
-    card.children.front.states.drag = card.states.drag
-    card.children.front.states.collide.can = false
-    card.children.front:set_role({major = card, role_type = 'Glued', draw_major = card})
+                    card_size*G.CARD_W, card_size*G.CARD_H, pseudorandom_element(G.P_CARDS), G.P_CENTERS.c_base)
 end
 '''
 match_indent = true
