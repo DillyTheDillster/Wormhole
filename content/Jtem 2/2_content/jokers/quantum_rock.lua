@@ -287,7 +287,7 @@ local function roll_new_rock_target()
 	local annoying_level = G.GAME.worm_quantum_rock_spawned and 0 or 0.97
 	if WORM_JTEM.quantum_rock.force_target then
 		result = WORM_JTEM.quantum_rock.force_target
-	elseif not WORM_JTEM.quantum_rock.enabled or pseudorandom("worm_quantum_rock") < annoying_level then
+	elseif pseudorandom("worm_quantum_rock") < annoying_level then
 		result = nil
 	else
 		local targets = {
@@ -308,7 +308,7 @@ local function roll_new_rock_target()
 	return result
 end
 local function spawn_new_rock(protect, whitelist)
-	if not WORM_JTEM.quantum_rock.enabled or is_rock_present() then
+	if is_rock_present() then
 		return
 	end
 	local target = G.worm_quantum_rock_target
@@ -414,9 +414,6 @@ function Game:update(...)
 			G.GAME.used_jokers[rock.key] = nil
 		end
 		if G.GAME.worm_quantum_rock_spawned then
-			WORM_JTEM.quantum_rock.enabled = true
-		end
-		if WORM_JTEM.quantum_rock.enabled then
 			G.worm_quantum_rock_target_dt = G.worm_quantum_rock_target_dt or G.TIMERS.REAL
 			if G.TIMERS.REAL - G.worm_quantum_rock_target_dt > 0.5 then
 				roll_new_rock_target()
@@ -573,9 +570,6 @@ end
 --
 
 local function calculate_rock(context)
-	if not WORM_JTEM.quantum_rock.enabled then
-		return
-	end
 	local target = G.worm_quantum_rock_target or roll_new_rock_target()
 	local is_present = is_rock_present()
 	if target == "hand" then
