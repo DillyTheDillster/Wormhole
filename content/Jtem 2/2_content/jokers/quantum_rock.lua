@@ -13,6 +13,9 @@ SMODS.Rarity({
 	key = "jtem2_quantum",
 	default_weight = 0.03,
 	badge_colour = SMODS.Gradients["worm_jtem2_quantum"],
+	pools = {
+	    Joker = true,
+	},
 	get_weight = function(self, weight, object_type)
 		return weight
 	end,
@@ -234,7 +237,7 @@ local rock = SMODS.Joker({
 	end,
 
 	add_to_deck = function()
-		G.GAME.worm_quantum_rock_spawned = true
+	    G.GAME.worm_quantum_rock_spawned = true
 	end,
 })
 
@@ -253,7 +256,7 @@ local function emplace_and_shuffle_in_area(card, area)
 		card:remove()
 		return
 	end
-	local new_index = pseudorandom("worm_quantum_rock" .. os.time(), 1, #area.cards + 1)
+	local new_index = pseudorandom("worm_quantum_rock", 1, #area.cards + 1)
 	table.insert(area.cards, new_index, card)
 	if card.facing == "back" and area.config.type ~= "discard" and area.config.type ~= "deck" then
 		card:flip()
@@ -275,16 +278,16 @@ local function shuffle_in_area(card, area)
 			break
 		end
 	end
-	local new_index = pseudorandom("worm_quantum_rock" .. os.time(), 1, #area.cards + 1)
+	local new_index = pseudorandom("worm_quantum_rock", 1, #area.cards + 1)
 	table.insert(area.cards, new_index, card)
 	card:hard_set_T()
 end
 local function roll_new_rock_target()
 	local result
-	local annoying_level = G.GAME.worm_quantum_rock_spawned and 0.8 or 0.97
+	local annoying_level = G.GAME.worm_quantum_rock_spawned and 0 or 0.97
 	if WORM_JTEM.quantum_rock.force_target then
 		result = WORM_JTEM.quantum_rock.force_target
-	elseif not WORM_JTEM.quantum_rock.enabled or pseudorandom("worm_quantum_rock" .. os.time()) < annoying_level then
+	elseif not WORM_JTEM.quantum_rock.enabled or pseudorandom("worm_quantum_rock") < annoying_level then
 		result = nil
 	else
 		local targets = {
@@ -576,45 +579,50 @@ local function calculate_rock(context)
 	local target = G.worm_quantum_rock_target or roll_new_rock_target()
 	local is_present = is_rock_present()
 	if target == "hand" then
-		if
-			context.stay_flipped
-			and (G.STATE == G.STATES.DRAW_TO_HAND or (SMODS.OPENED_BOOSTER and SMODS.OPENED_BOOSTER.config.center.draw_hand))
-			and not is_present
+	    if
+		context.stay_flipped
+		and (G.STATE == G.STATES.DRAW_TO_HAND or (SMODS.OPENED_BOOSTER and SMODS.OPENED_BOOSTER.config.center.draw_hand))
+		and not is_present
 		then
-			G.E_MANAGER:add_event(Event({
+		    G.E_MANAGER:add_event(Event({
+			func = function()
+			    if is_rock_present() then
+				return true
+			    end
+			    local _area = G.deck
+			    local card = Card(_area.T.x, _area.T.y, G.CARD_W, G.CARD_H, G.P_CARDS["S_J"], rock)
+			    G.worm_quantum_rock = card
+			    card.facing = "back"
+			    card.sprite_facing = "back"
+			    card.worm_protect_quantum_rock = true
+			    roll_new_rock_target()
+			    G.E_MANAGER:add_event(Event({
 				func = function()
-					if is_rock_present() then
-						return true
-					end
-					local _area = G.deck
-					local card = Card(_area.T.x, _area.T.y, G.CARD_W, G.CARD_H, G.P_CARDS["S_J"], rock)
-					G.worm_quantum_rock = card
-					card.facing = "back"
-					card.sprite_facing = "back"
-					card.worm_protect_quantum_rock = true
-					roll_new_rock_target()
-					G.E_MANAGER:add_event(Event({
-						func = function()
-							G.hand:emplace(card)
-							shuffle_in_area(card, G.hand)
-							G.E_MANAGER:add_event(Event({
-								trigger = "after",
-								delay = 0.25,
-								timer = "REAL",
-								blocking = false,
-								blockable = false,
-								func = function()
-									card.worm_protect_quantum_rock = nil
-									return true
-								end,
-							}))
-							return true
-						end,
-					}))
+				    -- Sanity check
+				    if not G.hand.cards[1] then
+					card:remove()
 					return true
+				    end
+				    G.hand:emplace(card)
+				    shuffle_in_area(card, G.hand)
+				    G.E_MANAGER:add_event(Event({
+					trigger = "after",
+					delay = 0.25,
+					timer = "REAL",
+					blocking = false,
+					blockable = false,
+					func = function()
+					    card.worm_protect_quantum_rock = nil
+					    return true
+					end,
+				    }))
+				    return true
 				end,
-			}))
-			return true
+			    }))
+			    return true
+			end,
+		    }))
+		    return true
 		end
 	elseif target == "deck" then
 		if context.worm_opening_deck then
