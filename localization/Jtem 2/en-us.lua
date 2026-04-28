@@ -27,7 +27,7 @@ return {
 				name = "Quantum Rock",
 				text = {
 					{
-						"{X:mult,C:white}X#1#{}",
+						"{X:mult,C:white}X#1#{} Mult",
 						"{C:attention}#2#{} of {V:1}#3#{}",
 					},
 					{
