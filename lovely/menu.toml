@@ -110,3 +110,18 @@ else
 end
 '''
 match_indent = true
+
+# Background Fade from White
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = '''
+ease_value(splash_args, 'mid_flash', -(change_context == 'splash' and 1.6 or 0), nil, nil, nil, 4)
+'''
+position = "after"
+payload = '''
+if Wormhole and Wormhole.bg_manager then
+    Wormhole.bg_manager.splash_args = splash_args
+end
+'''
+match_indent = true

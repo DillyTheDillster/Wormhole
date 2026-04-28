@@ -8,11 +8,12 @@ function manager:draw()
     if G.STAGE ~= G.STAGES.MAIN_MENU then return end
     if not conf.menu then return end
     if not self.chosen then manager:reset() end
+    local w, h = love.graphics.getDimensions()
+
     if self.chosen == "util" then
 	Wormhole.util_space_manager:draw_background(true)
     elseif self.chosen == "tbp" then
         if not self.tbp_canvas then
-            local w, h = love.graphics.getDimensions()
             self.canvas_scale = h / target_height
             self.canvas_w = math.ceil(w / self.canvas_scale)
             self.canvas_h = target_height
@@ -32,7 +33,6 @@ function manager:draw()
         love.graphics.draw(self.tbp_canvas, 0, 0, 0, self.canvas_scale, self.canvas_scale)
     elseif self.chosen == "lfc" then
 	local shader = G.SHADERS.worm_lfc_eigengrau_bg
-        local w, h = love.graphics.getDimensions()
 	shader:send("time", G.TIMERS.REAL_SHADER)
 	shader:send("alpha", 1)
         love.graphics.setShader(shader)
@@ -40,6 +40,17 @@ function manager:draw()
         love.graphics.setShader()
     end
 
+    if self.splash_args then
+        if not self.splash_args.mid_flash or self.splash_args.mid_flash == 0 then
+            self.splash_args = nil
+        else
+            local opacity = self.splash_args.mid_flash / 1.6
+            love.graphics.setColor({1, 1, 1, opacity})
+
+            love.graphics.rectangle("fill", 0, 0, w, h)
+            love.graphics.setColor(G.C.WHITE)
+        end
+    end
 end
 
 function manager:reset()
@@ -52,7 +63,7 @@ end
 local game_delete_run = Game.delete_run
 function Game:delete_run()
     if G.STAGE ~= G.STAGES.MAIN_MENU then
-	manager:reset()
+        manager:reset()
     end
     game_delete_run(self)
 end
