@@ -15,6 +15,7 @@ return {
 			b_wormhole_custom_menu = 'Toggle Custom Menu',
 			b_wormhole_quantum_rock = 'Quantum Rock',
 			b_wormhole_family_friendly = 'Family-Friendly Mode',
+			b_wormhole_cosmic_gorilla_beast_mode = 'Cosmic Gorilla Beast Mode',
 		}
 	}
 }

@@ -11,4 +11,5 @@ return {
 	menu = true,
 	quantum_rock = true,
 	family_friendly = false,
+	cosmic_gorilla_beast_mode = false
 }
