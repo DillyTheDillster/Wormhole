@@ -25,7 +25,7 @@ return {
                 text = {
                     '{C:attention}Stores{} all {C:red}destroyed',
                     'cards\' {C:chips}Chips{} until',
-                    'the start of the next {C:attention}Ante{}',
+                    '{C:attention}Boss Blind{} is defeated',
                     '{C:inactive}(Currently {C:chips}+#1#{C:inactive} Chips)'
                 }
             },
@@ -145,35 +145,40 @@ return {
             e_worm_hedonia_tipsy = {
                 name = 'Tipsy',
                 text = {
-                    '{C:green}#1# in #2#{} chance to {C:attention}sober up{},',
-                    '{C:green}#3# in #4#{} chance to {C:attention}get drunker{},',
-                    'Randomize rank when played',
+                    '{C:green}#1# in #2#{} chance to {C:attention}sober up{}',
+                    'whilst held in hand,',
+                    'Randomize rank and {C:green}#3# in #4#{} chance to',
+                    '{C:attention}get drunker{} when played and scoring',
                     '{C:inactive}(max rank variance: {C:attention}#5#{C:inactive})' },
                 label = 'Tipsy'
             },
             e_worm_hedonia_drunk = {
                 name = 'Drunk',
                 text = {
-                    '{C:green}#1# in #2#{} chance to {C:attention}sober up{},',
-                    '{C:green}#3# in #4#{} chance to {C:attention}get drunker{},',
-                    'Randomize rank when played',
+                    '{C:green}#1# in #2#{} chance to {C:attention}sober up{}',
+                    'whilst held in hand,',
+                    'Randomize rank and {C:green}#3# in #4#{} chance to',
+                    '{C:attention}get drunker{} when played and scoring',
                     '{C:inactive}(max rank variance: {C:attention}#5#{C:inactive})' },
                 label = 'Drunk'
             },
             e_worm_hedonia_very_drunk = {
                 name = 'Very Drunk',
                 text = {
-                    '{C:green}#1# in #2#{} chance to {C:attention}sober up{},',
-                    '{C:green}#3# in #4#{} chance to {C:attention}get drunker{},',
-                    'Randomize rank when played',
+                    '{C:green}#1# in #2#{} chance to {C:attention}sober up{}',
+                    'whilst held in hand,',
+                    'Randomize rank and {C:green}#3# in #4#{} chance to',
+                    '{C:attention}get drunker{} when played and scoring',
                     '{C:inactive}(max rank variance: {C:attention}#5#{C:inactive})' },
                 label = 'Very Drunk'
             },
             e_worm_hedonia_blackout = {
                 name = 'Blackout',
                 text = {
-                    '{C:green}#1# in #2#{} chance to {C:attention}sober up{},',
+                    '{C:green}#1# in #2#{} chance to {C:attention}sober up{}',
+                    'whilst held in hand',
                     '{C:green}#3# in #4#{} chance to {C:red,E:2}self destruct{}',
+                    'when played and scoring',
                 },
                 label = 'Blackout'
             },
