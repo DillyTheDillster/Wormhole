@@ -1,8 +1,8 @@
 return {
 	descriptions = {
 		Back = {
-			b_worm_jtem2_black_hole_deck = {
-				name = "Black Hole Deck",
+			b_worm_jtem2_schwarzschild_deck = {
+				name = "Schwarzschild Deck",
 				text = {
 					"{C:spectral}Spectral Cards{} may",
 					"appear in the shop,",

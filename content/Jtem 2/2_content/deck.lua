@@ -1,13 +1,13 @@
 SMODS.Atlas({
-	key = "jtem2_black_hole_deck",
+	key = "jtem2_schwarzschild_deck",
 	path = "Jtem 2/decks/black_hole_deck.png",
 	px = 71,
 	py = 95,
 })
 
 SMODS.Back({
-	key = "jtem2_black_hole_deck",
-	atlas = "jtem2_black_hole_deck",
+	key = "jtem2_schwarzschild_deck",
+	atlas = "jtem2_schwarzschild_deck",
 	ppu_team = { "jtem2" },
 	ppu_artist = { "aikoyori" },
 	ppu_coder = { "aikoyori" },
