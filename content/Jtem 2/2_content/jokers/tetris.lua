@@ -1203,8 +1203,7 @@ function JtemTGM.PlaySound(id)
 end
 
 function JtemTGM.LoadImage(path)
-	local img = assert(nativefs.newFileData(Wormhole.path .. "/assets/jtem2/" .. path,
-		"Failed to load the goddamn image"))
+	local img = assert(nativefs.read("data", Wormhole.path .. "/assets/jtem2/" .. path))
 	local data = assert(love.image.newImageData(img), "uh oh")
 	return love.graphics.newImage(data)
 end
