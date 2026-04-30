@@ -94,6 +94,8 @@ SMODS.Joker {
                             card)
                     --end
                     card.ability.extra.current = 0
+                else    
+                    alert_no_space(card, G.consumeables)
                 end
             else
                 card.ability.extra.current = card.ability.extra.current + 1
