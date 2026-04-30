@@ -238,10 +238,10 @@ return {
             dottykitty = {
                 name = "dottykitty",
                 text = {
-                    "\"Some fall for eternal sleep",
-                    "Their eulogies turn into gleaming stars\"",
-                    "{s:0.4} ",
-                    "{s:0.6,C:stew_inactive_lighter}if you recognise the lyrics no you don't",
+                    "Did you know?",
+                    "When the big bang happened,",
+                    "DrSpectred was there.",
+                    "He wrote a paragraph about it.",
                 }
             },
             Wingcap = {

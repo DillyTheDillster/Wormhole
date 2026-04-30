@@ -38,3 +38,10 @@ SMODS.Atlas {
     px = 326,
     py = 176
 }
+
+SMODS.Atlas {
+    key = 'stew_credits',
+    path = 'BalatroStewniversity/Credits.png',
+    px = 71,
+    py = 95
+}

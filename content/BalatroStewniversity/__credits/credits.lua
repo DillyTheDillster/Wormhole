@@ -7,6 +7,8 @@ PotatoPatchUtils.Team {
 }
 
 PotatoPatchUtils.Developer {
+  atlas = "worm_stew_credits",
+  pos = { x = 4, y = 0 },
   name = 'PLagger',
   colour = HEX('943A48'),
   loc = "PLagger",
@@ -14,6 +16,8 @@ PotatoPatchUtils.Developer {
 }
 
 PotatoPatchUtils.Developer {
+  atlas = "worm_stew_credits",
+  pos = { x = 3, y = 0 },
   name = 'stupxd',
   colour = HEX('61b5ff'),
   loc = "stupxd",
@@ -21,6 +25,8 @@ PotatoPatchUtils.Developer {
 }
 
 PotatoPatchUtils.Developer {
+  atlas = "worm_stew_credits",
+  pos = { x = 0, y = 1 },
   name = 'dottykitty',
   colour = HEX('62afe3'),
   loc = "dottykitty",
@@ -28,6 +34,8 @@ PotatoPatchUtils.Developer {
 }
 
 PotatoPatchUtils.Developer {
+  atlas = "worm_stew_credits",
+  pos = { x = 0, y = 0 },
   name = 'Wingcap',
   colour = HEX('FF1F00'),
   loc = "Wingcap",
@@ -35,6 +43,8 @@ PotatoPatchUtils.Developer {
 }
 
 PotatoPatchUtils.Developer {
+  atlas = "worm_stew_credits",
+  pos = { x = 1, y = 1 },
   name = 'tuzzo',
   colour = HEX('ff7d5b'),
   loc = "tuzzo",
@@ -42,6 +52,8 @@ PotatoPatchUtils.Developer {
 }
 
 PotatoPatchUtils.Developer {
+  atlas = "worm_stew_credits",
+  pos = { x = 2, y = 0 },
   name = 'HonuKane',
   colour = HEX('15A61C'),
   loc = "HonuKane",
@@ -49,6 +61,8 @@ PotatoPatchUtils.Developer {
 }
 
 PotatoPatchUtils.Developer {
+  atlas = "worm_stew_credits",
+  pos = { x = 1, y = 0 },
   name = 'harmonywoods',
   colour = HEX('ffffff'),
   loc = "harmonywoods",
