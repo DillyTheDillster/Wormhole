@@ -113,7 +113,7 @@ SMODS.DrawStep {
         self.children.center:draw_shader("polychrome", nil, self.ARGS.send_to_shader)
         self.children.center:set_sprite_pos({ x = 3, y = 0 })
     end,
-    conditions = { vortex = true, facing = 'front' },
+    conditions = { vortex = false, facing = 'front' },
 }
 
 -- rotate hook
