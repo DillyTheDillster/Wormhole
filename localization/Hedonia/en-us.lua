@@ -14,10 +14,16 @@ return {
             j_worm_hedonia_casino = {
                 name = 'Casino Bartender',
                 text = {
-                    'Add {C:edition}{E:1}Drunk{} to scored',
-                    '{C:attention}Lucky Cards{}, create a {C:worm_hedonia_menu}Menu Item{}',
-                    'when a {C:attention}Lucky Card{} triggers',
-                    '{C:inactive}(Must have room)',
+                    {
+                        'Played {C:edition}{E:2}Tipsy{}, {C:edition}{E:1}Drunk{}, {C:dark_edition}{E:1}Very Drunk{},',
+                        'and {C:dark_edition}Blackout{} cards become',
+                        '{C:attention}Lucky Cards{} when scored',
+                    },
+                    {
+                        'Create a {C:attention}Drink{} {C:worm_hedonia_menu}Menu Item{}',
+                        'when {C:attention}Blind{} is selected',
+                        '{C:inactive}(Must have room)',
+                    },            
                 }
             },
             j_worm_hedonia_trash = {
@@ -32,15 +38,22 @@ return {
             j_worm_hedonia_patron = {
                 name = 'Drunken Patron',
                 text = {
-                    '{C:mult}+#1#{} Mult for every',
+                    'This Joker gains {C:mult}+#2#{} Mult when a',
                     '{C:edition}{E:2}Tipsy{}, {C:edition}{E:1}Drunk{}, {C:dark_edition}{E:1}Very Drunk{},',
-                    'or {C:dark_edition}Blackout{} card {C:attention}held in hand{}'
+                    'or {C:dark_edition}Blackout{} card is scored',
+                    '{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)',
                 }
             },
             j_worm_hedonia_happy_hour = {
                 name = 'Happy Hour',
                 text = {
-                    '{C:worm_hedonia_menu}Menu Packs{} cost {C:money}$#1#{} less'
+                    {
+                        'Earn {C:money}$#2#{} when a',
+                        '{C:worm_hedonia_menu}Menu Item{} is used',
+                    },
+                    {
+                        '{C:worm_hedonia_menu}Menu Packs{} cost {C:money}$#1#{} less'
+                    }
                 }
             },
             j_worm_hedonia_speed = {
@@ -56,9 +69,9 @@ return {
             j_worm_hedonia_bar_mitzvah = {
                 name = 'Bar Mitzvah',
                 text = {
-                    'Creates a {C:worm_hedonia_menu}Menu Item{}',
-                    'after {C:attention}#1#{} played hands',
-                    '{C:inactive}(currently {C:attention}#2#{C:inactive} hands left){}',
+                    'Creates a {C:worm_hedonia_menu}Menu Item{} after',
+                    '{C:attention}#1#{} played and scoring cards',
+                    '{C:inactive}(Currently {C:attention}#2#{C:inactive} cards left){}',
                     '{C:inactive,s:0.8}(put Aliyah reading here){}'
                 }
             }
@@ -67,29 +80,29 @@ return {
             c_worm_hedonia_hadron = {
                 name = 'Hadron Colada',
                 text = {
-                    'Add {E:2}Tipsy{} to a',
-                    'random card held in hand'
+                    'Add {E:2}Tipsy{} to',
+                    'all selected cards'
                 }
             },
             c_worm_hedonia_cosmo = {
                 name = 'Cosmopolitan',
                 text = {
-                    'Add {E:1}Drunk{} to a',
-                    'random card held in hand'
+                    'Add {E:1}Drunk{} to',
+                    'up to {C:attention}#1#{} selected cards'
                 }
             },
             c_worm_hedonia_mojitury = {
                 name = 'Mojitury',
                 text = {
-                    'Add {C:dark_edition,E:1}Very Drunk{} to a',
-                    'random card held in hand'
+                    'Add {C:dark_edition,E:1}Very Drunk{} to',
+                    'up to {C:attention}#1#{} selected cards'
                 }
             },
             c_worm_hedonia_blackHoleBomb = {
                 name = 'Black Hole Bomb',
                 text = {
-                    'Add {C:dark_edition}Blackout{} to a',
-                    'random card held in hand'
+                    'Add {C:dark_edition}Blackout{} to',
+                    '{C:attention}#1#{} {C:attention}random{} cards held in hand'
                 }
             },
             c_worm_hedonia_jawbreaker = {
@@ -102,22 +115,22 @@ return {
             c_worm_hedonia_rings = {
                 name = 'Satonion Rings',
                 text = {
-                    'All cards held in hand sober up',
+                    'All selected cards {C:attention}sober up{}',
                     '{C:red}OR{} gain {C:money}$#1#{} if there are',
-                    'no drunk cards in hand'
+                    'no drunk cards held in hand'
                 }
             },
             c_worm_hedonia_debbie = {
                 name = 'Cosmic Brownies',
                 text = {
-                    'Converts {C:attention}#1#{} selected cards',
+                    'Converts up to {C:attention}#1#{} selected cards',
                     'to the same random rank'
                 }
             },
             c_worm_hedonia_jam = {
                 name = 'Space Jam',
                 text = {
-                    'Converts {C:attention}#1#{} selected cards',
+                    'Converts up to {C:attention}#1#{} selected cards',
                     'to the same random suit'
                 }
             }
@@ -146,9 +159,9 @@ return {
                 name = 'Tipsy',
                 text = {
                     '{C:green}#1# in #2#{} chance to {C:attention}sober up{}',
-                    'whilst held in hand,',
-                    'Randomize rank and {C:green}#3# in #4#{} chance to',
-                    '{C:attention}get drunker{} when played and scoring',
+                    'whilst held in hand',
+                    'Randomize rank and {C:green}#3# in #4#{} chance',
+                    'to {C:attention}get drunker{} when scored',
                     '{C:inactive}(max rank variance: {C:attention}#5#{C:inactive})' },
                 label = 'Tipsy'
             },
@@ -156,9 +169,9 @@ return {
                 name = 'Drunk',
                 text = {
                     '{C:green}#1# in #2#{} chance to {C:attention}sober up{}',
-                    'whilst held in hand,',
-                    'Randomize rank and {C:green}#3# in #4#{} chance to',
-                    '{C:attention}get drunker{} when played and scoring',
+                    'whilst held in hand',
+                    'Randomize rank and {C:green}#3# in #4#{} chance',
+                    'to {C:attention}get drunker{} when scored',
                     '{C:inactive}(max rank variance: {C:attention}#5#{C:inactive})' },
                 label = 'Drunk'
             },
@@ -166,9 +179,9 @@ return {
                 name = 'Very Drunk',
                 text = {
                     '{C:green}#1# in #2#{} chance to {C:attention}sober up{}',
-                    'whilst held in hand,',
-                    'Randomize rank and {C:green}#3# in #4#{} chance to',
-                    '{C:attention}get drunker{} when played and scoring',
+                    'whilst held in hand',
+                    'Randomize rank and {C:green}#3# in #4#{} chance',
+                    'to {C:attention}get drunker{} when scored',
                     '{C:inactive}(max rank variance: {C:attention}#5#{C:inactive})' },
                 label = 'Very Drunk'
             },
@@ -178,7 +191,7 @@ return {
                     '{C:green}#1# in #2#{} chance to {C:attention}sober up{}',
                     'whilst held in hand',
                     '{C:green}#3# in #4#{} chance to {C:red,E:2}self destruct{}',
-                    'when played and scoring',
+                    'when scored',
                 },
                 label = 'Blackout'
             },
@@ -250,6 +263,14 @@ return {
                     'additions! Or don\'t. I don\'t care. I\'m just',
                     'happy I\'m in the same mod as SarcPot and Revo.'
                 }
+            },
+            PotatoPatchDev_stanzarorae = {
+                name = "Stanza Rorae",
+                text = {
+                    'Here in spirit',
+                    '',
+                    'play UNBEATABLE, greatest game of all time',
+                }
             }
         }
     },
@@ -259,6 +280,7 @@ return {
             k_worm_hedonia_menu = "Menu Item",
             k_worm_hedonia_menu_plus = "+1 Menu Item",
             hedonia_menu = "Tonight's Menu",
+            k_lucky = "Lucky",
         },
         labels = {
             worm_hedonia_tipsy = 'Tipsy',

@@ -21,7 +21,7 @@ PotatoPatchUtils.Team {
   colour = HEX("deb009"),
   loc = true,
   short_credit = true,
-  credit_rows = {3,3}
+  credit_rows = {3,4}
 }
 
 PotatoPatchUtils.Developer {
@@ -68,6 +68,14 @@ PotatoPatchUtils.Developer {
   name = 'wombatcountry',
   atlas = 'worm_credits',
   pos = {x=2, y=1},
+  loc = true,
+  team = 'Hedonia'
+}
+
+PotatoPatchUtils.Developer {
+  name = 'stanzarorae',
+  atlas = 'worm_credits',
+  pos = {x=0, y=2},
   loc = true,
   team = 'Hedonia'
 }
