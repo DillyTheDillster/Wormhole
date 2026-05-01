@@ -1,6 +1,6 @@
 Wormhole.JR_UTILS.create_UIBox_current_hand_row = function(handname, simple)
   local key = 'sat_worm_' .. Wormhole.JR_UTILS.get_satellite(handname)
-  local _level = Wormhole.JR_UTILS.get_level(handname, true)
+  local _level = Wormhole.JR_UTILS.get_level(handname)
   return (not in_collection or SMODS.is_poker_hand_visible(handname)) and
       (not simple and
         { n = G.UIT.R, config = { align = "cm", padding = 0.05, r = 0.1, colour = darken(G.C.JOKER_GREY, 0.1), emboss = 0.05, hover = true, force_focus = true, detailed_tooltip = G.P_CENTERS[key] }, nodes = {
