@@ -220,7 +220,7 @@ SMODS.Joker {
     blueprint_compat = true,
     config = { extra = {
         mult = 0,
-        mult_mod = 5 
+        mult_mod = 4 
     }},
     attributes = {"mult", "scaling", "editions", "space"},
     loc_vars = function(self,info_queue,card)
@@ -236,11 +236,20 @@ SMODS.Joker {
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play and context.other_card.edition 
         and string.sub(context.other_card.edition.key, 1, 15) == 'e_worm_hedonia_' then
-            SMODS.scale_card(card, {
-                ref_table = card.ability.extra,
-                ref_value = "mult",
-                scalar_value = "mult_mod",
-            })
+            return {
+                message_card = card,
+                func = function()
+                    SMODS.scale_card(card, {
+                        ref_table = card.ability.extra,
+                        ref_value = "mult",
+                        scalar_value = "mult_mod",
+                        scaling_message = {
+                            message = localize("k_upgrade_ex"),
+                            colour = G.C.MULT,
+                        }
+                    })
+                end
+            }
         end
         if context.joker_main then
             return {
