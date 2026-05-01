@@ -268,7 +268,7 @@ SMODS.Shader {
     path = "Hedonia/drunk.fs",
     send_vars = function(sprite, card)
         return {
-            wobble_strength = card.edition.drunk_wobble_strength,
+            wobble_strength = card and card.edition.drunk_wobble_strength,
             time = love.timer.getTime(),
         }
     end,
