@@ -1,36 +1,57 @@
 ---@diagnostic disable: undefined-field
 
-local function drunk_level_chance(card, probability_numerator, probability_denominator, next_edition, seed)
-    if SMODS.pseudorandom_probability(card, seed or "hedonia_drunk", probability_numerator, probability_denominator) then
-        card:set_edition(next_edition, true)     --TODO add timer call so the return text happens at the same time
-        return true
-    end
-    return false
+local function drunk_level_chance(card, probability_numerator, probability_denominator, seed)
+    return SMODS.pseudorandom_probability(card, seed or "hedonia_drunk", probability_numerator, probability_denominator)
 end
 
 local function drunk_change_rank(card, rank_range, msg_increase, msg_decrease)
     local amount = pseudorandom("drunk_range", -rank_range, rank_range + 0.999)
     amount = math.floor(amount)
     if SMODS.pseudorandom_probability(card, "drunk_change", 1, 2, "", true) then
-        assert(SMODS.modify_rank(card, amount))
+        G.E_MANAGER:add_event(Event({
+            func = function()
+                assert(SMODS.modify_rank(card, amount))
+                return true;
+            end
+        }))
         return msg_increase
     end
-    assert(SMODS.modify_rank(card, amount))
+    G.E_MANAGER:add_event(Event({
+        func = function()
+            assert(SMODS.modify_rank(card, amount))
+            return true;
+        end
+    }))
     return msg_decrease
 end
 
 local function drunk_behaviour(self, card, context)
     --     print(context)
     if context.main_scoring and context.cardarea == G.hand then
-        if drunk_level_chance(card, self.config.extra.sober_base, self.config.extra.sober_chance, self.config.extra.edition_soberer) then
-            return { message = "Sobered Up!" }
+        if drunk_level_chance(card, self.config.extra.sober_base, self.config.extra.sober_chance) then
+            G.E_MANAGER:add_event(Event({
+                func = function()
+                    card:set_edition(self.config.extra.edition_soberer, true)
+                    return true;
+                end
+            }))
+            return {
+                message = "Sobered Up!"
+            }
         end
     end
 
-    if context.main_scoring and context.cardarea == G.play then
-        if drunk_level_chance(card, self.config.extra.drunker_base, self.config.extra.drunker_chance, self.config.extra.edition_drunker) then
-            return { message = drunk_change_rank(card, self.config.extra.rank_range, self.config.extra.msg_increase,
-                self.config.extra.msg_decrease) }
+    if context.after and context.cardarea == G.play then
+        if drunk_level_chance(card, self.config.extra.drunker_base, self.config.extra.drunker_chance) then
+            G.E_MANAGER:add_event(Event({
+                func = function()
+                    card:set_edition(self.config.extra.edition_drunker, true)
+                    return true;
+                end
+            }))
+            return {
+                message = drunk_change_rank(card, self.config.extra.rank_range, self.config.extra.msg_increase, self.config.extra.msg_decrease)
+            }
         end
     end
 end
@@ -60,15 +81,15 @@ SMODS.Edition {
         card.edition.drunk_wobble_strength = 0.6
     end,
     config = { extra = {
-        sober_base = 1,                               -- sober_base in sober_chance chance to sober up  (when held in hand)
+        sober_base = 1,                           -- sober_base in sober_chance chance to sober up  (when held in hand)
         sober_chance = 2,
-        drunker_base = 1,                             -- sober_base in sober_chance chance to get drunker (when played)
+        drunker_base = 1,                         -- sober_base in sober_chance chance to get drunker (when played)
         drunker_chance = 4,
-        rank_range = 1,                               -- how far the rank of the card will swing when played
-        edition_drunker = "e_worm_hedonia_drunk",     -- the more drunk edition
-        edition_soberer = nil,                        -- the more sober edition
-        msg_increase = "I like beer :)",              -- message when the rank of the card increases
-        msg_decrease = "Too much for me..."           -- message when the rank of the card decreases
+        rank_range = 1,                           -- how far the rank of the card will swing when played
+        edition_drunker = "e_worm_hedonia_drunk", -- the more drunk edition
+        edition_soberer = nil,                    -- the more sober edition
+        msg_increase = "I like beer :)",          -- message when the rank of the card increases
+        msg_decrease = "Too much for me..."       -- message when the rank of the card decreases
     } },
     loc_vars = function(self, info_queue, card)
         local sober_base, sober_chance = SMODS.get_probability_vars(card, self.config.extra.sober_base,
@@ -107,15 +128,15 @@ SMODS.Edition {
         card.edition.drunk_wobble_strength = 1.0
     end,
     config = { extra = {
-        sober_base = 1,                                    -- sober_base in sober_chance chance to sober up  (when held in hand)
+        sober_base = 1,                                -- sober_base in sober_chance chance to sober up  (when held in hand)
         sober_chance = 4,
-        drunker_base = 1,                                  -- sober_base in sober_chance chance to get drunker (when played)
+        drunker_base = 1,                              -- sober_base in sober_chance chance to get drunker (when played)
         drunker_chance = 4,
-        rank_range = 3,                                    -- how far the rank of the card will swing when played
-        edition_drunker = "e_worm_hedonia_very_drunk",     -- the more drunk edition
-        edition_soberer = "e_worm_hedonia_tipsy",          -- the more sober edition
-        msg_increase = "ANOTHER!",                         -- message when the rank of the card increases
-        msg_decrease = "I'm Feelin' It"                    -- message when the rank of the card decreases
+        rank_range = 3,                                -- how far the rank of the card will swing when played
+        edition_drunker = "e_worm_hedonia_very_drunk", -- the more drunk edition
+        edition_soberer = "e_worm_hedonia_tipsy",      -- the more sober edition
+        msg_increase = "ANOTHER!",                     -- message when the rank of the card increases
+        msg_decrease = "I'm Feelin' It"                -- message when the rank of the card decreases
     } },
     loc_vars = function(self, info_queue, card)
         local sober_base, sober_chance = SMODS.get_probability_vars(card, self.config.extra.sober_base,
@@ -219,8 +240,16 @@ SMODS.Edition {
 
     calculate = function(self, card, context)
         if context.main_scoring and context.cardarea == G.hand then
-            if drunk_level_chance(card, self.config.extra.sober_base, self.config.extra.sober_chance, nil) then
-                return { message = "Sobered up!" }
+            if drunk_level_chance(card, self.config.extra.sober_base, self.config.extra.sober_chance) then
+                G.E_MANAGER:add_event(Event({
+                    func = function()
+                        card:set_edition(self.config.extra.edition_soberer, true)
+                        return true;
+                    end
+                }))
+                return {
+                    message = "Sobered up!"
+                }
             end
         end
         if context.destroy_card and context.cardarea == G.play and context.destroy_card == card then -- from glass https://github.com/nh6574/VanillaRemade/blob/main/src/enhancements.lua
