@@ -489,7 +489,7 @@ function Wormhole.tbp.change_durability(ship, module_type, change, abs, silent)
     ship = ship or SMODS.find_card("j_worm_tbp_spaceship")[1]
     if ship and ship.ability.extra.modules[module_type] and ship.ability.extra.modules[module_type].durability then
         local flags = SMODS.calculate_context({ wormhome_tbp_module_change_durability = true, amount = change, module = module_type, card = ship, during_uninstall = G.GAME.tbp_during_uninstall })
-        change = flags.modify or change
+        change = flags.modify ~= nil and flags.modify or change
         
         ship.ability.extra.modules[module_type].durability = ship.ability.extra.modules[module_type].durability + change
         if change < 0 then
