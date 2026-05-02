@@ -115,6 +115,6 @@ SMODS.Tag({
 
 local ccasbref = Card_Character.add_speech_bubble
 function Card_Character:add_speech_bubble(text_key, align, loc_vars, quip_args)
-	if self.config.args.center == 'j_worm_dum_timcurry' then aeiou = self; self.wormhole_pos_extra = { x = 2, y = 18 } end
+	if self.config.args.center == 'j_worm_dum_timcurry' then self.wormhole_pos_extra = { x = 2, y = 18 } end
 	ccasbref(self, text_key, align, loc_vars, quip_args)
 end
