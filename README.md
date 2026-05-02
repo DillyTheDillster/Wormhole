@@ -3,4 +3,4 @@
 # PRESENTING WORMHOLE
 A space-themed Balatro mod created during MurphyOBV's Joker Jam event! 25 Teams and over 120 Developers came together to create the final product of this mod, making this the largest Balatro collab mod ever! We hope you enjoy this experience
 
-# Wormhole depends on PotatoPatchUtils, which you can download here: https://github.com/Balatro-Potato-Patch/Potato-Patch-Utils
+## Wormhole depends on PotatoPatchUtils, which you can download here: https://github.com/Balatro-Potato-Patch/Potato-Patch-Utils
