@@ -15,7 +15,7 @@ SMODS.Seal {
     atlas = "lfc_seals",
     pos = {x=0,y=0},
     calculate = function (self, card, context)
-        if context.individual and context.cardarea == G.play then
+        if context.individual and context.cardarea == G.play and not context.end_of_round then
             G.E_MANAGER:add_event(Event({func = function ()
                 Wormhole.LancerFanClub.create_meteor(card.ability.seal.extra.dollars,1)
             return true end}))
