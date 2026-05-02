@@ -168,6 +168,7 @@ G.FUNCS.show_module_replace_confirm = function(card, spaceship)
     
     local AUT = card.ability_UIBox_table
     AUT.main.block_image = nil
+    AUT.info = {}
 
     local vars = {colours = {mix_colours(G.ARGS.LOC_COLOURS.inactive, Wormhole.tbp.module_colours[target_slot], 0.5)}}
     if current_module.key and (G.P_CENTERS[current_module.key] or {}).loc_vars then
