@@ -392,11 +392,11 @@ SMODS.Joker {
                         end
                     }))
                 end
-                if triggered then
-                    return {
-                        message = localize('k_thorn_giygas_enhanced')
-                    }
-                end
+            end
+            if triggered then
+                return {
+                    message = localize('k_thorn_giygas_enhanced')
+                }
             end
         end
     end,
