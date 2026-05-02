@@ -82,10 +82,10 @@ descriptions={
 				"Orrery"
 			--[[]]
 			, text={
-				"When a {C:attention}poker hand{} level is",
-				"upgraded, randomly create",
-				"{C:tarot}#1#{}, {C:tarot}#2#{},",
-				"{C:tarot}#3#{}, and {C:tarot}#4#{}",
+				"When upgrading level of any",
+				"{C:attention}poker hand{}, create {C:tarot}#1#{},",
+				"{C:tarot}#2#{}, {C:tarot}#3#{}, and",
+				"{C:tarot}#4#{} in a random order",
 				"{C:inactive}(Must have room){}"
 			}
 			--[[] ]
