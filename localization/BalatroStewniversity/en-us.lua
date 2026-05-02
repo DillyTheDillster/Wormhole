@@ -115,7 +115,7 @@ return {
             j_worm_stew_chicken_egg = {
                 name = 'Paradox Earth',
                 text = {
-                    '{C:chips}+Chips{} equal to double the',
+                    '{C:chips}+Chips{} equal to half the',
                     'amount of {C:chips}Chips{} when triggered',
                 }
             },

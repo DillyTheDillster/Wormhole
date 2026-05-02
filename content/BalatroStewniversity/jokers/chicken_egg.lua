@@ -6,12 +6,12 @@ SMODS.Joker {
     ppu_coder = { "stupxd" },
 
     key = 'stew_chicken_egg',
-    config = {extra = { Xchips = 3, chicken = false }},
+    config = {extra = { Xchips = 1.5, chicken = false }},
     rarity = "Common",
     cost = 4,
     atlas = 'stewjokers',
     pos = { x=0, y=2 },
-    blueprint_compat = true,
+    blueprint_compat = false,
     eternal_compat = false,
     perishable_compat = true,
 
@@ -41,7 +41,7 @@ SMODS.Joker {
     calculate = function (self, card, context)
         if context.joker_main then
             if not context.blueprint then
-            card.ability.extra.chicken = not card.ability.extra.chicken
+              card.ability.extra.chicken = not card.ability.extra.chicken
             end
             return {
                 xchips = card.ability.extra.Xchips
