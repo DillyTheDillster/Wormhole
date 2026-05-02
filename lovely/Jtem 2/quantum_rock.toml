@@ -17,3 +17,16 @@ end
 WORM_JTEM.quantum_rock.calculate({ worm_opening_deck = true, areas = worm_deck_areas })
 '''
 match_indent = true
+        
+# Fix stuck cards
+[[patches]]
+[patches.pattern]
+target = '''cardarea.lua'''
+pattern = '''(self.config.type == 'shop' and self ~= G.shop_vouchers) then'''
+position = "after"
+payload = '''
+if self == G.hand then
+    fixing_the_symptom_and_not_the_problem_because_replicating_the_issue_in_this_enigma_of_a_system_let_alone_fixing_it_is_not_worth_what_little_sanity_i_have_left(self)
+end
+'''
+match_indent = true

@@ -288,6 +288,7 @@ local function roll_new_rock_target()
 	return result
 end
 local function spawn_new_rock(protect, whitelist)
+	if not G.GAME.worm_quantum_rock_spawned then return end
 	if is_rock_present() then
 		return
 	end
@@ -548,6 +549,7 @@ end
 --
 
 local function calculate_rock(context)
+	if not G.GAME.worm_quantum_rock_spawned then return end
 	local target = G.worm_quantum_rock_target or roll_new_rock_target()
 	local is_present = is_rock_present()
 	if target == "hand" then
@@ -646,3 +648,13 @@ WORM_JTEM.quantum_rock = {
 	center = rock,
 	calculate = calculate_rock,
 }
+
+function fixing_the_symptom_and_not_the_problem_because_replicating_the_issue_in_this_enigma_of_a_system_let_alone_fixing_it_is_not_worth_what_little_sanity_i_have_left(area)
+	if G.GAME.STOP_USE and G.GAME.STOP_USE > 0 then return end
+	if #area.cards == 0 then return end
+	if G.STATE ~= G.STATES.SHOP and G.STATE ~= G.STATES.ROUND_EVAL then return end
+	for _, c in ipairs(area.cards) do
+		area:remove_card(c)
+		G.deck:emplace(c)
+	end
+end
