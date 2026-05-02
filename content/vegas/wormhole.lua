@@ -1345,34 +1345,33 @@ SMODS.Consumable {
     pos = { x = 4, y = 3 },
 	pixel_size = { w = 69 },
 	discovered = true,
-    config = { max_highlighted = 2 },
+  config = { extra = { max = 2 }},
 	ppu_team = {"People Found In Vegas"},
     ppu_coder = {"Jammbo"},
     ppu_artist = {"Jammbo"},
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = {key = 'e_negative_playing_card', set = 'Edition', config = {extra = 1}}
-        return { vars = { card.ability.max_highlighted } }
+        return { vars = { card.ability.extra.max } }
     end,
     use = function(self, card, area, copier)
+      local targets = {}
+      local filter = function (v, args)
+             return not v.edition
+      end
+      targets[1] = pseudorandom_element(G.playing_cards,'c_worm_vegas_expanse', {in_pool = filter})
+      targets[2] = 
         G.E_MANAGER:add_event(Event({
             trigger = 'after',
             delay = 0.4,
             func = function()
-                G.hand.highlighted[1]:set_edition("e_negative", true)
-                card:juice_up(0.3, 0.5)
-				if #G.hand.highlighted == 2 then
-					G.hand.highlighted[2]:set_edition("e_negative", true)
-					card:juice_up(0.3, 0.5)
-				end
-				
-				G.E_MANAGER:add_event(Event({
-					trigger = 'after',
-					delay = 0.5,
-					func = function()
-						G.hand:unhighlight_all()
-						return true
-					end
-				}))
+              for i = 1, card.ability.extra.max, 1 do
+                local target = pseudorandom_element(G.playing_cards,'c_worm_vegas_expanse', {in_pool = filter})
+				        if target then
+                  target:set_edition("e_negative", true)
+                  card:juice_up(0.3, 0.5)
+		        		end
+              end
+                
 							
                 return true
             end
@@ -1382,7 +1381,11 @@ SMODS.Consumable {
         if (layer == 'card' or layer == 'both') and card.sprite_facing == 'front' then
             card.children.center:draw_shader('booster', nil, card.ARGS.send_to_shader)
         end
-    end
+    end,
+
+    can_use = function(self, card)
+        return next(SMODS.Edition:get_edition_cards({cards = G.playing_cards}, true))
+    end,
 }
 
 SMODS.PokerHand{

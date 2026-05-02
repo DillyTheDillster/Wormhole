@@ -131,7 +131,8 @@ return {
 				name = "Expanse",
 				text = {
 					"Add {C:dark_edition}Negative{} to up",
-					"to {C:attention}#1#{} selected playing cards"
+					"to {C:attention}#1#{} random cards",
+          "in your full deck"
 				}
 			}
 		},
