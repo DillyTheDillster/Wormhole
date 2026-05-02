@@ -7,7 +7,7 @@ SMODS.Joker {
 
     key = 'stew_stew_earth', -- haha
     config = {extra = {Xmult = 1.5, Xmult_up = 0.5, Xmult_down = 0.25}},
-    rarity = "Uncommon",
+    rarity = 3,
     cost = 8,
     atlas = 'stewjokers',
     pos = {x=1, y=0},
