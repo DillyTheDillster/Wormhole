@@ -82,8 +82,10 @@ return {
             j_worm_inthesky = {
                 name = "Diamonds in the Sky",
 		        text = {
-			        "First {C:attention}#1#{} scored {V:1}Diamond{} cards",
-			        "in {C:attention}first{} played hand become {C:dark_edition}Negative{}"
+			        "If first hand of round", 
+              "contains {C:attention}#1#{} {V:1}Diamonds{},",
+			        "a random card held in hand",
+              "becomes {C:dark_edition}Negative{}"
 		        }
             },
             j_worm_observable = {

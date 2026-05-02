@@ -601,7 +601,7 @@ end
 SMODS.Joker{
 	key = "inthesky",
 	attributes = {"suit", "diamonds", "hands", "editions", "space"},
-	config = { extra = { cards = 2, suit = 'Diamonds' }},
+	config = { extra = { cards = 5, suit = 'Diamonds' }},
 	loc_vars = function(self, info_queue, card)
 		info_queue[#info_queue + 1] = {key = 'e_negative_playing_card', set = 'Edition', config = {extra = 1}}
 		return { vars = { card.ability.extra.cards, colours = { G.C.SUITS['Diamonds'] } } }
@@ -619,16 +619,30 @@ SMODS.Joker{
 	ppu_artist = {"Jammbo"},
 	calculate = function(self, card, context)
 		if context.before and context.main_eval and not context.blueprint and G.GAME.current_round.hands_played == 0 then
-            local amount = 0
-            for _, scored_card in ipairs(context.scoring_hand) do
-                if amount < card.ability.extra.cards then
-					if scored_card:is_suit(card.ability.extra.suit) and not scored_card.edition then
-                    	scored_card:set_edition('e_negative', true)
-						amount = amount + 1
-					end
-                end
+      local filter = function (v, args)
+        return not v.edition
+      end
+
+      local amount = 0
+      for _, _card in ipairs(context.scoring_hand) do
+        if _card:is_suit(card.ability.extra.suit) then amount = amount + 1 end
+      end
+
+      if amount >= card.ability.extra.cards then
+        G.E_MANAGER:add_event(Event({
+            trigger = 'after',
+            delay = 0.4,
+            func = function()                
+              local target = pseudorandom_element(G.hand.cards,'j_worm_vegas_inthesky', {in_pool = filter})
+				        if target then
+                  target:set_edition("e_negative", true)
+                  card:juice_up(0.3, 0.5)
+                  return true
+		        		end
             end
-        end
+        }))
+      end
+    end
 	end
 }
 
