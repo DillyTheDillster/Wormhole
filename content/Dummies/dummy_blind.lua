@@ -145,7 +145,7 @@ SMODS.Blind {
 		        check_for_unlock({ type = 'dum_hyperlight', level = reward_level }) --> Grants Achievement.
             end 
             -- Money-Cap
-            return math.min(100, reward_level * 2 - 1)
+            return math.min(25, math.max((reward_level), 0))
         else return -5 end --> Penalty for not reaching 50%
     end,
     calculate = function(self, blind, context)
