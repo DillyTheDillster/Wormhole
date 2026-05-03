@@ -172,7 +172,7 @@ return {
             c_worm_stakataka = {
                 name = "Stakataka",
                 text = {
-                    "Turn {C:attention}#1#{} selected cards",
+                    "Turn up to {C:attention}#1#{} selected cards",
                     "into {C:dark_edition}Polychrome{} {C:attention}Stone{} cards",
                 }
             },

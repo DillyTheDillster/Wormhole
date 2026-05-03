@@ -64,11 +64,10 @@ for _, t in ipairs(wormholes) do
         cost = t.cost,
         atlas = t.atlas,
         display_size = t.display_size,
-        select_card = 'consumeables',
         disable_shine = true,
         config = { extra = t.extra, choose = t.choose },
         group_key = "k_worm_ultrawormhole",
-        --draw_hand = true,
+        draw_hand = true,
         loc_vars = function (self, info_queue, card)
             local cfg = (card and card.ability) or self.config or {}
             return {
