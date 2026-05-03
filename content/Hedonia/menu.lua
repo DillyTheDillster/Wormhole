@@ -241,7 +241,7 @@ SMODS.Consumable {
                     if i1 == 1 then
                         v:set_edition(nil, true)
                     else
-                        local edition = SMODS.poll_edition({guaranteed = true, options = {{name = stages[i1 - 1], weight = 1}}})
+                        local edition = SMODS.poll_edition({guaranteed = true, options = {{name = stages[i1 - 1], weight = 1}}}).name
                         v:set_edition(edition, true)
                     end
                 end
