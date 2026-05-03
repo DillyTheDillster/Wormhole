@@ -93,6 +93,10 @@ function Game:start_run(...)
         G.ARGS.eigengrau_alpha = SMODS.is_active_blind("bl_worm_lfc_eigengrau", true) and 1 or 0
     end
 
+    if SMODS.is_active_blind("bl_worm_lfc_eigengrau", true) then
+        Wormhole.LFC_Util.ease_eigengrau_bg_alpha(1)
+    end
+
     return ret
 end
 
