@@ -1,11 +1,6 @@
 local function count_score_digits(score)
     if not score then return 1 end
-    local s = tostring(score)
-    local _, exp = s:match("([%d%.]+)[eE]%+?(%d+)")
-    if exp then return tonumber(exp) + 1 end
-    s = s:match("^%-?(%d+)") or "0"
-    if s == "0" then return 1 end
-    return #s
+    return math.floor(math.log(score, 10)) + 1
 end
 
 SMODS.Consumable {
@@ -50,7 +45,7 @@ SMODS.Consumable {
 
 
             if score > (card.ability.extra.best_hand or 0) then
-                --print('set best_hand to ' .. score)
+                print('set best_hand to ' .. score)
                 card.ability.extra.best_hand = score
             end
 
