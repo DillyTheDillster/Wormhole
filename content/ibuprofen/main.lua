@@ -483,8 +483,7 @@ SMODS.Joker {
       local most = _handname
       if context.scoring_name == most then
         card.ability.extra.money = card.ability.extra.money + card.ability.extra.money_gain
-        play_sound('worm_ibu_woof')
-        return { message = "Woof!" }
+        return { message = "Woof!", sound = 'worm_ibu_woof', pitch = 1 }
       end
     end
   end,
