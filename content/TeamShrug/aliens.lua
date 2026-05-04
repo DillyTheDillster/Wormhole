@@ -50,7 +50,7 @@ alien_booster{
     key = "shrug_alien_normal_1",
     config = {extra = 2, choose = 1},
     cost = 4,
-    weight = 0.3,
+    weight = 1,
     atlas = "shrug_boosters",
     pos = {x = 0, y = 0},
 }
@@ -58,7 +58,7 @@ alien_booster{
     key = "shrug_alien_normal_2",
     config = {extra = 2, choose = 1},
     cost = 4,
-    weight = 0.3,
+    weight = 1,
     atlas = "shrug_boosters",
     pos = {x = 1, y = 0},
 }
@@ -66,7 +66,7 @@ alien_booster{
     key = "shrug_alien_jumbo",
     config = {extra = 4, choose = 1},
     cost = 6,
-    weight = 0.3,
+    weight = 1,
     atlas = "shrug_boosters",
     pos = {x = 2, y = 0},
 }
@@ -74,7 +74,7 @@ alien_booster{
     key = "shrug_alien_mega",
     config = {extra = 4, choose = 2},
     cost = 8,
-    weight = 0.07,
+    weight = 0.25,
     atlas = "shrug_boosters",
     pos = {x = 3, y = 0},
 }

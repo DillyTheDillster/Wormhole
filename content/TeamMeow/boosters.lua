@@ -35,7 +35,7 @@ SMODS.Booster({
     kind = "worm_meow_Spacetart",
 	select_card = "consumeables",
 	cost = 4,
-	weight = 0.6,
+	weight = 1,
 
 	ease_background_colour = function(self)
         ease_background_colour({ new_colour = G.C.CLEAR, special_colour = HEX("5b4bf0") })
@@ -82,7 +82,7 @@ SMODS.Booster({
     kind = "worm_meow_Spacetart",
 	select_card = "consumeables",
 	cost = 4,
-	weight = 0.6,
+	weight = 1,
 
 	ease_background_colour = function(self)
         ease_background_colour({ new_colour = G.C.CLEAR, special_colour = HEX("5b4bf0") })
@@ -129,7 +129,7 @@ SMODS.Booster({
     kind = "worm_meow_Spacetart",
 	select_card = "consumeables",
 	cost = 6,
-	weight = 0.6,
+	weight = 1,
 
 	ease_background_colour = function(self)
         ease_background_colour({ new_colour = G.C.CLEAR, special_colour = HEX("5b4bf0") })
@@ -176,7 +176,7 @@ SMODS.Booster({
     kind = "worm_meow_Spacetart",
 	select_card = "consumeables",
 	cost = 8,
-	weight = 0.09,
+	weight = 0.25,
 
 	ease_background_colour = function(self)
         ease_background_colour({ new_colour = G.C.CLEAR, special_colour = HEX("5b4bf0") })
@@ -242,7 +242,7 @@ SMODS.Booster({
     kind = "worm_meow_Zodicat",
 	draw_hand = true,
     cost = 4,
-	weight = 0.9,
+	weight = 1,
 
 	ease_background_colour = function(self)
         ease_background_colour({ new_colour = G.C.CLEAR, special_colour = HEX("A7D6E0") })
@@ -268,7 +268,7 @@ SMODS.Booster({
     kind = "worm_meow_Zodicat",
 	draw_hand = true,
     cost = 4,
-	weight = 0.9,
+	weight = 1,
 
 	ease_background_colour = function(self)
         ease_background_colour({ new_colour = G.C.CLEAR, special_colour = HEX("A7D6E0") })
@@ -294,7 +294,7 @@ SMODS.Booster({
     kind = "worm_meow_Zodicat",
 	draw_hand = true,
     cost = 6,
-	weight = 0.9,
+	weight = 1,
 
 	ease_background_colour = function(self)
         ease_background_colour({ new_colour = G.C.CLEAR, special_colour = HEX("A7D6E0") })
@@ -320,7 +320,7 @@ SMODS.Booster({
     kind = "worm_meow_Zodicat",
 	draw_hand = true,
     cost = 8,
-	weight = 0.24,
+	weight = 0.25,
 
 	ease_background_colour = function(self)
         ease_background_colour({ new_colour = G.C.CLEAR, special_colour = HEX("A7D6E0") })

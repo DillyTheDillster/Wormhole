@@ -41,7 +41,7 @@ local function booster_create_card(self, card, i)
     }
 end
 
-for i, v in ipairs({{"normal_1", 4, 3, 1}, {"normal_2", 4, 3, 1}, {"jumbo", 6, 4, 1}, {"mega", 8, 4, 2}}) do
+for i, v in ipairs({{"normal_1", 4, 3, 1, 1}, {"normal_2", 4, 3, 1, 1}, {"jumbo", 6, 4, 1, 1}, {"mega", 8, 4, 2, 0.25}}) do
     local loc_vars = booster_loc_vars
     if v[2] == 4 then -- Standard
 	loc_vars = booster_loc_vars_key
@@ -52,6 +52,7 @@ for i, v in ipairs({{"normal_1", 4, 3, 1}, {"normal_2", 4, 3, 1}, {"jumbo", 6, 4
 	atlas = "util_boosters",
 	ppu_team = {"util-modders"},
 	cost = v[2],
+    weight = v[5],
 	pos = { x = i - 1, y = 0 },
 	config = { extra = v[3], choose = v[4] },
 	group_key = "k_util_spaces_group",
