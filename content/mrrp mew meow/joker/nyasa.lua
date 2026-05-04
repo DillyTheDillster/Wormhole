@@ -44,10 +44,6 @@ SMODS.Joker {
                 SMODS.add_card{
                     attributes = {"space"},
                     edition = negative and card.ability.extra.edition or nil,
-                    stickers = {
-                        card.ability.extra.sticker
-                    },
-                    force_stickers = true
                 }
                 return nil, true
             end
