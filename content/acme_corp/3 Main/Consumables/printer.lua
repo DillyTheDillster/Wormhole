@@ -45,7 +45,7 @@ SMODS.Consumable {
 
 
             if score > (card.ability.extra.best_hand or 0) then
-                print('set best_hand to ' .. score)
+                --print('set best_hand to ' .. score)
                 card.ability.extra.best_hand = score
             end
 
