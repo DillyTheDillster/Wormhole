@@ -146,7 +146,7 @@ descriptions={
 		j_worm_mrrp_tanabata = {
 			name = "Tanabata",
 			text = {
-				"If poker hand contains a",
+				"If scoring hand contains a",
 				"{C:attention}#1#{} and a {C:attention}#2#{}, create",
 				"a random {C:planet}#3#{} card",
 				"{C:inactive}(Must have room)"
