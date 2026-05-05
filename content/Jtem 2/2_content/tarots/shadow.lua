@@ -81,17 +81,20 @@ SMODS.Consumable {
 
 		-- random hand
 		local picked = pseudorandom_element(eligible_hands, "jtem2_shadow_pick" .. G.GAME.round_resets.ante)
-		local picked_level = picked.level - 1
+		local picked_level = picked.level
+		if Talisman then
+			picked_level = to_number(picked_level)
+		end
 		-- decrease random poker hand
 		SMODS.upgrade_poker_hands({
 			hands = { picked.jtem2_name },
-			level_up = -picked.level + 1,
+			level_up = -picked_level + 1,
 			from = card
 		})
 		-- increase most played poker hand
 		SMODS.upgrade_poker_hands({
 			hands = { most_played },
-			level_up = picked_level,
+			level_up = picked_level - 1,
 			from = card
 		})
 	end,

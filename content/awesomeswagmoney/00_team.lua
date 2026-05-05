@@ -5,7 +5,8 @@ PotatoPatchUtils.Team{
     name = "awesomeswagmoney",
     colour = HEX("345678"),
     loc = true,
-    credit_rows = {5}
+    credit_rows = {5},
+    short_credit = true,
 }
 --extra prefix isnt technically needed but could avoid duplicate register conflicts with other event mods
 PotatoPatchUtils.Developer{

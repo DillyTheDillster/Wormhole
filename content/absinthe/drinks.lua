@@ -60,7 +60,7 @@ SMODS.Booster {
     ppu_artist = { 'AnneBean' },
     ppu_team = { 'absinthe' },
     cost = 5,
-    weight = 0.96,
+    weight = 1,
     select_card = 'consumeables',
     create_card = function(self, card)
         return create_card("abs_drinks", G.pack_cards, nil, nil, true, true, nil, "worm_abs_top_shelf")
@@ -108,7 +108,7 @@ SMODS.Booster {
     ppu_artist = { 'AnneBean' },
     ppu_team = { 'absinthe' },
     cost = 5,
-    weight = 0.96,
+    weight = 1,
     select_card = 'consumeables',
     create_card = function(self, card)
         return create_card("abs_drinks", G.pack_cards, nil, nil, true, true, nil, "worm_abs_top_shelf")
@@ -156,7 +156,7 @@ SMODS.Booster {
     ppu_artist = { 'AnneBean' },
     ppu_team = { 'absinthe' },
     cost = 7,
-    weight = 0.48,
+    weight = 1,
     select_card = 'consumeables',
     create_card = function(self, card)
         return create_card("abs_drinks", G.pack_cards, nil, nil, true, true, nil, "worm_abs_top_shelf")
@@ -204,7 +204,7 @@ SMODS.Booster {
     ppu_artist = { 'AnneBean' },
     ppu_team = { 'absinthe' },
     cost = 10,
-    weight = 0.12,
+    weight = 0.25,
     select_card = 'consumeables',
     create_card = function(self, card)
         return create_card("abs_drinks", G.pack_cards, nil, nil, true, true, nil, "worm_abs_top_shelf")

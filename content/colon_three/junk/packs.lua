@@ -9,9 +9,9 @@ SMODS.Atlas {
 -- type, cost, count, x pos, y pos, choose, size, weight
 -- weights are higher as they should appear more often by the nature of them
 for _, booster_type in ipairs({
-	{ "normal", 4, 2, 0, 0, 2, 3, 1.48 },
-	{ "jumbo", 6, 1, 2, 0, 2, 4, 1.48 },
-	{ "mega", 8, 1, 3, 0, 3, 5, 1.48/4 },
+	{ "normal", 4, 2, 0, 0, 2, 3, 1 },
+	{ "jumbo", 6, 1, 2, 0, 2, 4, 1 },
+	{ "mega", 8, 1, 3, 0, 3, 5, 0.25 },
 }) do
 	for i = 1, booster_type[3] do
 		SMODS.Booster({

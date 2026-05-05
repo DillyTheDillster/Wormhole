@@ -9,6 +9,7 @@ return {
 		sonic_drop = "up",
 	},
 	menu = true,
+	disable_nyan = false,
 	family_friendly = false,
 	cosmic_gorilla_beast_mode = false
 }

@@ -50,10 +50,10 @@ local wormhole_colour = function (self)
 end
 
 local wormholes = { --im so fucking smart
-    { type = "normal_1", atlas = "worm_asm_ultrawormhole_sm", display_size = { w = 83, h = 99 },  extra = 2, choose = 1, pos = { x = 0, y = 0 }, weight = 0.8, cost = 4 },
+    { type = "normal_1", atlas = "worm_asm_ultrawormhole_sm", display_size = { w = 83, h = 99 },  extra = 2, choose = 1, pos = { x = 0, y = 0 }, weight = 1, cost = 4 },
     -- { type = "normal_2", extra = 2, choose = 1, pos = { x = 0, y = 0 }, weight = 0.8, cost = 4 },
-    { type = "jumbo_1", atlas = "worm_asm_ultrawormhole_bg", display_size = { w = 99, h = 99 }, extra = 4, choose = 1, pos = { x = 0, y = 0 }, weight = 0.8, cost = 6 },
-    { type = "mega_1", atlas = "worm_asm_ultrawormhole_bgr", display_size = { w = 102, h = 99 }, extra = 4, choose = 2, pos = { x = 0, y = 0 }, weight = 0.2, cost = 8 },
+    { type = "jumbo_1", atlas = "worm_asm_ultrawormhole_bg", display_size = { w = 99, h = 99 }, extra = 4, choose = 1, pos = { x = 0, y = 0 }, weight = 1, cost = 6 },
+    { type = "mega_1", atlas = "worm_asm_ultrawormhole_bgr", display_size = { w = 102, h = 99 }, extra = 4, choose = 2, pos = { x = 0, y = 0 }, weight = 0.25, cost = 8 },
 }
 
 for _, t in ipairs(wormholes) do
@@ -64,11 +64,10 @@ for _, t in ipairs(wormholes) do
         cost = t.cost,
         atlas = t.atlas,
         display_size = t.display_size,
-        select_card = 'consumeables',
         disable_shine = true,
         config = { extra = t.extra, choose = t.choose },
         group_key = "k_worm_ultrawormhole",
-        --draw_hand = true,
+        draw_hand = true,
         loc_vars = function (self, info_queue, card)
             local cfg = (card and card.ability) or self.config or {}
             return {

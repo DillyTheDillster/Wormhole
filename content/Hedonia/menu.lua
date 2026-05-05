@@ -241,7 +241,7 @@ SMODS.Consumable {
                     if i1 == 1 then
                         v:set_edition(nil, true)
                     else
-                        local edition = SMODS.poll_edition({guaranteed = true, options = {{name = stages[i1 - 1], weight = 1}}})
+                        local edition = SMODS.poll_edition({guaranteed = true, options = {{name = stages[i1 - 1], weight = 0.5}}}).name
                         v:set_edition(edition, true)
                     end
                 end
@@ -414,6 +414,7 @@ SMODS.Booster {
     group_key = 'hedonia_menu',
     kind = "hedonia_menu",
     cost = 4,
+    weight = 0.5,
     atlas = "booster_placeholder",
     pos = { x = 0, y = 0 },
     config = { extra = 3, choose = 1, name = "Menu Pack" },
@@ -437,6 +438,7 @@ SMODS.Booster {
     group_key = 'hedonia_menu',
     kind = "hedonia_menu",
     cost = 4,
+    weight = 0.5,
     atlas = "booster_placeholder",
     pos = { x = 1, y = 0 },
     config = { extra = 3, choose = 1, name = "Menu Pack" },
@@ -460,6 +462,7 @@ SMODS.Booster {
     group_key = 'hedonia_menu',
     kind = "hedonia_menu",
     cost = 4,
+    weight = 0.5,
     atlas = "booster_placeholder",
     pos = { x = 2, y = 0 },
     config = { extra = 3, choose = 1, name = "Menu Pack" },
@@ -483,6 +486,7 @@ SMODS.Booster {
     group_key = 'hedonia_menu',
     kind = "hedonia_menu",
     cost = 4,
+    weight = 0.5,
     atlas = "booster_placeholder",
     pos = { x = 3, y = 0 },
     config = { extra = 3, choose = 1, name = "Menu Pack" },
@@ -506,6 +510,7 @@ SMODS.Booster {
     group_key = 'hedonia_menu',
     kind = "hedonia_menu",
     cost = 6,
+    weight = 0.5,
     atlas = "booster_placeholder",
     pos = { x = 0, y = 1 },
     config = { extra = 4, choose = 1, name = "Jumbo Menu Pack" },
@@ -529,6 +534,7 @@ SMODS.Booster {
     group_key = 'hedonia_menu',
     kind = "hedonia_menu",
     cost = 6,
+    weight = 0.5,
     atlas = "booster_placeholder",
     pos = { x = 1, y = 1 },
     config = { extra = 4, choose = 1, name = "Jumbo Menu Pack" },
@@ -552,6 +558,7 @@ SMODS.Booster {
     group_key = 'hedonia_menu',
     kind = "hedonia_menu",
     cost = 8,
+    weight = 0.125,
     atlas = "booster_placeholder",
     pos = { x = 2, y = 1 },
     config = { extra = 4, choose = 2, name = "Mega Menu Pack" },
@@ -575,6 +582,7 @@ SMODS.Booster {
     group_key = 'hedonia_menu',
     kind = "hedonia_menu",
     cost = 8,
+    weight = 0.125,
     atlas = "booster_placeholder",
     pos = { x = 3, y = 1 },
     config = { extra = 4, choose = 2, name = "Mega Menu Pack" },
