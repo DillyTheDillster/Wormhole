@@ -34,7 +34,7 @@ SMODS.Joker {
     end,
 
     calculate = function(self, card, context)
-        if context.before and context.poker_hands and next(context.poker_hands[card.ability.extra.hand]) then
+        if context.before and context.scoring_name == card.ability.extra.hand then
             local target = context.scoring_hand[math.ceil((#context.scoring_hand)/2)]
 
             target:set_ability('m_gold', nil, true)
