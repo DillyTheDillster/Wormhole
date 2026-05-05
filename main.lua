@@ -157,6 +157,27 @@ Wormhole.config_tab = function()
 							},
 						},
 					},
+					-- Nyancat tart effect toggle
+					{
+						n = G.UIT.R,
+						config = { align = "cm", padding = 0 },
+						nodes = {
+							{
+								n = G.UIT.C,
+								config = { align = "cl", padding = 0.05 },
+								nodes = {
+									create_toggle { col = true, label = "", scale = 0.8, w = 0, shadow = true, ref_table = Wormhole.config, ref_value = "disable_nyan" },
+								}
+							},
+							{
+								n = G.UIT.C,
+								config = { align = "c", padding = 0 },
+								nodes = {
+									{ n = G.UIT.T, config = { text = localize('b_wormhole_disable_nyan'), scale = 0.35, colour = G.C.UI.TEXT_LIGHT } },
+								}
+							},
+						},
+					},
 					-- Family friendly mode
 					{
 						n = G.UIT.R,
