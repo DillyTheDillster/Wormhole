@@ -700,7 +700,7 @@ SMODS.Consumable { -- Cosmospolitan
             local cosmos_filter = function(pool)
                 for i, v in ipairs(pool) do
                     if G.P_CENTERS[v.key] and G.P_CENTERS[v.key].set == 'Back' then
-                        pool[i].key = 'UNAVAILABLE'
+                        pool[i] = 'UNAVAILABLE'
                     end
                 end
 
