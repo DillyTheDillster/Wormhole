@@ -703,6 +703,14 @@ SMODS.Consumable { -- Cosmospolitan
                         pool[i].key = 'UNAVAILABLE'
                     end
                 end
+
+                local pool_exists = false
+                for i, k in ipairs(pool) do
+                    if not pool_exists and k ~= 'UNAVAILABLE' then pool_exists = true; break end
+                end
+
+                if not pool_exists then pool = {{key = 'j_joker', type = 'Joker'}} end
+
                 return pool
             end
             local key = SMODS.poll_object({ attributes = { card.ability.extra.current_team }, rarity = false, filter = cosmos_filter })
