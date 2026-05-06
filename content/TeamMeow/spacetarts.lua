@@ -954,15 +954,15 @@ SMODS.DrawStep({
 	func = function(card)
 		local yshift = 0
 		local yinc = 0.2 / 3
-		if card.tarts then
+		if next(card.tarts) then
 			for _, v in ipairs(card.tarts) do
 				local tartObj = Wormhole.TEAM_MEOW.tartInfo[v.key]
 				tartObj.sprite = tartObj.sprite
 					or Sprite(0, 0, G.CARD_W, G.CARD_H, G.ASSET_ATLAS["worm_meow_spacetart"], tartObj.pos)
 				local tartSprite = tartObj.sprite
 				tartSprite.role.draw_major = card
-				tartSprite:draw_shader("dissolve", 0, nil, nil, card.children.center, 0, 0, 0, yshift, nil, 0.6)
-				tartSprite:draw_shader("dissolve", nil, nil, nil, card.children.center, 0, 0, 0, yshift)
+				tartSprite:draw_shader("dissolve", 0, nil, nil, card.children.center, 0, 0, (card.T.w - G.CARD_W)/2, (card.T.h - G.CARD_H)/2 + yshift, nil, 0.6)
+				tartSprite:draw_shader("dissolve", nil, nil, nil, card.children.center, 0, 0, (card.T.w - G.CARD_W)/2, (card.T.h - G.CARD_H)/2 + yshift)
 				yshift = yshift + yinc
 			end
 		end
@@ -980,7 +980,7 @@ SMODS.DrawStep({
 				or SMODS.create_sprite(0, 0, G.CARD_W, 2 * G.CARD_H, "worm_meow_nyan_cat_trail", { x = 0, y = 0 })
 			if #card.tarts > 0 or card.config.center.key == 'j_worm_meow_nyan_cat' then
 				Wormhole.TEAM_MEOW.rainbow_trail_sprite:set_role({ major = card, role_type = "Glued", draw_major = card })
-				Wormhole.TEAM_MEOW.rainbow_trail_sprite:draw_shader("dissolve", nil, nil, true, card.children.center, 0.05, nil, nil, nil)
+				Wormhole.TEAM_MEOW.rainbow_trail_sprite:draw_shader("dissolve", nil, nil, true, card.children.center, 0.05, nil, (card.T.w - G.CARD_W)/2, (card.T.h - G.CARD_H)/2)
 			end
 		end
 	end,
