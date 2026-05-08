@@ -15,5 +15,6 @@
 		"Lovely (>=0.9)",
 		"PotatoPatchUtils (>=1.0.10)"
 	],
+	"conflicts": ["SilkTouch (<1.2)"],
 	"allow_redistribution": true
 }
