@@ -16,7 +16,7 @@
 		"PotatoPatchUtils (>=1.0.10)"
 	],
 	"conflicts": [
-		"SilkTouch (<1.2)",
+		"SilkTouch (<<1.2)",
 		"Talisman (<=2.7)"
 	],
 	"allow_redistribution": true
