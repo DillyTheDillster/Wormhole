@@ -87,7 +87,7 @@ end
 SMODS.Stake {
     key = 'util_void',
     atlas = 'util_stake',
-    applied_stakes = {'gold'},
+    applied_stakes = {'gold', 'worm_mrrp_cosmic'},
     prefix_config = { applied_stakes = { mod = false } },
     ppu_team = {"util-modders"},
     modifiers = function ()
